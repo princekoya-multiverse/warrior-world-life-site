@@ -21,154 +21,110 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(12,12,16,0.92); backdrop-filter: blur(10px);
+    background: rgba(12,12,16,0.94); backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
-    padding: 14px 32px;
+    padding: 12px 32px;
     display: flex; align-items: center; justify-content: space-between;
   }
-  nav .logo { display: flex; align-items: center; gap: 12px; }
-  nav .logo img { height: 34px; width: auto; border-radius: 4px; }
-  nav .logo .name { font-family: var(--font); font-size: 17px; font-weight: 700; letter-spacing: 1px; color: var(--text); }
+  nav .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  nav .logo img { height: 32px; width: auto; border-radius: 4px; }
+  nav .logo .name { font-family: var(--font); font-size: 16px; font-weight: 700; letter-spacing: 1px; color: var(--text); }
   nav .logo .name small { display: block; font-family: var(--sans); font-size: 9px; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; }
-  nav .links { display: flex; gap: 26px; font-size: 13px; font-weight: 500; }
-  nav .links a { color: var(--dim); text-decoration: none; transition: color 0.2s; }
-  nav .links a:hover { color: var(--gold); }
+  nav .tabs { display: flex; gap: 4px; font-size: 13px; font-weight: 500; overflow-x: auto; }
+  nav .tabs button {
+    background: none; border: none; color: var(--dim); cursor: pointer;
+    padding: 8px 14px; border-radius: 3px; font-family: var(--sans); font-size: 13px; font-weight: 500;
+    white-space: nowrap; transition: all 0.2s;
+  }
+  nav .tabs button:hover { color: var(--text); }
+  nav .tabs button.active { color: var(--gold); background: rgba(200,168,90,0.1); }
+  .menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--text); font-size: 18px; padding: 4px 12px; cursor: pointer; }
 
-  section { padding: 96px 24px; max-width: 1120px; margin: 0 auto; }
+  /* PAGES */
+  .page { display: none; padding-top: 68px; }
+  .page.active { display: block; }
+  section { padding: 84px 24px; max-width: 1120px; margin: 0 auto; }
   .label { font-family: var(--sans); font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
   h2 { font-family: var(--font); font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
   h2 em { color: var(--gold); font-style: italic; }
+  h3 { font-family: var(--font); font-size: 20px; font-weight: 700; margin: 24px 0 10px; }
   .lead { font-size: 16px; color: var(--dim); max-width: 680px; line-height: 1.8; }
-
-  /* HERO — real photo, editorial */
-  #hero {
-    min-height: 100vh; display: flex; align-items: flex-end; position: relative;
-    overflow: hidden; padding: 0;
-  }
-  #hero .photo {
-    position: absolute; inset: 0;
-    background-image: url('https://projectpemfwarrior.com/__l5e/assets-v1/7a4c3d07-79ae-4b61-b4a2-e42d5492ef40/champ-hero-kalari.jpg');
-    background-size: cover; background-position: center 20%;
-  }
-  #hero .scrim {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(12,12,16,0.35) 0%, rgba(12,12,16,0.55) 45%, rgba(12,12,16,0.97) 100%);
-  }
-  .hero-inner { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; width: 100%; padding: 0 24px 80px; }
-  .hero-kicker {
-    display: inline-block; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
-    color: var(--gold); border: 1px solid rgba(200,168,90,0.4); padding: 6px 16px; border-radius: 2px; margin-bottom: 22px;
-    background: rgba(12,12,16,0.5);
-  }
-  .hero-inner h1 { font-family: var(--font); font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 18px; }
-  .hero-inner h1 .hl { color: var(--gold); font-style: italic; }
-  .hero-inner p { font-size: 17px; color: #d5d5dd; max-width: 560px; line-height: 1.75; margin-bottom: 30px; }
-  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-gold {
-    padding: 13px 28px; background: var(--gold); color: #0c0c10; font-size: 14px; font-weight: 600;
-    text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s; letter-spacing: 0.5px;
-  }
+  .btn-gold { display: inline-block; padding: 13px 28px; background: var(--gold); color: #0c0c10; font-size: 14px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.5px; }
   .btn-gold:hover { opacity: 0.88; }
-  .btn-line {
-    padding: 13px 28px; background: transparent; color: var(--text); font-size: 14px; font-weight: 500;
-    text-decoration: none; border: 1px solid rgba(255,255,255,0.25); cursor: pointer; transition: all 0.2s; letter-spacing: 0.5px;
-  }
+  .btn-line { display: inline-block; padding: 13px 28px; background: transparent; color: var(--text); font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); cursor: pointer; letter-spacing: 0.5px; }
   .btn-line:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* STATS */
-  .stats { max-width: 1120px; margin: -40px auto 0; padding: 0 24px; position: relative; z-index: 5; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  /* HOME HERO */
+  #home-hero { min-height: 92vh; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0; max-width: 100%; }
+  #home-hero .photo { position: absolute; inset: 0; background-image: url('https://projectpemfwarrior.com/__l5e/assets-v1/7a4c3d07-79ae-4b61-b4a2-e42d5492ef40/champ-hero-kalari.jpg'); background-size: cover; background-position: center 20%; }
+  #home-hero .scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,12,16,0.35) 0%, rgba(12,12,16,0.55) 45%, rgba(12,12,16,0.97) 100%); }
+  .hero-inner { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; width: 100%; padding: 0 24px 70px; }
+  .hero-kicker { display: inline-block; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,168,90,0.4); padding: 6px 16px; border-radius: 2px; margin-bottom: 20px; background: rgba(12,12,16,0.5); }
+  .hero-inner h1 { font-family: var(--font); font-size: 50px; font-weight: 700; line-height: 1.1; margin-bottom: 16px; }
+  .hero-inner h1 .hl { color: var(--gold); font-style: italic; }
+  .hero-inner p { font-size: 17px; color: #d5d5dd; max-width: 560px; line-height: 1.75; margin-bottom: 26px; }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .stats { max-width: 1120px; margin: -36px auto 0; padding: 0 24px; position: relative; z-index: 5; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
   .stat { background: var(--surface); border: 1px solid var(--line); padding: 20px; text-align: center; }
   .stat .n { font-family: var(--font); font-size: 30px; font-weight: 700; color: var(--gold); }
   .stat .l { font-size: 10.5px; color: var(--dim); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 2px; }
 
-  /* STORY — two-column with real photos */
-  #story { background: var(--surface); max-width: 100%; padding: 96px 24px; }
-  #story .wrap { max-width: 1120px; margin: 0 auto; }
-  .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 34px; align-items: start; }
-  .story-grid .photo-side img { width: 100%; border-radius: 2px; border: 1px solid var(--line); display: block; }
-  .story-grid .photo-side .cap { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
-  .story-text p { font-size: 15px; color: var(--dim); margin-bottom: 16px; line-height: 1.85; }
-  .story-text p strong { color: var(--text); font-weight: 600; }
-  .quote { border-left: 2px solid var(--gold); padding: 16px 24px; margin-top: 22px; background: var(--surface2); }
+  /* GRID HELPERS */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 28px; align-items: start; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+  .photo-frame img { width: 100%; border-radius: 2px; border: 1px solid var(--line); display: block; }
+  .cap { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
+  .body-copy p { font-size: 15px; color: var(--dim); margin-bottom: 16px; line-height: 1.85; }
+  .body-copy p strong { color: var(--text); font-weight: 600; }
+  .quote { border-left: 2px solid var(--gold); padding: 16px 24px; margin: 22px 0; background: var(--surface2); }
   .quote p { font-family: var(--font); font-size: 17px; font-style: italic; color: var(--text); margin-bottom: 6px; }
   .quote .by { font-size: 12px; color: var(--muted); }
 
-  /* PROOF */
-  #proof { max-width: 100%; padding: 96px 24px; }
-  #proof .wrap { max-width: 1120px; margin: 0 auto; }
-  .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
-  .proof {
-    background: var(--surface); border: 1px solid var(--line); padding: 26px;
-    display: flex; flex-direction: column; gap: 6px;
-  }
-  .proof .big { font-family: var(--font); font-size: 38px; font-weight: 700; color: var(--gold); }
-  .proof .t { font-size: 14px; font-weight: 600; color: var(--text); }
-  .proof .d { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+  /* CARDS */
+  .card { background: var(--surface); border: 1px solid var(--line); padding: 26px; }
+  .card .big { font-family: var(--font); font-size: 36px; font-weight: 700; color: var(--gold); }
+  .card .t { font-size: 14px; font-weight: 600; color: var(--text); margin: 4px 0 6px; }
+  .card .d { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+  .card h4 { font-family: var(--font); font-size: 17px; margin-bottom: 6px; }
 
-  /* DOCUMENTARY — photo banner */
-  #doc { background: var(--surface); max-width: 100%; padding: 96px 24px; }
-  #doc .wrap { max-width: 1120px; margin: 0 auto; }
-  .doc-banner { position: relative; margin-top: 30px; overflow: hidden; border: 1px solid var(--line); border-radius: 2px; }
-  .doc-banner img { width: 100%; display: block; }
-  .doc-banner .overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,12,16,0.92) 0%, rgba(12,12,16,0.6) 55%, rgba(12,12,16,0.15) 100%); display: flex; align-items: center; }
-  .doc-banner .txt { max-width: 520px; padding: 40px; }
-  .doc-banner .txt h3 { font-family: var(--font); font-size: 24px; font-weight: 700; margin-bottom: 10px; }
-  .doc-banner .txt p { font-size: 14px; color: #c5c5d0; line-height: 1.7; margin-bottom: 16px; }
+  /* BANNER */
+  .banner { position: relative; margin-top: 30px; overflow: hidden; border: 1px solid var(--line); border-radius: 2px; }
+  .banner img { width: 100%; display: block; }
+  .banner .overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,12,16,0.92) 0%, rgba(12,12,16,0.6) 55%, rgba(12,12,16,0.15) 100%); display: flex; align-items: center; }
+  .banner .txt { max-width: 540px; padding: 40px; }
+  .banner .txt h3 { font-family: var(--font); font-size: 24px; font-weight: 700; margin: 0 0 10px; }
+  .banner .txt p { font-size: 14px; color: #c5c5d0; line-height: 1.7; margin-bottom: 14px; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; }
   .chip { padding: 4px 12px; border: 1px solid rgba(200,168,90,0.35); font-size: 10.5px; color: var(--gold); letter-spacing: 0.5px; text-transform: uppercase; }
 
-  /* P.E.M.F. */
-  #protocols { max-width: 100%; padding: 96px 24px; }
-  #protocols .wrap { max-width: 1120px; margin: 0 auto; }
-  .pemf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 34px; }
-  .pemf { border: 1px solid var(--line); padding: 26px 20px; text-align: center; background: var(--surface); }
-  .pemf .letter { font-family: var(--font); font-size: 40px; font-weight: 700; color: var(--gold); line-height: 1; }
-  .pemf h3 { font-family: var(--font); font-size: 17px; margin: 8px 0 6px; }
-  .pemf p { font-size: 12px; color: var(--muted); line-height: 1.6; }
-
-  /* ECOSYSTEM */
-  #eco { max-width: 100%; padding: 96px 24px; }
-  #eco .wrap { max-width: 1120px; margin: 0 auto; }
-  .eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
-  .eco { border: 1px solid var(--line); padding: 26px; background: var(--surface); text-decoration: none; color: var(--text); display: block; transition: border-color 0.2s; }
-  .eco:hover { border-color: var(--gold); }
-  .eco h3 { font-family: var(--font); font-size: 17px; margin-bottom: 6px; }
-  .eco p { font-size: 13px; color: var(--dim); line-height: 1.6; }
-
-  /* PARTNERS — real logos */
-  #partners { background: var(--surface); max-width: 100%; padding: 96px 24px; }
-  #partners .wrap { max-width: 1120px; margin: 0 auto; }
-  .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 34px; }
-  .partner { border: 1px solid var(--line); background: var(--bg); padding: 20px; display: flex; align-items: center; justify-content: center; min-height: 90px; }
-  .partner img { max-width: 100%; max-height: 52px; object-fit: contain; filter: grayscale(0.4); opacity: 0.85; transition: all 0.2s; }
+  /* PARTNERS */
+  .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+  .partner { border: 1px solid var(--line); background: var(--bg); padding: 20px; display: flex; align-items: center; justify-content: center; min-height: 88px; }
+  .partner img { max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(0.4); opacity: 0.85; transition: all 0.2s; }
   .partner:hover img { filter: none; opacity: 1; }
-  .partner.text-only { font-family: var(--font); font-size: 15px; color: var(--dim); text-align: center; font-style: italic; }
+  .partner.text-only { font-family: var(--font); font-size: 14px; color: var(--dim); text-align: center; font-style: italic; }
+  .track { border: 1px solid var(--line); background: var(--surface); padding: 26px; }
+  .track h4 { font-family: var(--font); font-size: 18px; margin-bottom: 4px; }
+  .track .sub { font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .track ul { list-style: none; }
+  .track li { font-size: 13px; color: var(--dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.55; }
+  .track li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
 
-  /* TEAM — real photos */
-  #team { max-width: 100%; padding: 96px 24px; }
-  #team .wrap { max-width: 1120px; margin: 0 auto; }
-  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+  /* TEAM */
   .member { border: 1px solid var(--line); background: var(--surface); overflow: hidden; }
-  .member img { width: 100%; height: 230px; object-fit: cover; display: block; }
-  .member .info { padding: 18px; }
+  .member img { width: 100%; height: 220px; object-fit: cover; display: block; }
+  .member .info { padding: 16px; }
   .member .name { font-family: var(--font); font-size: 16px; font-weight: 700; }
   .member .role { font-size: 12px; color: var(--gold); margin: 2px 0 6px; }
   .member .bio { font-size: 12.5px; color: var(--dim); line-height: 1.6; }
 
   /* CONTACT */
-  #contact { max-width: 100%; padding: 96px 24px; text-align: center; }
-  #contact .wrap { max-width: 720px; margin: 0 auto; }
   .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; }
   .contact { border: 1px solid var(--line); padding: 24px; background: var(--surface); }
   .contact .l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
@@ -177,17 +133,17 @@
   footer { border-top: 1px solid var(--line); padding: 34px 24px; text-align: center; font-size: 12px; color: var(--muted); }
   footer .legal { font-size: 11px; margin-top: 6px; color: var(--muted); }
 
+  .alt-bg { background: var(--surface); }
+  .full { max-width: 100%; }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+
   @media (max-width: 800px) {
-    nav .links { display: none; }
+    nav .tabs { display: none; }
+    .menu-btn { display: block; }
+    nav .tabs.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--line); padding: 10px; }
     .hero-inner h1 { font-size: 34px; }
     .stats { grid-template-columns: repeat(2, 1fr); }
-    .story-grid { grid-template-columns: 1fr; }
-    .proof-grid { grid-template-columns: 1fr; }
-    .pemf-grid { grid-template-columns: repeat(2, 1fr); }
-    .eco-grid { grid-template-columns: 1fr; }
-    .partner-grid { grid-template-columns: repeat(2, 1fr); }
-    .team-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
+    .grid2, .grid3, .grid4, .partner-grid, .contact-grid { grid-template-columns: 1fr; }
     h2 { font-size: 27px; }
   }
 </style>
@@ -195,59 +151,74 @@
 <body>
 
 <nav>
-  <div class="logo">
+  <a class="logo" href="#" onclick="showPage('home');return false;">
     <img src="https://projectpemfwarrior.com/pemf-warrior-logo.jpg" alt="Warrior World">
     <div class="name">Warrior World<small>Empowering the 1-in-4</small></div>
+  </a>
+  <div class="tabs" id="navTabs">
+    <button class="active" data-page="home" onclick="showPage('home')">Home</button>
+    <button data-page="story" onclick="showPage('story')">Our Story</button>
+    <button data-page="documentary" onclick="showPage('documentary')">The Documentary</button>
+    <button data-page="proof" onclick="showPage('proof')">The Proof</button>
+    <button data-page="protocols" onclick="showPage('protocols')">Protocols</button>
+    <button data-page="partners" onclick="showPage('partners')">Partners</button>
+    <button data-page="civic" onclick="showPage('civic')">For Mayors &amp; Civic Leaders</button>
+    <button data-page="contact" onclick="showPage('contact')">Contact</button>
   </div>
-  <div class="links">
-    <a href="#story">Our Story</a>
-    <a href="#proof">The Proof</a>
-    <a href="#doc">Documentary</a>
-    <a href="#protocols">Protocols</a>
-    <a href="#partners">Partners</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <button class="menu-btn" onclick="document.getElementById('navTabs').classList.toggle('open')">☰</button>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="photo"></div>
-  <div class="scrim"></div>
-  <div class="hero-inner">
-    <div class="hero-kicker">1 in 4 Canadians lives with an invisible disability</div>
-    <h1>Invisible to the world.<br><span class="hl">Unstoppable with us.</span></h1>
-    <p>Warrior World uses AI-powered assistive technology and Health Canada-approved medical devices to help people with invisible disabilities go from surviving to thriving — and we prove it on camera.</p>
-    <div class="hero-ctas">
-      <a href="#story" class="btn-gold">Our Story</a>
-      <a href="#partners" class="btn-line">Who We Partner With</a>
+<!-- ============ HOME ============ -->
+<div class="page active" id="page-home">
+  <section id="home-hero">
+    <div class="photo"></div>
+    <div class="scrim"></div>
+    <div class="hero-inner">
+      <div class="hero-kicker">1 in 4 Canadians lives with an invisible disability</div>
+      <h1>Invisible to the world.<br><span class="hl">Unstoppable with us.</span></h1>
+      <p>Warrior World uses AI-powered assistive technology and Health Canada-approved medical devices to help people with invisible disabilities go from surviving to thriving — and we prove it on camera.</p>
+      <div class="hero-ctas">
+        <a class="btn-gold" href="#" onclick="showPage('story');return false;">Our Story</a>
+        <a class="btn-line" href="#" onclick="showPage('partners');return false;">Who We Partner With</a>
+      </div>
     </div>
+  </section>
+  <div class="stats">
+    <div class="stat"><div class="n">75%</div><div class="l">Pain Reduction</div></div>
+    <div class="stat"><div class="n">6 wks</div><div class="l">vs 6-mo Prognosis</div></div>
+    <div class="stat"><div class="n">8</div><div class="l">Invisible Conditions</div></div>
+    <div class="stat"><div class="n">11+</div><div class="l">Partners Across BC</div></div>
   </div>
-</section>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat"><div class="n">75%</div><div class="l">Pain Reduction</div></div>
-  <div class="stat"><div class="n">6 wks</div><div class="l">vs 6-mo Prognosis</div></div>
-  <div class="stat"><div class="n">8</div><div class="l">Invisible Conditions</div></div>
-  <div class="stat"><div class="n">11+</div><div class="l">Partners Across BC</div></div>
+  <section>
+    <div class="label">Who We Are</div>
+    <h2>We prove that recovery is <em>possible</em></h2>
+    <p class="lead">Warrior World is a BC non-profit society using AI-powered assistive technology, Health Canada-approved medical devices, and radical documentary proof to help the 1-in-4 Canadians living with invisible disabilities go from surviving to thriving.</p>
+    <div class="grid3">
+      <div class="card"><div class="big">🤖</div><div class="t">AI-Powered Platform</div><div class="d">Machine learning tools that coach warriors daily, track biometrics, and reduce the cognitive load of managing multiple invisible disabilities.</div></div>
+      <div class="card"><div class="big">🔬</div><div class="t">Health Canada Approved</div><div class="d">Class II medical devices. Swiss engineered. 284 conditions in peer-reviewed research. Every session logged with full clinical traceability.</div></div>
+      <div class="card"><div class="big">🎬</div><div class="t">Clinical Documentary</div><div class="d">The world's first clinical documentary on invisible disability — 90 days, 8 conditions, every session filmed, every metric public.</div></div>
+    </div>
+  </section>
 </div>
 
-<!-- STORY -->
-<section id="story">
-  <div class="wrap">
+<!-- ============ STORY ============ -->
+<div class="page" id="page-story">
+  <section>
     <div class="label">Our Story</div>
     <h2>It started with a <em>car accident</em></h2>
-    <div class="story-grid">
-      <div class="photo-side">
+    <div class="grid2">
+      <div class="photo-frame">
         <img src="https://pemf.cool/assets/prince-portrait-tQlVGHNt.jpg" alt="Prince Koya — founder of Warrior World">
         <div class="cap">Prince Koya, founder — every session filmed, every metric tracked.</div>
       </div>
-      <div class="story-text">
-        <p><strong>January 2021.</strong> A car accident changed everything. The doctors said Chelsy Koya would be lucky to stand — let alone walk.</p>
-        <p>Her husband Prince refused to accept that. He started filming everything — every practitioner visit, every workout, every protocol. He built a system of evidence because the medical system had no answers.</p>
+      <div class="body-copy">
+        <p><strong>January 2021. A morning of hope. A moment that split life into before and after.</strong></p>
+        <p>Prince and Chelsy were driving through Osoyoos when a catastrophic crash on <strong>Anarchist Mountain</strong> changed everything. Chelsy fractured her hip in three places. The doctors' prognosis was brutal: she would be lucky to stand — let alone walk.</p>
+        <p>They said <strong>98% of patients her age end up hooked on opiates</strong>. They said she'd never walk normally again.</p>
+        <p>Prince refused to accept that prognosis. He brought the Prime Medical Device into the hospital room. PEMF therapy. Plant medicine. Alkalized water. Bolstered protocols.</p>
+        <p><strong>She was off all narcotics in five days.</strong></p>
         <p>The City of New Westminster raised over <strong>$10,000</strong> for Chelsy's recovery. A movement was born.</p>
-        <p>That movement became Warrior World — a data-proven, AI-powered society helping the <strong>1-in-4 Canadians</strong> living with invisible disabilities.</p>
         <p><strong>This is not a testimonial. This is clinical proof on camera.</strong></p>
         <div class="quote">
           <p>"If the system can't save the person you love most, you build your own system. So I did."</p>
@@ -255,82 +226,163 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROOF -->
-<section id="proof">
-  <div class="wrap">
-    <div class="label">The Evidence</div>
-    <h2>Results are not <em>opinions</em></h2>
-    <p class="lead">Every number here was generated by real treatments, tracked by real devices, and verified by licensed medical professionals.</p>
-    <div class="proof-grid">
-      <div class="proof"><div class="big">75%</div><div class="t">Pain Reduction</div><div class="d">One session. Verified by Grant Storzuk, physiotherapist, 10+ years clinical practice.</div></div>
-      <div class="proof"><div class="big">6 wks</div><div class="t">vs 6-Month Prognosis</div><div class="d">Fractured shoulder in 3 places. 4 sessions. Documented on camera.</div></div>
-      <div class="proof"><div class="big">92%</div><div class="t">Mobility Restored</div><div class="d">Objective range-of-motion testing, before and after, by a licensed physiotherapist.</div></div>
-      <div class="proof"><div class="big">8</div><div class="t">Invisible Conditions</div><div class="d">Tracked with biometric data — HRV, sleep, pain scores, mobility metrics.</div></div>
-      <div class="proof"><div class="big">Class II</div><div class="t">Health Canada Approved</div><div class="d">Swiss-engineered medical device. 284 conditions in peer-reviewed research.</div></div>
-      <div class="proof"><div class="big">10+</div><div class="t">Active Warriors</div><div class="d">Training, tracking, and recovering through our platform right now.</div></div>
+  <section class="alt-bg full">
+    <div class="wrap">
+      <div class="label">The Diagnosis</div>
+      <h2>Eight invisible disabilities. <em>The system said manage it.</em> He said no.</h2>
+      <div class="grid2">
+        <div class="body-copy">
+          <p>After Chelsy's recovery, Prince turned the mirror on himself. Years of concussions from professional wrestling. <strong>Degenerative Disc Disease at C6-C7</strong> — the career-ender. Nerve damage down his entire right side.</p>
+          <p>The diagnosis: <strong>eight invisible disabilities</strong>. Not a single one shows up on an x-ray.</p>
+          <p><strong>Degenerative Disc Disease · PTSD · Depression · Anxiety · Chronic Pain · Sleep Disorder · Debilitating TMJ · Nervous System Dysregulation</strong></p>
+          <p>The medical system said: manage it. Accept the limitations. Never fight again.</p>
+          <p>He refused. He built Project PEMF Warrior — turning his own body into the laboratory. Every protocol tested on himself. Every metric tracked. The same system that helped Chelsy walk again.</p>
+        </div>
+        <div class="photo-frame">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/7690837c-402a-4537-9e28-402029588c4f/hes-fearless.jpg" alt="Prince — fearless">
+          <div class="cap">"They said I'd never wrestle again. Watch what happens."</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
-<!-- DOCUMENTARY -->
-<section id="doc">
-  <div class="wrap">
+<!-- ============ DOCUMENTARY ============ -->
+<div class="page" id="page-documentary">
+  <section>
     <div class="label">Warrior Season 1</div>
     <h2>The world's first clinical documentary on <em>invisible disability</em></h2>
-    <div class="doc-banner">
+    <p class="lead">90 consecutive days. 8 invisible disabilities. Every session filmed. Every metric tracked. No editing. No spin. Radical transparency — the most documented recovery in Canadian health history.</p>
+    <div class="banner">
       <img src="https://pemf.cool/assets/treatment-room-CetmkAT8.jpg" alt="Treatment room at Warrior World HQ">
       <div class="overlay">
         <div class="txt">
-          <h3>90 days. 8 invisible disabilities. Every session filmed.</h3>
-          <p>The most documented recovery in Canadian health history. No editing. No spin. Radical transparency. Filmed from Warrior World HQ in Clayton Heights, BC.</p>
+          <h3>90 days. One warrior. Proof on camera.</h3>
+          <p>June 15 to September 13. Filmed from Warrior World HQ in Clayton Heights, BC — with warriors across the province tracking the same protocols in real time.</p>
           <div class="chips">
             <span class="chip">Every Session Public</span>
             <span class="chip">Biometric Tracking</span>
             <span class="chip">Health Canada Approved</span>
+            <span class="chip">AI-Powered</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROTOCOLS -->
-<section id="protocols">
-  <div class="wrap">
+  <section class="alt-bg full">
+    <div class="wrap">
+      <div class="label">The Eight Fights</div>
+      <h2>None of them show up in a <em>photo</em></h2>
+      <div class="grid4">
+        <div class="card"><div class="t">Degenerative Disc Disease</div><div class="d">C6-C7. The career-ender. Nerve damage down the right side.</div></div>
+        <div class="card"><div class="t">PTSD</div><div class="d">The thoughts don't stop. Hypervigilance. Always what's next.</div></div>
+        <div class="card"><div class="t">Chronic Pain</div><div class="d">Nerve pain, migraines, the constant background hum.</div></div>
+        <div class="card"><div class="t">Sleep Disorder</div><div class="d">Sleep apnea. The thief that stole recovery.</div></div>
+        <div class="card"><div class="t">Debilitating TMJ</div><div class="d">Jaw dysfunction, facial pain, headaches.</div></div>
+        <div class="card"><div class="t">TBI / Memory Fog</div><div class="d">Concussion fallout, cognitive fog, memory loss.</div></div>
+        <div class="card"><div class="t">Anxiety &amp; Depression</div><div class="d">The heavy. The flat. 3 AM worst-case scripts.</div></div>
+        <div class="card"><div class="t">Nervous System Dysregulation</div><div class="d">Wired and tired. The signal stays loud after the fight.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Filmed Across BC</div>
+    <h2>Proof gathered <em>everywhere</em></h2>
+    <p class="lead">Years of filming — New Westminster, Whistler, the Okanagan, the Lower Mainland — gathering proof that a body with eight invisible disabilities can still come back.</p>
+    <div class="grid2">
+      <div class="photo-frame">
+        <img src="https://pemf.cool/assets/clinical-detail-ZThfZdlK.jpg" alt="Clinical detail">
+        <div class="cap">Clinical detail — every session logged with device settings, frequencies, and durations.</div>
+      </div>
+      <div class="photo-frame">
+        <img src="https://pemf.cool/assets/case-study-visual-UIPgJKL6.jpg" alt="Case study visual">
+        <div class="cap">Real case studies — documented, verified, and public.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PROOF ============ -->
+<div class="page" id="page-proof">
+  <section>
+    <div class="label">The Evidence</div>
+    <h2>Results are not <em>opinions</em></h2>
+    <p class="lead">Every number here was generated by real treatments, tracked by real devices, and verified by licensed medical professionals.</p>
+    <div class="grid3">
+      <div class="card"><div class="big">75%</div><div class="t">Pain Reduction</div><div class="d">One session. Verified by Grant Storzuk, physiotherapist, 10+ years clinical practice.</div></div>
+      <div class="card"><div class="big">6 wks</div><div class="t">vs 6-Month Prognosis</div><div class="d">Fractured shoulder in 3 places. 4 sessions. Documented on camera.</div></div>
+      <div class="card"><div class="big">92%</div><div class="t">Mobility Restored</div><div class="d">Objective range-of-motion testing, before and after, by a licensed physiotherapist.</div></div>
+      <div class="card"><div class="big">8</div><div class="t">Invisible Conditions</div><div class="d">Tracked with biometric data — HRV, sleep, pain scores, mobility metrics.</div></div>
+      <div class="card"><div class="big">Class II</div><div class="t">Health Canada Approved</div><div class="d">Swiss-engineered medical device. 284 conditions in peer-reviewed research.</div></div>
+      <div class="card"><div class="big">10+</div><div class="t">Active Warriors</div><div class="d">Training, tracking, and recovering through our platform right now.</div></div>
+    </div>
+  </section>
+
+  <section class="alt-bg full">
+    <div class="wrap">
+      <div class="label">The Receipts</div>
+      <h2>We've done this <em>before</em></h2>
+      <div class="grid2">
+        <div class="body-copy">
+          <p><strong>Royal City Wrestling.</strong> Prince founded it in New Westminster — not as a business, but as a community vehicle. Free family events. Hundreds of families packed in.</p>
+          <p>In 2019, <strong>Mayor Jonathan Coté stepped into the ring as his tag-team partner</strong> — the first sitting Canadian mayor to ever wrestle. Front page of the newspaper. Global TV coverage.</p>
+          <p><strong>The City of New Westminster raised over $10,000 for Chelsy's recovery.</strong></p>
+          <p>That's the model we're scaling — community events, real media coverage, and civic leaders standing with us.</p>
+          <div class="quote">
+            <p>"We are not a wrestling company. We are a building-the-community company."</p>
+            <div class="by">— Prince, Royal City Wrestling</div>
+          </div>
+        </div>
+        <div class="photo-frame">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/0ac9b4e8-eebf-4b5b-ab23-0145567be396/prince-pemf-happy.jpg" alt="Prince on the PEMF device">
+          <div class="cap">Cellular restoration — documented on camera, verified by practitioners.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PROTOCOLS ============ -->
+<div class="page" id="page-protocols">
+  <section>
     <div class="label">The P.E.M.F. Protocol System</div>
     <h2>26+ protocols. <em>Four pillars.</em></h2>
     <p class="lead">Every treatment, every app session, every documentary episode follows the P.E.M.F. Protocol System — the framework we teach at ITeachProtocols.</p>
-    <div class="pemf-grid">
-      <div class="pemf"><div class="letter">P</div><h3>Performance</h3><p>Power, purpose, priming — optimizing the body for output through structured PEMF and movement protocols.</p></div>
-      <div class="pemf"><div class="letter">E</div><h3>Energy</h3><p>Earthing, electricity, essence — restoring cellular voltage, the foundation of natural healing.</p></div>
-      <div class="pemf"><div class="letter">M</div><h3>Movement</h3><p>Machines, metrics, mobility — adaptive fitness and rehabilitation, measured every session.</p></div>
-      <div class="pemf"><div class="letter">F</div><h3>Flow</h3><p>Frequency, fasting, freedom — nervous system reset, meditation, and restored peace.</p></div>
+    <div class="grid4">
+      <div class="card"><div class="big">P</div><div class="t">Performance</div><div class="d">Power, purpose, priming. Bloodwork, pain scores, mental health — clinical output tracked and measured.</div></div>
+      <div class="card"><div class="big">E</div><div class="t">Energy</div><div class="d">Cellular voltage restoration. PEMF 3x daily, red light, sauna, float. Kalari nutrition, alkalized water, 16:8 fasting.</div></div>
+      <div class="card"><div class="big">M</div><div class="t">Movement</div><div class="d">Machines, metrics, mobility. Adaptive fitness, Kalaripayattu flow, wrestling. Every session filmed and logged.</div></div>
+      <div class="card"><div class="big">F</div><div class="t">Flow</div><div class="d">Frequency, fasting, freedom. The 4:00 AM ritual, gratitude, prayer, sleep. Nervous system reset and restored peace.</div></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ECOSYSTEM -->
-<section id="eco">
-  <div class="wrap">
-    <div class="label">The Ecosystem</div>
-    <h2>One mission. <em>Many fronts.</em></h2>
-    <div class="eco-grid">
-      <a class="eco" href="https://projectpemfwarrior.com"><h3>Project PEMF Warrior</h3><p>The documentary — 90 days of clinical proof, filmed in real time.</p></a>
-      <a class="eco" href="https://pemfmovie.com"><h3>PEMF Movie</h3><p>The living documentary — protocols, warriors, and recovery on film.</p></a>
-      <a class="eco" href="https://pemftv.com"><h3>PEMF TV</h3><p>Our streaming network — originals, talk shows, protocol breakdowns.</p></a>
-      <a class="eco" href="https://iteachprotocols.com"><h3>ITeachProtocols</h3><p>Courses and protocols based on documented, proven recovery methods.</p></a>
-      <a class="eco" href="https://pemfwarrior.shop"><h3>PEMF Warrior Shop</h3><p>Products and tools that fund the mission.</p></a>
-      <a class="eco" href="https://pemf.cool"><h3>Prime Medical Device</h3><p>The Health Canada-approved device at the centre of the protocol system.</p></a>
+  <section class="alt-bg full">
+    <div class="wrap">
+      <div class="label">The Technology</div>
+      <h2>Health Canada <em>approved</em></h2>
+      <div class="grid2">
+        <div class="photo-frame">
+          <img src="https://pemf.cool/assets/protocol-detail-OZDgW_Ma.jpg" alt="Protocol detail">
+          <div class="cap">Every session logged with device settings, frequencies, and durations.</div>
+        </div>
+        <div class="body-copy">
+          <p><strong>The Prime Medical Device</strong> — a Class II medical device, Swiss engineered and German manufactured, approved by Health Canada, FDA, and EU MDR.</p>
+          <p>284 conditions supported by peer-reviewed research. Cellular-level stimulation that restores the body's natural voltage.</p>
+          <p>Our AI-powered app takes the protocol system and puts it in every warrior's pocket — coaching, tracking, and connecting them with practitioners.</p>
+          <p><strong>This is not alternative medicine. This is medicine's next frontier — documented.</strong></p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
-<!-- PARTNERS — real logos -->
-<section id="partners">
-  <div class="wrap">
+<!-- ============ PARTNERS ============ -->
+<div class="page" id="page-partners">
+  <section>
     <div class="label">Our Partners</div>
     <h2>We don't do this <em>alone</em></h2>
     <p class="lead">From Osoyoos to the Lower Mainland, these clinics, businesses, and community organizations have stood with us through the documentary, the movie, and the mission.</p>
@@ -338,67 +390,158 @@
       <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/fe43e23d-dbcb-4c01-adb8-64ea77768c37/catalyst.jpg" alt="Catalyst"></div>
       <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/37cf3219-01f5-4a85-954c-c657699e7d0f/semiahmoo-logo.jpg" alt="Semiahmoo Athletic Club"></div>
       <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/721c4f23-8fcf-4e04-9f15-e95c4b49dcf2/float-house.jpg" alt="Float House Surrey"></div>
-      <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/bae3f68e-5748-47d3-a990-8a41971d417f/salt-wellness.jpg" alt="Salt Wellness"></div>
+      <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/bae3f68e-5748-47d3-a990-8a41971d417f/salt-wellness.jpg" alt="Salt Wellness Centre"></div>
       <div class="partner text-only">South Okanagan Physiotherapy</div>
       <div class="partner text-only">Greenleaf Cannabis</div>
       <div class="partner text-only">Royal Canadian Legion</div>
       <div class="partner text-only">City of New Westminster</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- TEAM -->
-<section id="team">
-  <div class="wrap">
-    <div class="label">The People</div>
-    <h2>Behind the <em>proof</em></h2>
-    <div class="team-grid">
-      <div class="member">
-        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/63299f1c-f262-43b6-838f-b41888ed8387/dr-adam.jpg" alt="Dr. Adam">
-        <div class="info"><div class="name">Dr. Adam</div><div class="role">Medical Director</div><div class="bio">Overseeing the medical protocol and clinical standards.</div></div>
-      </div>
-      <div class="member">
-        <img src="https://projectpemfwarrior.com/story-media/dr-silvana.jpg" alt="Dr. Silvana">
-        <div class="info"><div class="name">Dr. Silvana</div><div class="role">Clinical Support</div><div class="bio">Part of the multidisciplinary team documenting real recovery.</div></div>
-      </div>
-      <div class="member">
-        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/457eb137-61ca-4547-97b3-05c51e7ed72e/trent.jpg" alt="Dr. Trent">
-        <div class="info"><div class="name">Dr. Trent</div><div class="role">Chiropractor</div><div class="bio">First adjustment, TMJ work, and spinal corrections on camera.</div></div>
-      </div>
-      <div class="member">
-        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/4a5d578d-9c33-44c4-81f1-1f9f1dd30ec9/manny.jpg" alt="Manny">
-        <div class="info"><div class="name">Manny</div><div class="role">Physiotherapist</div><div class="bio">Discovered the disengaged shoulder blade that changed the program.</div></div>
-      </div>
-      <div class="member">
-        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/7fe79401-4f1f-4703-b824-882746e15325/coach-joe.jpg" alt="Coach Joe">
-        <div class="info"><div class="name">Coach Joe</div><div class="role">Semiahmoo Athletic Club</div><div class="bio">Building the engine with adaptive, data-tracked training.</div></div>
-      </div>
-      <div class="member">
-        <img src="https://projectpemfwarrior.com/story-media/austin-v3.jpg" alt="Austin">
-        <div class="info"><div class="name">Austin</div><div class="role">RMT</div><div class="bio">Massage therapy support — every session documented.</div></div>
+  <section class="alt-bg full">
+    <div class="wrap">
+      <div class="label">Partnership Tracks</div>
+      <h2>Four ways to <em>stand with us</em></h2>
+      <p class="lead">We're not asking for cash. We're asking for alignment. Each track is built for real contribution — not just a logo on a page.</p>
+      <div class="grid4" style="grid-template-columns: repeat(2, 1fr);">
+        <div class="track">
+          <h4>Civic Partner</h4>
+          <div class="sub">Mayors, MLAs, councils, granting bodies</div>
+          <ul>
+            <li>City or municipality credited in the documentary as a civic partner</li>
+            <li>Logo placement in film credits, website, and community materials</li>
+            <li>Access to anonymized outcome data for policy and grant reporting</li>
+            <li>Co-branded community events — free wrestling shows, wellness clinics, town halls</li>
+            <li>Position your community as a leader in invisible disability innovation</li>
+            <li>Direct pipeline to 8+ disability advocacy groups</li>
+          </ul>
+        </div>
+        <div class="track">
+          <h4>Device Partner</h4>
+          <div class="sub">Swiss Bionic, Prime Medical, recovery tech</div>
+          <ul>
+            <li>Your device powers the protocol — featured in documentary footage</li>
+            <li>Logo placement in film credits, website footer, event signage</li>
+            <li>Anonymized outcome data from the 90-day study for your R&amp;D</li>
+            <li>Exclusive listing in the Warrior World Business Directory</li>
+            <li>First right of refusal on live event sponsorships</li>
+          </ul>
+        </div>
+        <div class="track">
+          <h4>Facility Partner</h4>
+          <div class="sub">Gyms, float studios, stretch labs, ring spaces</div>
+          <ul>
+            <li>Your space becomes the proving ground — filmed and credited</li>
+            <li>Logo placement in film credits and partner grid</li>
+            <li>Featured on our website with backlink and full description</li>
+            <li>Anonymized outcome data for your own community proof</li>
+          </ul>
+        </div>
+        <div class="track">
+          <h4>Fuel Partner</h4>
+          <div class="sub">Clean meat, whole food, hydration, plant medicine</div>
+          <ul>
+            <li>Your product literally fuels the comeback — real usage, real results</li>
+            <li>Product placement in kitchen, training, and recovery scenes</li>
+            <li>Outcome data correlating nutrition with measurable gains</li>
+            <li>Co-branded social media showcasing your product in action</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
+<!-- ============ CIVIC ============ -->
+<div class="page" id="page-civic">
+  <section>
+    <div class="label">For Mayors, MLAs &amp; Civic Leaders</div>
+    <h2>Put your community at the forefront of <em>invisible disability care</em></h2>
+    <p class="lead">1 in 4 Canadians lives with a disability — most of them invisible. The world's first clinical documentary on invisible disability is being filmed right now in BC. Your city can be part of it.</p>
+    <div class="grid2">
+      <div class="body-copy">
+        <p><strong>The opportunity:</strong> We're filming Warrior Season 1 at Warrior World HQ in Clayton Heights — with warriors across BC tracking the same protocols in real time.</p>
+        <p><strong>The ask:</strong> We're not asking for cash. We're asking for alignment — a letter of support, a recommendation, a connection to granting bodies, and a partnership that puts your community on the map as a leader in invisible disability innovation.</p>
+        <p><strong>The proof:</strong> 75% pain reduction in one session. 6-week recovery versus a 6-month prognosis. 92% mobility restored. Health Canada-approved devices. All documented on camera.</p>
+        <p><strong>The precedent:</strong> Mayor Jonathan Coté of New Westminster stepped into the ring as our tag-team partner — the first sitting Canadian mayor to ever wrestle. Front page. Global TV. And the City raised $10,000+ for Chelsy's recovery.</p>
+        <p><strong>Why it matters:</strong> Your community becomes a civic partner in the most documented recovery in Canadian health history — with media recognition alongside the documentary.</p>
+        <div class="quote">
+          <p>"We are not a wrestling company. We are a building-the-community company."</p>
+          <div class="by">— Prince, Royal City Wrestling</div>
+        </div>
+      </div>
+      <div class="photo-frame">
+        <img src="https://pemf.cool/assets/patient-photo-NaWANXYn.jpg" alt="Warrior on the Prime Medical Device">
+        <div class="cap">Real treatment. Real tracking. Real results — documented on camera.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-bg full">
+    <div class="wrap">
+      <div class="label">What Your Community Gets</div>
+      <h2>The Civic Partner <em>benefits</em></h2>
+      <div class="grid3">
+        <div class="card"><div class="t">🏛️ Documentary Credit</div><div class="d">Your city or municipality credited as a civic partner in the film, website, and all community-facing materials.</div></div>
+        <div class="card"><div class="t">📊 Policy-Grade Data</div><div class="d">Access to anonymized outcome data — pain reduction, mobility gains, mental health improvements — for policy development and grant reporting.</div></div>
+        <div class="card"><div class="t">🎉 Community Events</div><div class="d">Co-branded events: free wrestling shows, warrior wellness clinics, and town halls that bring real energy to your community.</div></div>
+        <div class="card"><div class="t">📺 Media Recognition</div><div class="d">Position your community alongside the documentary's media coverage — local and national attention for invisible disability innovation.</div></div>
+        <div class="card"><div class="t">🤝 Advocacy Pipeline</div><div class="d">Direct connection to 8+ disability advocacy groups through the project's reach.</div></div>
+        <div class="card"><div class="t">🌍 A Lasting Legacy</div><div class="d">Be remembered as the community that stood up for the 1-in-4 — the birthplace of a new standard in disability care.</div></div>
+      </div>
+      <p style="margin-top:30px;text-align:center;">
+        <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Request the Civic Partner Package</a>
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="page" id="page-contact">
+  <section style="text-align:center;">
     <div class="label">Get In Touch</div>
     <h2>Let's build something <em>unforgettable</em></h2>
     <p class="lead" style="margin:0 auto 8px;">Grant decision makers, elected officials, foundations, and partners — reach out directly.</p>
-    <div class="contact-grid">
+    <div class="contact-grid" style="margin-left:auto;margin-right:auto;max-width:720px;">
       <div class="contact"><div class="l">Phone</div><a class="v" href="tel:6049068311">604-906-8311</a></div>
       <div class="contact"><div class="l">Email</div><a class="v" href="mailto:info@warriorworld.life">info@warriorworld.life</a></div>
       <div class="contact"><div class="l">HQ</div><span class="v">Clayton Heights, BC</span></div>
     </div>
-  </div>
-</section>
+    <div style="margin-top:40px;">
+      <h3 style="font-family:var(--font);font-size:18px;">The Ecosystem</h3>
+      <div class="chips" style="justify-content:center;margin-top:14px;">
+        <a class="chip" style="text-decoration:none;padding:8px 16px;" href="https://projectpemfwarrior.com">Project PEMF Warrior</a>
+        <a class="chip" style="text-decoration:none;padding:8px 16px;" href="https://pemfmovie.com">PEMF Movie</a>
+        <a class="chip" style="text-decoration:none;padding:8px 16px;" href="https://pemftv.com">PEMF TV</a>
+        <a class="chip" style="text-decoration:none;padding:8px 16px;" href="https://iteachprotocols.com">ITeachProtocols</a>
+        <a class="chip" style="text-decoration:none;padding:8px 16px;" href="https://pemfwarrior.shop">Shop</a>
+        <a class="chip" style="text-decoration:none;padding:8px 16px;" href="https://pemf.cool">Prime Medical Device</a>
+      </div>
+    </div>
+  </section>
+</div>
 
 <footer>
   <p>⚔️ Warrior World &middot; Empowering the 1-in-4 Canadians with invisible disabilities</p>
   <p class="legal">Warrior World Health &amp; Performance Society &middot; BC Non-Profit Society &middot; Not medical advice. Results may vary. All data verified by licensed practitioners.</p>
 </footer>
 
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('#navTabs button').forEach(b => {
+    b.classList.toggle('active', b.dataset.page === name);
+  });
+  document.getElementById('navTabs').classList.remove('open');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+// Deep-link support: #story opens the story tab
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.replace('#', '');
+  const valid = ['home','story','documentary','proof','protocols','partners','civic','contact'];
+  if (hash && valid.includes(hash)) showPage(hash);
+});
+</script>
 </body>
 </html>
