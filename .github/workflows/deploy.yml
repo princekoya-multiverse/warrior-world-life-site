@@ -1,0 +1,42 @@
+name: Deploy to Cloudflare Worker
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy worker
+        env:
+          CF_EMAIL: ${{ secrets.CF_EMAIL }}
+          CF_KEY: ${{ secrets.CF_KEY }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT }}
+        run: |
+          # Build the worker script with the HTML embedded
+          python3 - <<'PYEOF'
+          import json
+          with open("index.html") as f:
+              html = f.read()
+          js_html = html.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
+          worker = f"""
+          const HTML = `{js_html}`;
+          addEventListener('fetch', event => {{
+            const url = new URL(event.request.url);
+            const path = url.pathname;
+            if (path.endsWith('.png') || path.endsWith('.jpg') || path.endsWith('.jpeg') || path.endsWith('.svg') || path.endsWith('.ico') || path.endsWith('.webp') || path.endsWith('.gif')) {{
+              event.respondWith(new Response('Not Found', {{ status: 404, headers: {{ 'Content-Type': 'text/plain' }} }}));
+              return;
+            }}
+            event.respondWith(new Response(HTML, {{
+              status: 200,
+              headers: {{ 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=60' }}
+            }}));
+          }});
+          """
+          with open("worker.js", "w") as f:
+              f.write(worker)
+          PYEOF
+          curl -s -X PUT "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT/workers/scripts/warrior-world-site"             -H "X-Auth-Email: $CF_EMAIL"             -H "X-Auth-Key: $CF_KEY"             -H "Content-Type: application/javascript"             --data-binary @worker.js
