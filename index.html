@@ -52,7 +52,7 @@
     background: var(--white); border: 1px solid var(--line); border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.12); padding: 8px; z-index: 200;
   }
-  .tab-wrap:hover .submenu, .tab-wrap:focus-within .submenu { display: block; }
+  .tab-wrap:hover .submenu, .tab-wrap:focus-within .submenu, .tab-wrap.open .submenu { display: block; }
   .submenu button {
     display: flex; width: 100%; text-align: left; padding: 10px 12px; border: none;
     background: none; font-family: var(--sans); font-size: 13px; color: var(--ink-soft);
@@ -226,7 +226,7 @@
     <button data-page="documentary" onclick="showPage('documentary')">The Documentary</button>
     <button data-page="proof" onclick="showPage('proof')">The Proof</button>
     <div class="tab-wrap">
-      <button class="tab-top active" data-group="grants" onclick="showPage('grants')">Grants &amp; Funding <span class="caret">▾</span></button>
+      <button class="tab-top active" data-group="grants" onclick="toggleSubmenu(event, this)">Grants &amp; Funding <span class="caret">▾</span></button>
       <div class="submenu">
         <button onclick="showPage('grants')"><span><span class="sub-t">Grant Strategy</span><span class="sub-d">The programs we're targeting</span></span></button>
         <button onclick="showPage('grant-officials')"><span><span class="sub-t">For Mayors &amp; MLAs</span><span class="sub-d">The ask — 15 minutes, a letter</span></span></button>
@@ -236,7 +236,7 @@
     </div>
     <button data-page="protocols" onclick="showPage('protocols')">Protocols</button>
     <div class="tab-wrap">
-      <button class="tab-top" data-group="partners" onclick="showPage('partners')">Partners <span class="caret">▾</span></button>
+      <button class="tab-top" data-group="partners" onclick="toggleSubmenu(event, this)">Partners <span class="caret">▾</span></button>
       <div class="submenu">
         <button onclick="showPage('partners')"><span><span class="sub-t">All Partners</span><span class="sub-d">The full grid + ways to stand with us</span></span></button>
         <button onclick="showPage('partner-sop')"><span><span class="sub-t">South Okanagan Physiotherapy</span><span class="sub-d">Osoyoos, BC</span></span></button>
@@ -1297,12 +1297,25 @@ function showPage(name) {
   document.getElementById('navTabs').classList.remove('open');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+function toggleSubmenu(ev, btn) {
+  ev.preventDefault();
+  ev.stopPropagation();
+  const wrap = btn.closest('.tab-wrap');
+  const wasOpen = wrap.classList.contains('open');
+  document.querySelectorAll('#navTabs .tab-wrap.open').forEach(w => w.classList.remove('open'));
+  if (!wasOpen) wrap.classList.add('open');
+}
 function toggleDropdown(btn) {
   const item = btn.closest('.dropdown-item');
   const wasOpen = item.classList.contains('open');
   document.querySelectorAll('.dropdown-item.open').forEach(i => i.classList.remove('open'));
   if (!wasOpen) item.classList.add('open');
 }
+document.addEventListener('click', (ev) => {
+  if (!ev.target.closest('.tab-wrap')) {
+    document.querySelectorAll('#navTabs .tab-wrap.open').forEach(w => w.classList.remove('open'));
+  }
+});
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#', '');
   const valid = ['home','story','documentary','proof','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','partner-mlg','partner-similkameen','partner-catalyst','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','contact'];
