@@ -32,12 +32,13 @@
     border-bottom: 1px solid var(--line);
     padding: 12px 32px;
     display: flex; align-items: center; justify-content: space-between;
+    overflow: visible;
   }
   nav .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
   nav .logo img { height: 32px; width: auto; border-radius: 3px; }
   nav .logo .name { font-family: var(--display); font-size: 19px; font-weight: 600; letter-spacing: 0.5px; color: var(--ink); }
   nav .logo .name small { display: block; font-family: var(--sans); font-size: 9px; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; }
-  nav .tabs { display: flex; gap: 2px; font-size: 13px; font-weight: 500; overflow-x: auto; }
+  nav .tabs { display: flex; gap: 2px; font-size: 13px; font-weight: 500; overflow: visible; }
   nav .tabs .tab-wrap { position: relative; }
   nav .tabs button, nav .tabs .tab-top {
     background: none; border: none; color: var(--muted); cursor: pointer;
@@ -46,7 +47,8 @@
   }
   nav .tabs .tab-top:hover { color: var(--ink); background: var(--cream-2); }
   nav .tabs button.active, nav .tabs .tab-top.active { color: var(--teal); background: var(--teal-soft); font-weight: 600; }
-  nav .tabs .tab-top .caret { font-size: 9px; margin-left: 4px; }
+  nav .tabs .tab-top .caret { font-size: 9px; margin-left: 4px; color: var(--teal); display: inline-block; transition: transform 0.2s; }
+  .tab-wrap.open .tab-top .caret { transform: rotate(180deg); }
   .submenu {
     display: none; position: absolute; top: 100%; left: 0; min-width: 260px;
     background: var(--white); border: 1px solid var(--line); border-radius: 8px;
