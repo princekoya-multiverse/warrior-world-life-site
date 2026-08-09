@@ -288,11 +288,12 @@
     <div class="tab-wrap">
       <button class="tab-top" data-group="about" onclick="toggleSubmenu(event, this)">About Us <span class="caret">▾</span></button>
       <div class="submenu">
-        <button onclick="showPage('about')"><span><span class="sub-t">The Society</span><span class="sub-d">Mission, purpose, governance</span></span></button>
-        <button onclick="showPage('story')"><span><span class="sub-t">Our Story</span><span class="sub-d">The mission in one page</span></span></button>
+        <button onclick="showPage('story')"><span><span class="sub-t">Our Story</span><span class="sub-d">It started with a car accident</span></span></button>
         <button onclick="showPage('story-chelsy')"><span><span class="sub-t">Chelsy's Story</span><span class="sub-d">The crash, the miracle, the recovery</span></span></button>
         <button onclick="showPage('story-prince')"><span><span class="sub-t">Prince's Story</span><span class="sub-d">The warrior who built the system</span></span></button>
         <button onclick="showPage('story-founders')"><span><span class="sub-t">Meet the Founders</span><span class="sub-d">Chelsy &amp; Prince Koya</span></span></button>
+        <button onclick="showPage('about')"><span><span class="sub-t">The Society</span><span class="sub-d">Mission, purpose, governance</span></span></button>
+        <button onclick="showPage('how-it-works')"><span><span class="sub-t">How It Works</span><span class="sub-d">Treat · Measure · Prove · Pass it on</span></span></button>
         <button onclick="showPage('protocols')"><span><span class="sub-t">The Protocols</span><span class="sub-d">P.E.M.F. system &amp; technology</span></span></button>
       </div>
     </div>
@@ -319,11 +320,11 @@
     <div class="tab-wrap">
       <button class="tab-top" data-group="involved" onclick="toggleSubmenu(event, this)">Get Involved <span class="caret">▾</span></button>
       <div class="submenu">
+        <button onclick="showPage('support')"><span><span class="sub-t">Support Us</span><span class="sub-d">Fund a warrior, fund the film</span></span></button>
         <button onclick="showPage('grants')"><span><span class="sub-t">Grants &amp; Funding</span><span class="sub-d">The programs we're targeting</span></span></button>
         <button onclick="showPage('grant-officials')"><span><span class="sub-t">For Mayors &amp; MLAs</span><span class="sub-d">The ask — 15 minutes, a letter</span></span></button>
         <button onclick="showPage('grant-business')"><span><span class="sub-t">For Businesses</span><span class="sub-d">Be part of the movie</span></span></button>
         <button onclick="showPage('grant-indigenous')"><span><span class="sub-t">Indigenous Communities</span><span class="sub-d">A call to the Nations</span></span></button>
-        <button onclick="showPage('support')"><span><span class="sub-t">Support Us</span><span class="sub-d">Fund a warrior, fund the film</span></span></button>
       </div>
     </div>
     <div class="tab-wrap">
@@ -369,7 +370,7 @@
   <div class="hero-inner">
     <div class="hero-kicker">A registered BC non-profit society</div>
     <h1>We help the 1-in-4 Canadians with invisible disabilities <span class="hl">recover — and prove it on camera</span></h1>
-    <p>AI-powered assistive technology. Health Canada-approved devices. Real warriors, real practitioners, real results — documented for the world.</p>
+    <p>With the right technology, the right plan, and the right community, people with invisible disabilities don't just survive — <strong>they thrive.</strong> Real warriors. Real practitioners. Real results — documented for the world.</p>
     <div class="hero-ctas">
       <a class="btn-gold" href="#" onclick="showPage('support');return false;">Support the Mission</a>
       <a class="btn-line" href="#" onclick="showPage('about');return false;">About the Society</a>
@@ -386,6 +387,26 @@
       <a class="btn-gold" href="#" onclick="showPage('support');return false;">Support the Mission</a>
     </div>
   </section>
+  <section style="padding-top:70px;padding-bottom:10px;">
+    <div class="grid2" style="align-items:center;gap:48px;">
+      <div>
+        <div class="label">The Invisible Disability</div>
+        <h2>You can't see it. <em>They live it.</em></h2>
+        <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:14px;"><strong style="color:var(--ink);">Degenerative disc disease doesn't show on an x-ray.</strong> PTSD doesn't show in a blood test. Chronic pain, TMJ, sleep disorder, nerve dysregulation — invisible to everyone except the person living with them, <em>every single day</em>.</p>
+        <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;margin-bottom:14px;">The system says: manage it. Accept it. Learn to live with it. <strong style="color:var(--ink);">1 in 4 Canadians has been told exactly that.</strong></p>
+        <p style="font-size:15px;color:var(--ink-soft);line-height:1.9;"><strong style="color:var(--teal);">But invisible doesn't mean unprovable.</strong> Watch what happens when we point the camera at it — and measure what the body can actually do.</p>
+      </div>
+      <div class="photo-frame">
+        <img src="https://projectpemfwarrior.com/story-media/chelsea-manny-profile-picture.jpg" alt="Chelsy Koya — invisible disability, visible recovery">
+        <div class="cap">Chelsy was told she'd never walk normally again. She walks. She trains. She attacks life.</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:34px;">
+      <span style="display:inline-block;font-family:var(--display);font-size:22px;color:var(--teal);letter-spacing:1px;">Prove it. Pass it on.</span>
+    </div>
+  </section>
+
+
 
   <section style="padding-top:50px;padding-bottom:0;">
     <div class="label">Trusted Across BC</div>
@@ -465,6 +486,65 @@
           <div class="cap">"They said I'd never wrestle again. Watch what happens."</div>
         </div>
       </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ HOW IT WORKS ============ -->
+<div class="page" id="page-how-it-works">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('about')">About Us</button> / How It Works</div>
+    <div class="label">The Method</div>
+    <h2>Invisible disability. <em>Measurable recovery.</em></h2>
+    <p class="lead">We don't ask you to believe us. We built a system that turns invisible disability into visible proof — four steps, repeated daily, documented on camera.</p>
+
+    <div class="grid4" style="margin-top:34px;">
+      <div class="card" style="border-top:4px solid var(--teal);text-align:left;">
+        <div class="big" style="font-size:38px;line-height:1;">1</div>
+        <div class="t" style="font-family:var(--display);font-size:19px;margin-top:10px;">Treat</div>
+        <div class="d" style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">Health Canada-approved medical devices. 26+ protocols. The Fab 5 practitioners — medical doctor, chiropractor, physio, RMT, naturopath — all under one roof.</div>
+      </div>
+      <div class="card" style="border-top:4px solid var(--gold);text-align:left;">
+        <div class="big" style="font-size:38px;line-height:1;">2</div>
+        <div class="t" style="font-family:var(--display);font-size:19px;margin-top:10px;">Measure</div>
+        <div class="d" style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">AI-powered tracking. HRV, sleep, pain scores, mobility — every metric logged daily by the warrior and verified by licensed practitioners.</div>
+      </div>
+      <div class="card" style="border-top:4px solid var(--teal);text-align:left;">
+        <div class="big" style="font-size:38px;line-height:1;">3</div>
+        <div class="t" style="font-family:var(--display);font-size:19px;margin-top:10px;">Prove</div>
+        <div class="d" style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">Every session filmed. Every result published. Testimonials, impact numbers, the documentary — the receipts are public, forever.</div>
+      </div>
+      <div class="card" style="border-top:4px solid var(--gold);text-align:left;">
+        <div class="big" style="font-size:38px;line-height:1;">4</div>
+        <div class="t" style="font-family:var(--display);font-size:19px;margin-top:10px;">Pass It On</div>
+        <div class="d" style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">The template is built for the next warrior. The app, the community, the documentary — everything scales so the 1-in-4 doesn't have to fight alone.</div>
+      </div>
+    </div>
+    <p style="text-align:center;font-family:var(--display);font-size:22px;color:var(--teal);margin-top:36px;">Treat → Measure → Prove → <em>Pass it on.</em></p>
+  </section>
+
+  <section class="alt-bg full">
+    <div class="wrap">
+      <div class="label">The Loop in Action</div>
+      <h2>One warrior. <em>90 days.</em></h2>
+      <p class="lead">This isn't theory — it's the daily reality of Warrior Season 1, filmed right now.</p>
+      <div class="grid2">
+        <div class="body-copy">
+          <p><strong>Every morning:</strong> the warrior logs sleep, pain, and HRV into the app. The AI flags trends before they become setbacks.</p>
+          <p><strong>Every session:</strong> a practitioner treats with the Prime device. The camera rolls. The metrics are logged.</p>
+          <p><strong>Every week:</strong> the data is reviewed by the clinical team — Dr. Adam, Dr. Trent, Manny, Austin, Dr. Silvana — and the protocol adapts.</p>
+          <p><strong>Every episode:</strong> the session goes up on YouTube. 28+ episodes and counting. The proof is public before the season even airs.</p>
+          <p style="font-size:14px;color:var(--ink-soft);margin-top:18px;">That's the loop. That's the method. That's how invisible becomes <em>provable</em>.</p>
+        </div>
+        <div class="photo-frame">
+          <img src="https://pemf.cool/assets/treatment-room-CetmkAT8.jpg" alt="The Warrior World treatment room">
+          <div class="cap">Warrior World HQ — Clayton Heights, Langley. Every session filmed.</div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:32px;">
+        <a class="btn-gold" href="#" onclick="showPage('proof');return false;">See the Proof</a>
+        <a class="btn-line" href="#" onclick="showPage('support');return false;">Support the Mission</a>
+      </p>
     </div>
   </section>
 </div>
@@ -573,6 +653,9 @@
       <p style="font-family:var(--display);font-size:20px;line-height:1.45;color:#e6e6ec;margin:0;">A Canada where invisible disabilities are seen, measured, and treated with the same rigor as visible ones — and where recovery is training.</p>
     </div>
 
+    <div style="text-align:center;margin:30px 0 0;">
+      <span style="display:inline-block;font-family:var(--display);font-size:20px;color:var(--teal);letter-spacing:1px;">Prove it. Pass it on.</span>
+    </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;">
       <div class="card"><div class="big">1-in-4</div><div class="t">Canadians Served</div><div class="d">27% of Canadians 15+ live with a disability — most invisible. We exist for them.</div></div>
       <div class="card"><div class="big">75%</div><div class="t">Pain Reduction</div><div class="d">Verified in one session by a licensed physiotherapist, documented on camera.</div></div>
@@ -2577,7 +2660,18 @@
     </div>
   </section>
 
-  <section class="alt-bg full">
+    <section style="padding-top:50px;padding-bottom:0;">
+    <div class="wrap">
+      <div style="background:var(--ink);border-radius:12px;padding:44px 36px;text-align:center;color:#fff;">
+        <div class="label" style="color:#e6d9ae;">The Next Warrior Is Waiting</div>
+        <p style="font-family:var(--display);font-size:26px;line-height:1.4;color:#fff;max-width:680px;margin:14px auto 10px;">"They said 6 months. He was back in <span style="color:#e6d9ae;">8 weeks</span>. The next one is waiting for you."</p>
+        <p style="font-size:14px;color:#b5b5c0;max-width:560px;margin:0 auto 26px;">Every dollar funds a treatment, a session, a documentary episode — and a warrior who gets to prove what's possible. Recovery is training. Proof creates change.</p>
+        <a class="btn-gold" href="#" onclick="showPage('support');return false;">Support the Mission</a>
+      </div>
+    </div>
+  </section>
+
+<section class="alt-bg full">
     <div class="wrap">
       <div class="label">Sponsor Tiers</div>
       <h2>What your <em>support</em> gets you</h2>
@@ -2694,7 +2788,7 @@ function showPage(name) {
     b.style.background = '';
   });
   // Highlight top-level nav for sub-pages
-  const groups = { 'about': ['about','story','story-chelsy','story-prince','story-founders','protocols'],
+  const groups = { 'about': ['about','how-it-works','story','story-chelsy','story-prince','story-founders','protocols'],
                    'documentary': ['documentary','doc-season1','doc-season2','doc-season3'],
                    'proof': ['proof','proof-youtube','proof-app','proof-testimonials','proof-clinic','proof-impact'],
                    'involved': ['grants','grant-officials','grant-business','grant-indigenous','support'],
@@ -2732,7 +2826,7 @@ document.addEventListener('click', (ev) => {
 });
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#', '');
-  const valid = ['home','about','story','story-chelsy','story-prince','story-founders','documentary','doc-season1','doc-season2','doc-season3','proof','proof-youtube','proof-app','proof-testimonials','proof-clinic','proof-impact','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','support','contact'];
+  const valid = ['home','about','how-it-works','story','story-chelsy','story-prince','story-founders','documentary','doc-season1','doc-season2','doc-season3','proof','proof-youtube','proof-app','proof-testimonials','proof-clinic','proof-impact','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','support','contact'];
   if (hash && valid.includes(hash)) showPage(hash);
 });
 </script>
