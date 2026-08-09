@@ -247,8 +247,25 @@
   </a>
   <div class="tabs" id="navTabs">
     <button class="active" data-page="home" onclick="showPage('home')">Home</button>
-    <button data-page="story" onclick="showPage('story')">Our Story</button>
-    <button data-page="documentary" onclick="showPage('documentary')">The Documentary</button>
+    <div class="tab-wrap">
+      <button class="tab-top" data-group="story" onclick="toggleSubmenu(event, this)">Our Story <span class="caret">▾</span></button>
+      <div class="submenu">
+        <button onclick="showPage('story')"><span><span class="sub-t">Our Story</span><span class="sub-d">The mission in one page</span></span></button>
+        <button onclick="showPage('story-chelsy')"><span><span class="sub-t">Chelsy's Story</span><span class="sub-d">The crash, the miracle, the recovery</span></span></button>
+        <button onclick="showPage('story-prince')"><span><span class="sub-t">Prince's Story</span><span class="sub-d">The warrior who built the system</span></span></button>
+        <button onclick="showPage('story-founders')"><span><span class="sub-t">Meet the Founders</span><span class="sub-d">Chelsy &amp; Prince Koya</span></span></button>
+        <button onclick="showPage('about')"><span><span class="sub-t">About Us — The Society</span><span class="sub-d">Who we are, what we represent</span></span></button>
+      </div>
+    </div>
+    <div class="tab-wrap">
+      <button class="tab-top" data-group="documentary" onclick="toggleSubmenu(event, this)">The Documentary <span class="caret">▾</span></button>
+      <div class="submenu">
+        <button onclick="showPage('documentary')"><span><span class="sub-t">The Documentary</span><span class="sub-d">The first clinical documentary on invisible disability</span></span></button>
+        <button onclick="showPage('doc-season1')"><span><span class="sub-t">Season 1 — The Now</span><span class="sub-d">South Surrey &amp; Langley, filming now</span></span></button>
+        <button onclick="showPage('doc-season2')"><span><span class="sub-t">Season 2 — Whistler</span><span class="sub-d">The mountain recovery lab</span></span></button>
+        <button onclick="showPage('doc-season3')"><span><span class="sub-t">Season 3 — Home</span><span class="sub-d">New Westminster</span></span></button>
+      </div>
+    </div>
     <div class="tab-wrap">
       <button class="tab-top" data-group="proof" onclick="toggleSubmenu(event, this)">The Proof <span class="caret">▾</span></button>
       <div class="submenu">
@@ -393,6 +410,149 @@
   </section>
 </div>
 
+<!-- ============ STORY: CHELSY ============ -->
+<div class="page" id="page-story-chelsy">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('story')">Our Story</button> / Chelsy's Story</div>
+    <div class="label">Chelsy Koya — Co-Founder</div>
+    <h2>She proved them <em>wrong</em></h2>
+    <div class="grid2">
+      <div class="photo-frame">
+        <img src="https://raw.githubusercontent.com/princekoya-multiverse/warrior-world-life-site/main/assets/article-mr-india.jpg" alt="The New Westminster Record — Chelsy's crash">
+        <div class="cap">The New Westminster Record: "Beloved New West wrestler raising money for his wife after horrific crash."</div>
+      </div>
+      <div class="body-copy">
+        <p><strong>January 2021. Anarchist Mountain, Osoyoos. A crash that changed everything.</strong></p>
+        <p>The <strong>jaws of life had to be used to extract Chelsy</strong>. Her injuries: a <strong>fractured spine, multiple fractures in the pelvis, a broken dominant left arm and wrist, plus 10 staples to the head</strong>. She spent <strong>35 days across Kelowna, Penticton, and Oliver hospitals</strong>.</p>
+        <p>The doctors' prognosis was brutal: <strong>98% of patients her age end up hooked on opiates</strong>. They said she'd never walk normally again.</p>
+        <p>Prince refused to accept it. He brought the Prime Medical Device into the hospital room. PEMF therapy. Plant medicine. Alkalized water. Bolstered protocols.</p>
+        <p><strong>She was off all narcotics in five days.</strong></p>
+        <p>The City of New Westminster rallied — <strong>over $10,000 raised</strong>. Chelsy attacked her recovery the same way she attacks her athletic training — <em>"with ruthless aggression"</em>.</p>
+        <p>She still lives with invisible disabilities — they don't disappear. But she walks. She trains. She attacks life. <strong>She proved them wrong.</strong></p>
+        <div class="quote">
+          <p>"She will be attacking her recovery the same way she attacks her athletic training — with ruthless aggression."</p>
+          <div class="by">— The New Westminster Record</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ STORY: PRINCE ============ -->
+<div class="page" id="page-story-prince">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('story')">Our Story</button> / Prince's Story</div>
+    <div class="label">Prince Koya — Founder</div>
+    <h2>He built the system that <em>saved them both</em></h2>
+    <div class="grid2">
+      <div class="body-copy">
+        <p><strong>While he was helping Chelsy heal, Prince was not taking care of himself.</strong></p>
+        <p>Years of concussions from professional wrestling. <strong>Degenerative Disc Disease at C6-C7</strong> — the career-ender. Nerve damage down his entire right side. And the stress of the crash, the hospitals, the fundraising — <strong>everything compounded</strong>.</p>
+        <p>By 2023, he had <strong>eight invisible disabilities</strong>. Not a single one shows up on an x-ray. The medical system said: manage it. Accept the limitations. Never fight again.</p>
+        <p><strong>He got to a state where he had to get help — and get help fast.</strong></p>
+        <p>So he did what he's always done: he documented everything. Filmed every session. Tracked every metric. And turned his own body into the laboratory — <strong>the same system that helped Chelsy walk again.</strong></p>
+        <p>That documentation became <strong>Warrior Season 1 — the 90-day documentary we're filming right now.</strong></p>
+        <p>Before the crash, Prince built Royal City Wrestling — not as a business, but as a community vehicle. In 2019, <strong>Mayor Jonathan Coté stepped into the ring as his tag-team partner</strong> — the first sitting Canadian mayor to ever wrestle. Front page of the newspaper. Global TV coverage. That's the model Warrior World scales: community events, real media, and civic leaders standing with us.</p>
+        <div class="quote">
+          <p>"They said I'd never wrestle again. Watch what happens."</p>
+          <div class="by">— Prince Koya</div>
+        </div>
+      </div>
+      <div class="photo-frame">
+        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/7690837c-402a-4537-9e28-402029588c4f/hes-fearless.jpg" alt="Prince — fearless">
+        <div class="cap">"They said I'd never wrestle again. Watch what happens."</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ STORY: FOUNDERS ============ -->
+<div class="page" id="page-story-founders">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('story')">Our Story</button> / Meet the Founders</div>
+    <div class="label">Meet the Founders</div>
+    <h2>Two people. One crash. <em>A mission.</em></h2>
+    <p class="lead">Warrior World was born from lived experience. We didn't know what was possible until we had to find out. This is who we are.</p>
+    <div class="grid2" style="margin-top:30px;">
+      <div class="member">
+        <img src="https://projectpemfwarrior.com/story-media/chelsea-manny-profile-picture.jpg" alt="Chelsy Koya" style="height:300px;width:100%;object-fit:cover;">
+        <div class="info" style="padding:20px;">
+          <div class="name" style="font-size:20px;">Chelsy Koya</div>
+          <div class="role">Co-Founder · The Miracle</div>
+          <div class="bio" style="font-size:13px;line-height:1.7;">Health and fitness coach with Koyabell Fitness. Survived a crash the doctors said would define her — fractured spine, pelvis, arm, and wrist — and walked again against every prognosis. Off all narcotics in five days. Her recovery proved the system works.</div>
+        </div>
+      </div>
+      <div class="member">
+        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/7a4c3d07-79ae-4b61-b4a2-e42d5492ef40/champ-hero-kalari.jpg" alt="Prince Koya" style="height:300px;width:100%;object-fit:cover;">
+        <div class="info" style="padding:20px;">
+          <div class="name" style="font-size:20px;">Prince Koya</div>
+          <div class="role">Founder · The Builder</div>
+          <div class="bio" style="font-size:13px;line-height:1.7;">Professional wrestler (Mr. India), community builder, and the first S.Asian Heavyweight Champion in All Star Wrestling. Founder of Royal City Wrestling. Lives with eight invisible disabilities and turned his own body into the laboratory — filming every session, tracking every metric, building the template for every warrior after him.</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:30px;text-align:center;">
+      <p style="font-family:var(--display);font-size:20px;color:var(--ink);margin-bottom:8px;">This was our experience. And we didn't know.</p>
+      <p style="font-size:14px;color:var(--muted);max-width:620px;margin:0 auto 18px;">Now we know what's possible — and we're building the system to prove it for everyone else.</p>
+      <a class="btn-gold" href="#" onclick="showPage('about');return false;">About the Society →</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ABOUT US ============ -->
+<div class="page" id="page-about">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('story')">Our Story</button> / About Us</div>
+    <div class="label">About Us — The Society</div>
+    <h2>Who we are. What we do. <em>What we represent.</em></h2>
+    <p class="lead">Warrior World Health &amp; Performance Society is a BC non-profit society serving the 1-in-4 Canadians living with invisible disabilities — using AI-powered assistive technology, Health Canada-approved medical devices, and radical documentary proof.</p>
+
+    <div class="grid3" style="margin-top:30px;">
+      <div class="card"><div class="t">🏛️ A Registered BC Society</div><div class="d">A non-profit society under BC law — eligible for federal, provincial, and municipal funding that supports health innovation, accessibility, and community wellbeing.</div></div>
+      <div class="card"><div class="t">🤖 AI-Powered Assistive Technology</div><div class="d">Machine learning tools that coach warriors daily, track biometrics, and reduce the cognitive load of managing multiple invisible disabilities.</div></div>
+      <div class="card"><div class="t">🩺 Health Canada-Approved Devices</div><div class="d">Class II medical devices. Swiss engineered, German manufactured. 284 conditions in peer-reviewed research. Every session logged with clinical traceability.</div></div>
+      <div class="card"><div class="t">🎥 Clinical Documentary Proof</div><div class="d">The world's first clinical documentary on invisible disability — every session filmed, every metric public, verified by licensed practitioners.</div></div>
+      <div class="card"><div class="t">📊 Data-Driven Outcomes</div><div class="d">75% pain reduction in one session. 6-week recovery vs 6-month prognosis. 92% mobility restored. Real numbers, verified, on camera.</div></div>
+      <div class="card"><div class="t">🌍 A Community of Believers</div><div class="d">Athletes, practitioners, sponsors, and fans — proving that recovery is training and that proof creates change.</div></div>
+    </div>
+  </section>
+
+  <section class="alt-bg full">
+    <div class="wrap">
+      <div class="label">Who It's For</div>
+      <h2>A home for <em>everyone</em> who believes</h2>
+      <div class="grid3">
+        <div class="card"><div class="t">🏃 Athletes &amp; Warriors</div><div class="d">People with invisible disabilities who are willing to get in front of the camera, do the work, take on the challenges, and build real proof. Their journey, tracked and documented.</div></div>
+        <div class="card"><div class="t">🩺 Practitioners</div><div class="d">Physiotherapists, chiropractors, naturopaths, RMTs, and coaches who treat with the Prime device and the P.E.M.F. protocol — verified, featured, and connected to warriors.</div></div>
+        <div class="card"><div class="t">🎉 Sponsors &amp; Fans</div><div class="d">Businesses and believers who support the mission — featured in the directory, visible in every challenge, part of the movement proving what's possible.</div></div>
+      </div>
+      <div style="text-align:center;margin-top:30px;">
+        <p style="font-family:var(--display);font-size:20px;color:var(--ink);margin-bottom:6px;">Our purpose: <em>prove it. pass it on.</em></p>
+        <p style="font-size:14px;color:var(--muted);max-width:640px;margin:0 auto;">A home for us to optimize, to make things even better, to create — and to pass it along. Everything we learn, we document. Everything we prove, we share.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="label">What We Represent</div>
+      <h2>The <em>values</em></h2>
+      <div class="grid3">
+        <div class="card"><div class="t">✅ Proof, not promises</div><div class="d">Every claim backed by filmed sessions, tracked metrics, and practitioner verification. No editing, no spin.</div></div>
+        <div class="card"><div class="t">✅ Regulated technology</div><div class="d">Health Canada Class II approved. FDA and EU MDR certified. Science, not stories.</div></div>
+        <div class="card"><div class="t">✅ Community first</div><div class="d">11+ partners across BC. A city that raised $10K+ for our founder's family. A movement, not a business.</div></div>
+        <div class="card"><div class="t">✅ Invisible no more</div><div class="d">We bring invisible disabilities into the light — documented, measured, and impossible to ignore.</div></div>
+        <div class="card"><div class="t">✅ Recovery is training</div><div class="d">The body can be rebuilt like an athlete rebuilds for a season. Discipline, protocols, and time.</div></div>
+        <div class="card"><div class="t">✅ Pass it on</div><div class="d">The template is built for every warrior after us. Prove it. Pass it on.</div></div>
+      </div>
+      <p style="margin-top:30px;text-align:center;">
+        <a class="btn-gold" href="#" onclick="showPage('story');return false;">Read Our Story</a>
+        <a class="btn-line" href="#" onclick="showPage('grants');return false;">Our Grant Strategy</a>
+      </p>
+    </div>
+  </section>
+</div>
+
 <!-- ============ DOCUMENTARY ============ -->
 <div class="page" id="page-documentary">
   <section>
@@ -452,6 +612,105 @@
       <div class="card"><div class="t">Anxiety &amp; Depression</div><div class="d">The heavy. The flat. 3 AM worst-case scripts.</div></div>
       <div class="card"><div class="t">Nervous System Dysregulation</div><div class="d">Wired and tired. The signal stays loud after the fight.</div></div>
     </div>
+  </section>
+</div>
+
+<!-- ============ DOC: SEASON 1 ============ -->
+<div class="page" id="page-doc-season1">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('documentary')">The Documentary</button> / Season 1</div>
+    <div class="label">Season 1 — The Now</div>
+    <h2>Filming <em>today</em> in South Surrey &amp; Langley</h2>
+    <p class="lead">Season 1 is the now. 90 consecutive days. 8 invisible disabilities. Every session filmed, every metric tracked. The most documented recovery in Canadian health history — and it's happening right now.</p>
+    <div class="banner">
+      <img src="https://pemf.cool/assets/treatment-room-CetmkAT8.jpg" alt="Treatment room at Warrior World HQ">
+      <div class="overlay">
+        <div class="txt">
+          <h3>Warrior World HQ — Clayton Heights, Langley.</h3>
+          <p>Filmed primarily in South Surrey and Langley — Warrior World HQ, Catalyst Kintec Surrey, Semiahmoo Athletic Club, Float House, and Salt Wellness. Every session public, every metric tracked.</p>
+          <div class="chips">
+            <span class="chip">Clayton Heights HQ</span>
+            <span class="chip">Catalyst Kintec Surrey</span>
+            <span class="chip">Semiahmoo Athletic Club</span>
+            <span class="chip">Wraps Sept 13</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>This is where it's all being proven.</strong> Prince's body is the laboratory — Degenerative Disc Disease, PTSD, chronic pain, sleep disorder, TMJ, nervous system dysregulation — all fought daily, on camera, with the Prime Medical Device and the P.E.M.F. protocol.</p>
+      <p>Dr. Adam, Dr. Trent, Manny, Austin, Dr. Silvana, and Coach Joe — the practitioners of Catalyst Kintec Surrey and Semiahmoo Athletic Club — are the clinical team behind the 90 days.</p>
+      <p><strong>Season 1 wraps September 13.</strong> Then we take the cameras home.</p>
+      <div class="quote">
+        <p>"One warrior proved them wrong. Now we build the template so every warrior after him can do the same."</p>
+        <div class="by">— Project PEMF Warrior</div>
+      </div>
+    </div>
+    <p style="margin-top:30px;text-align:center;">
+      <a class="btn-gold" href="#" onclick="showPage('proof-youtube');return false;">Watch the Daily Episodes</a>
+      <a class="btn-line" href="#" onclick="showPage('doc-season2');return false;">Season 2 — Whistler →</a>
+    </p>
+  </section>
+</div>
+
+<!-- ============ DOC: SEASON 2 ============ -->
+<div class="page" id="page-doc-season2">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('documentary')">The Documentary</button> / Season 2</div>
+    <div class="label">Season 2 — The Mountain</div>
+    <h2>Whistler: the <em>recovery lab</em></h2>
+    <p class="lead">We're taking everything we've learned — every note, every protocol, every practitioner's insight from Season 1 — and we're going to the mountains.</p>
+    <div class="grid2" style="margin-top:30px;">
+      <div class="photo-frame">
+        <img src="https://pemf.cool/assets/patient-photo-NaWANXYn.jpg" alt="Warrior in recovery">
+        <div class="cap">Season 2 — the protocol meets the mountain.</div>
+      </div>
+      <div class="body-copy">
+        <p><strong>This is Whistler.</strong> The village. The athletes. The cold. The atmosphere.</p>
+        <p>We're <strong>taking all the notes from the current practitioners</strong> — the protocols, the metrics, the lessons of the 90 days — and we're going where recovery meets the mountain.</p>
+        <p><strong>In the village with all these athletes</strong>, recording the documentary on location. Finding new practitioners. Working the training <strong>outdoors</strong> — in the cold, in that atmosphere, in the mountains.</p>
+        <p>Cold exposure. Altitude. Outdoor training. The mountain as the ultimate recovery lab — the body pushed, tested, and rebuilt against the elements.</p>
+        <p><strong>We have a warm connection in Whistler</strong> — and we've already filmed in the mountains. Season 2 is where the protocol leaves the clinic and goes to the peaks.</p>
+        <div class="quote">
+          <p>"The mountain doesn't care about your prognosis. It only cares about your work."</p>
+          <div class="by">— Season 2, Whistler</div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:30px;text-align:center;">
+      <a class="btn-gold" href="#" onclick="showPage('doc-season3');return false;">Season 3 — Home →</a>
+      <a class="btn-line" href="#" onclick="showPage('grant-officials');return false;">Partnerships &amp; Civic Support</a>
+    </p>
+  </section>
+</div>
+
+<!-- ============ DOC: SEASON 3 ============ -->
+<div class="page" id="page-doc-season3">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('documentary')">The Documentary</button> / Season 3</div>
+    <div class="label">Season 3 — Home</div>
+    <h2>New Westminster: <em>coming home</em></h2>
+    <p class="lead">Season 3 films in New Westminster — Prince's home. The city that carried this family through the worst is now the stage for proving the system works.</p>
+    <div class="grid2" style="margin-top:30px;">
+      <div class="body-copy">
+        <p><strong>The community that raised $10,000+ for Chelsy.</strong> The city where Royal City Wrestling packed hundreds of families into free community events.</p>
+        <p>In 2019, <strong>Mayor Jonathan Coté stepped into the ring as Prince's tag-team partner</strong> — the first sitting Canadian mayor to ever wrestle. Front page of the newspaper. Global TV coverage.</p>
+        <p><strong>Season 3 is where the documentary comes full circle:</strong> the community that carried this family through the worst is now the stage for proving the system works.</p>
+        <p>New warriors. New stories. The same mission — and the city that started it all.</p>
+        <div class="quote">
+          <p>"We are not a wrestling company. We are a building-the-community company."</p>
+          <div class="by">— Prince, Royal City Wrestling</div>
+        </div>
+      </div>
+      <div class="photo-frame">
+        <img src="https://raw.githubusercontent.com/princekoya-multiverse/warrior-world-life-site/main/assets/article-rumble.jpg" alt="Royal City Rumble — Mayor Cote and Mr. India">
+        <div class="cap">The Royal City Defenders — Mr. India and Mayor Jonathan Cote. The New Westminster Record, March 2021.</div>
+      </div>
+    </div>
+    <p style="margin-top:30px;text-align:center;">
+      <a class="btn-gold" href="#" onclick="showPage('partner-newwest');return false;">City of New Westminster Partner</a>
+      <a class="btn-line" href="#" onclick="showPage('documentary');return false;">Back to The Documentary</a>
+    </p>
   </section>
 </div>
 
@@ -2191,7 +2450,9 @@ function showPage(name) {
     b.style.background = '';
   });
   // Highlight top-level nav for sub-pages
-  const groups = { 'proof': ['proof','proof-youtube','proof-app','proof-testimonials','proof-clinic'],
+  const groups = { 'story': ['story','story-chelsy','story-prince','story-founders','about'],
+                   'documentary': ['documentary','doc-season1','doc-season2','doc-season3'],
+                   'proof': ['proof','proof-youtube','proof-app','proof-testimonials','proof-clinic'],
                    'grants': ['grants','grant-officials','grant-business','grant-indigenous'],
                    'partners': ['partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf'] };
   for (const [group, pages] of Object.entries(groups)) {
@@ -2225,7 +2486,7 @@ document.addEventListener('click', (ev) => {
 });
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#', '');
-  const valid = ['home','story','documentary','proof','proof-youtube','proof-app','proof-testimonials','proof-clinic','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','contact'];
+  const valid = ['home','story','story-chelsy','story-prince','story-founders','about','documentary','doc-season1','doc-season2','doc-season3','proof','proof-youtube','proof-app','proof-testimonials','proof-clinic','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','contact'];
   if (hash && valid.includes(hash)) showPage(hash);
 });
 </script>
