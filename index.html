@@ -64,6 +64,13 @@
   .submenu button .sub-t { font-weight: 600; color: var(--ink); display: block; }
   .submenu button .sub-d { font-size: 11px; color: var(--muted); display: block; }
   .submenu button:hover .sub-t { color: var(--teal); }
+  .submenu-group {
+    padding: 8px 12px 4px; font-size: 9.5px; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--gold); font-weight: 700; border-top: 1px solid var(--line);
+  }
+  .submenu-group:first-of-type { border-top: none; padding-top: 4px; }
+  .submenu .sub-child { padding-left: 22px; position: relative; }
+  .submenu .sub-child::before { content: '—'; position: absolute; left: 10px; color: var(--teal); font-size: 11px; top: 50%; transform: translateY(-50%); }
   .menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--ink); font-size: 18px; padding: 4px 12px; cursor: pointer; border-radius: 4px; }
 
   /* PAGES */
@@ -257,21 +264,30 @@
       <button class="tab-top" data-group="partners" onclick="toggleSubmenu(event, this)">Partners <span class="caret">▾</span></button>
       <div class="submenu">
         <button onclick="showPage('partners')"><span><span class="sub-t">All Partners</span><span class="sub-d">The full grid + ways to stand with us</span></span></button>
-        <button onclick="showPage('partner-sop')"><span><span class="sub-t">South Okanagan Physiotherapy</span><span class="sub-d">Osoyoos, BC</span></span></button>
-        <button onclick="showPage('partner-mlg')"><span><span class="sub-t">Maple Leaf Greenery</span><span class="sub-d">Osoyoos, BC</span></span></button>
-        <button onclick="showPage('partner-similkameen')"><span><span class="sub-t">Similkameen Valley Resort</span><span class="sub-d">Cawston, BC</span></span></button>
-        <button onclick="showPage('partner-catalyst')"><span><span class="sub-t">Catalyst Kintec</span><span class="sub-d">Surrey, BC — the medical home base</span></span></button>
-        <button onclick="showPage('catalyst-adam')"><span><span class="sub-t">Dr. Adam Parlberg</span><span class="sub-d">Medical Doctor</span></span></button>
-        <button onclick="showPage('catalyst-trent')"><span><span class="sub-t">Dr. Trent Wittal</span><span class="sub-d">Chiropractor · Director</span></span></button>
-        <button onclick="showPage('catalyst-manny')"><span><span class="sub-t">Manny Lehal</span><span class="sub-d">Physiotherapist</span></span></button>
-        <button onclick="showPage('catalyst-austin')"><span><span class="sub-t">Austin Marron</span><span class="sub-d">Registered Massage Therapist</span></span></button>
-        <button onclick="showPage('catalyst-silvana')"><span><span class="sub-t">Dr. Silvana Jakupovic</span><span class="sub-d">Naturopath · Prolotherapy · PRP</span></span></button>
-        <button onclick="showPage('partner-semiahmoo')"><span><span class="sub-t">Semiahmoo Athletic Club</span><span class="sub-d">South Surrey — training ground</span></span></button>
-        <button onclick="showPage('partner-float')"><span><span class="sub-t">Float House Surrey</span><span class="sub-d">South Surrey, BC</span></span></button>
-        <button onclick="showPage('partner-salt')"><span><span class="sub-t">Salt Wellness Centre</span><span class="sub-d">South Surrey, BC</span></span></button>
-        <button onclick="showPage('partner-newwest')"><span><span class="sub-t">City of New Westminster</span><span class="sub-d">Our civic partner</span></span></button>
-        <button onclick="showPage('partner-numode')"><span><span class="sub-t">Numode Delivery</span><span class="sub-d">Greater Vancouver</span></span></button>
-        <button onclick="showPage('partner-pemf')"><span><span class="sub-t">PEMF Warrior</span><span class="sub-d">The flagship program</span></span></button>
+        <div class="submenu-group">Catalyst Kintec — Surrey</div>
+        <button class="sub-child" onclick="showPage('partner-catalyst')"><span><span class="sub-t">Catalyst Kintec</span><span class="sub-d">The medical home base</span></span></button>
+        <button class="sub-child" onclick="showPage('catalyst-adam')"><span><span class="sub-t">Dr. Adam Parlberg</span><span class="sub-d">Medical Director</span></span></button>
+        <button class="sub-child" onclick="showPage('catalyst-trent')"><span><span class="sub-t">Dr. Trent Wittal</span><span class="sub-d">Chiropractor</span></span></button>
+        <button class="sub-child" onclick="showPage('catalyst-manny')"><span><span class="sub-t">Manny Lehal</span><span class="sub-d">Physiotherapist</span></span></button>
+        <button class="sub-child" onclick="showPage('catalyst-austin')"><span><span class="sub-t">Austin Marron</span><span class="sub-d">RMT &amp; CrossFit Coach</span></span></button>
+        <button class="sub-child" onclick="showPage('catalyst-silvana')"><span><span class="sub-t">Dr. Silvana Jakupovic</span><span class="sub-d">Naturopath · PRP · TCM</span></span></button>
+        <div class="submenu-group">South Okanagan Physiotherapy — Osoyoos</div>
+        <button class="sub-child" onclick="showPage('partner-sop')"><span><span class="sub-t">South Okanagan Physiotherapy</span><span class="sub-d">Clinic &amp; team</span></span></button>
+        <button class="sub-child" onclick="showPage('sop-grant')"><span><span class="sub-t">Grant Storzuk</span><span class="sub-d">Physiotherapist · Founder</span></span></button>
+        <div class="submenu-group">Maple Leaf Greenery — Osoyoos</div>
+        <button class="sub-child" onclick="showPage('partner-mlg')"><span><span class="sub-t">Maple Leaf Greenery</span><span class="sub-d">Plant medicine</span></span></button>
+        <button class="sub-child" onclick="showPage('mlg-jana')"><span><span class="sub-t">Jana</span><span class="sub-d">The heart of the operation</span></span></button>
+        <div class="submenu-group">Similkameen Valley Resort — Cawston</div>
+        <button class="sub-child" onclick="showPage('partner-similkameen')"><span><span class="sub-t">Similkameen Valley Resort</span><span class="sub-d">Recovery retreat</span></span></button>
+        <button class="sub-child" onclick="showPage('similkameen-jana')"><span><span class="sub-t">Jana</span><span class="sub-d">The welcoming heart</span></span></button>
+        <div class="submenu-group">Training &amp; Recovery — South Surrey</div>
+        <button class="sub-child" onclick="showPage('partner-semiahmoo')"><span><span class="sub-t">Semiahmoo Athletic Club</span><span class="sub-d">Coach Joe &amp; Austin — training ground</span></span></button>
+        <button class="sub-child" onclick="showPage('partner-float')"><span><span class="sub-t">Float House</span><span class="sub-d">Float therapy</span></span></button>
+        <button class="sub-child" onclick="showPage('partner-salt')"><span><span class="sub-t">Salt Wellness Centre</span><span class="sub-d">Float &amp; salt therapy</span></span></button>
+        <div class="submenu-group">Civic &amp; Logistics</div>
+        <button class="sub-child" onclick="showPage('partner-newwest')"><span><span class="sub-t">City of New Westminster</span><span class="sub-d">Our civic partner</span></span></button>
+        <button class="sub-child" onclick="showPage('partner-numode')"><span><span class="sub-t">Numode Delivery</span><span class="sub-d">Greater Vancouver</span></span></button>
+        <button class="sub-child" onclick="showPage('partner-pemf')"><span><span class="sub-t">PEMF Warrior</span><span class="sub-d">The flagship program</span></span></button>
       </div>
     </div>
     <button data-page="contact" onclick="showPage('contact')">Contact</button>
@@ -958,6 +974,44 @@
   </section>
 </div>
 
+<!-- ============ SOP: GRANT STORZUK ============ -->
+<div class="page" id="page-sop-grant">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / <button onclick="showPage('partner-sop')">South Okanagan Physiotherapy</button> / Grant Storzuk</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://southokanaganphysio.com/wp-content/uploads/Staff-Grant.jpeg" alt="Grant Storzuk">
+        <div class="cap">Grant Storzuk — Physiotherapist, South Okanagan Physiotherapy.</div>
+      </div>
+      <div>
+        <div class="label">South Okanagan Physiotherapy — Osoyoos</div>
+        <h2>Grant <em>Storzuk</em></h2>
+        <p class="lead">Physiotherapist · Founder — the man who verified the proof.</p>
+        <div class="badges">
+          <span class="chip">Physiotherapist</span>
+          <span class="chip">10+ Years Practice</span>
+          <span class="chip">Osoyoos, BC</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Grant Storzuk is the physiotherapist who put clinical eyes on the mission.</strong> Over a decade of practice, from Osoyoos in the South Okanagan — the region where the whole story began on Anarchist Mountain.</p>
+      <p>When Prince brought the Prime Medical Device to the Okanagan, Grant didn't just watch. He measured. Range of motion, before and after. Pain scores, session by session. His verification of <strong>75% pain reduction in a single session</strong> became one of the cornerstones of the documentary's proof.</p>
+      <p>Grant is the practitioner who asks the hard questions, checks the numbers, and makes sure every claim is backed by measurable reality. That's why his word matters.</p>
+      <div class="quote">
+        <p>"The data is real. The results are real. This is medicine working the way it should."</p>
+        <div class="by">— Grant Storzuk</div>
+      </div>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Work with Grant Storzuk</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">South Okanagan Physiotherapy · Osoyoos, BC</p>
+      <a class="btn-gold" href="https://southokanaganphysio.com" target="_blank">Visit South Okanagan Physio</a>
+      <a class="btn-line" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
 <!-- ============ PARTNER: MLG ============ -->
 <div class="page" id="page-partner-mlg">
   <section>
@@ -992,6 +1046,44 @@
   </section>
 </div>
 
+<!-- ============ MLG: JANA ============ -->
+<div class="page" id="page-mlg-jana">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / <button onclick="showPage('partner-mlg')">Maple Leaf Greenery</button> / Jana</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://mapleleafgreenery.ca/wp-content/uploads/2021/06/20191101-Maple-Leaf-Greenery_Logo.jpg" alt="Jana — Maple Leaf Greenery">
+        <div class="cap">Photo coming: Jana — the heart of Maple Leaf Greenery. [Send us her photo]</div>
+      </div>
+      <div>
+        <div class="label">Maple Leaf Greenery — Osoyoos</div>
+        <h2>Jana</h2>
+        <p class="lead">The heart of Maple Leaf Greenery — plant medicine from the Okanagan.</p>
+        <div class="badges">
+          <span class="chip">Maple Leaf Greenery</span>
+          <span class="chip">Osoyoos, BC</span>
+          <span class="chip">Fuel Partner</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Jana is the welcoming heart of Maple Leaf Greenery</strong> — the plant-medicine partner standing with the mission from Osoyoos, right where the story began on Anarchist Mountain.</p>
+      <p>Nature has been doing medicine longer than we have. Maple Leaf Greenery brings the plant side of the protocol — the herbal and botanical support that works alongside PEMF, movement, and nutrition.</p>
+      <p>Jana's warmth and care make every visit feel like coming home. She believes in the mission because she's watched it work — real people, real recovery, real results.</p>
+      <div class="quote">
+        <p>"The land that took is giving back — one warrior at a time."</p>
+        <div class="by">— Jana, Maple Leaf Greenery</div>
+      </div>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Connect with Jana</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Maple Leaf Greenery · Osoyoos, BC</p>
+      <a class="btn-gold" href="https://mapleleafgreenery.ca" target="_blank">Visit Maple Leaf Greenery</a>
+      <a class="btn-line" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
 <!-- ============ PARTNER: SIMILKAMEEN ============ -->
 <div class="page" id="page-partner-similkameen">
   <section>
@@ -1021,6 +1113,44 @@
       <h3 style="margin-top:0;">Stay at Similkameen Valley Resort</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Cawston, BC — Similkameen Valley.</p>
       <a class="btn-gold" href="https://www.similkameenvalleyresort.ca" target="_blank">Visit Their Website</a>
+      <a class="btn-line" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ SIMILKAMEEN: JANA ============ -->
+<div class="page" id="page-similkameen-jana">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / <button onclick="showPage('partner-similkameen')">Similkameen Valley Resort</button> / Jana</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://static.wixstatic.com/media/8d7ff8_8087872b25a346e7b980bf45cdc6cb72~mv2.png" alt="Jana — Similkameen Valley Resort">
+        <div class="cap">Photo coming: Jana — the welcoming heart of Similkameen Valley Resort. [Send us her photo]</div>
+      </div>
+      <div>
+        <div class="label">Similkameen Valley Resort — Cawston</div>
+        <h2>Jana</h2>
+        <p class="lead">The welcoming heart of the Similkameen Valley Resort.</p>
+        <div class="badges">
+          <span class="chip">Similkameen Valley Resort</span>
+          <span class="chip">Cawston, BC</span>
+          <span class="chip">Facility Partner</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Jana is the welcoming heart of Similkameen Valley Resort</strong> — the recovery retreat in Cawston where warriors come to let the protocols work.</p>
+      <p>Between the orchard rows and the mountain air, the resort gives our warriors a true recovery environment: rest, restoration, and the space to heal — all within reach of the communities we serve in the South Okanagan.</p>
+      <p>Jana makes sure every warrior feels at home from the moment they arrive. As a Facility Partner, the resort is featured in the documentary as part of the recovery journey — the place where the body catches up with the spirit.</p>
+      <div class="quote">
+        <p>"Recovery needs a place to happen. This is that place."</p>
+        <div class="by">— Jana, Similkameen Valley Resort</div>
+      </div>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Stay at the Resort</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Similkameen Valley Resort · Cawston, BC</p>
+      <a class="btn-gold" href="https://www.similkameenvalleyresort.ca" target="_blank">Visit the Resort</a>
       <a class="btn-line" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
     </div>
   </section>
@@ -1764,7 +1894,7 @@ function showPage(name) {
   });
   // Highlight top-level nav for sub-pages
   const groups = { 'grants': ['grants','grant-officials','grant-business','grant-indigenous'],
-                   'partners': ['partners','partner-sop','partner-mlg','partner-similkameen','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf'] };
+                   'partners': ['partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf'] };
   for (const [group, pages] of Object.entries(groups)) {
     if (pages.includes(name)) {
       document.querySelectorAll(`#navTabs .tab-top[data-group="${group}"]`).forEach(b => b.classList.add('active'));
@@ -1796,7 +1926,7 @@ document.addEventListener('click', (ev) => {
 });
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#', '');
-  const valid = ['home','story','documentary','proof','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','partner-mlg','partner-similkameen','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','contact'];
+  const valid = ['home','story','documentary','proof','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','contact'];
   if (hash && valid.includes(hash)) showPage(hash);
 });
 </script>
