@@ -167,6 +167,22 @@
   .star-cta .btn-gold { margin: 0 6px 10px; }
   .star-cta .btn-line { margin: 0 6px 10px; }
 
+  /* PHOTO GALLERY + VIDEOS */
+  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
+  .gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+  .gallery-grid img:hover { transform: scale(1.03); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+  .video-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+  .video-card { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--white); }
+  .video-card .vid-frame { aspect-ratio: 16/9; background: #000; }
+  .video-card iframe { width: 100%; height: 100%; border: none; display: block; }
+  .video-card .vid-info { padding: 14px 16px; }
+  .video-card .vid-date { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+  .video-card .vid-title { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-top: 4px; line-height: 1.5; }
+  @media (max-width: 800px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .video-list { grid-template-columns: 1fr; }
+  }
+
   /* GRANTS TABLE */
   .grant-table { width: 100%; border-collapse: collapse; margin-top: 26px; background: var(--white); border-radius: 6px; overflow: hidden; border: 1px solid var(--line); }
   .grant-table th { text-align: left; padding: 14px 16px; background: var(--cream-2); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
@@ -1043,7 +1059,19 @@
       <div class="member" style="cursor:pointer;" onclick="showPage('catalyst-austin')"><img src="https://projectpemfwarrior.com/story-media/austin-v3.jpg" alt="Austin Marron"><div class="info"><div class="name">Austin Marron</div><div class="role">RMT &amp; CrossFit Coach</div><div class="bio">CARs, myofascial, tissue tension. Uncanny hands. Click for full page →</div></div></div>
       <div class="member" style="cursor:pointer;" onclick="showPage('catalyst-silvana')"><img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-profile-picture.jpg" alt="Dr. Silvana Jakupovic"><div class="info"><div class="name">Dr. Silvana Jakupovic</div><div class="role">Naturopath · PRP · TCM</div><div class="bio">When nothing else has worked — she gets to the root. Click for full page →</div></div></div>
     </div>
-    <div class="star-cta">
+        <div class="label" style="margin-top:34px;">The Gallery</div>
+    <h3>Inside the <em>space</em></h3>
+    <div class="gallery-grid"><img src="https://projectpemfwarrior.com/story-media/day3-catalyst-chiro-adjust.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day3-catalyst-entrance.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day3-catalyst-exterior-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day3-catalyst-front.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day3-catalyst-sign.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day3-catalyst-smile.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day3-catalyst-treatment.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day3-catalyst-waiting.jpg" alt="Photo" onclick="window.open(this.src)">
+    </div>
+
+<div class="star-cta">
       <h3 style="margin-top:0;">Work with Catalyst Kintec Surrey</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">376 175a St #2, Surrey, BC · (604) 330-6772</p>
       <a class="btn-gold" href="https://catalystkintec.com" target="_blank">Visit Catalyst Kintec</a>
@@ -1083,7 +1111,36 @@
       <p>When the accidental double Lyrica dose gave Prince the best sleep in months, Dr. Adam didn't just note it — he adjusted the protocol. Data-driven. Responsive. Always optimizing.</p>
       <p>He oversees every practitioner's work and ensures the clinical data is accurate, ethical, and meaningful. He's the doctor who makes sure the science is sound — so the documentary can prove what's possible.</p>
     </div>
-    <div class="star-cta">
+        <div class="label" style="margin-top:34px;">The Gallery</div>
+    <h3>In the <em>room</em></h3>
+        <div class="gallery-grid"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/0c10ea51-8918-4bd3-9866-1108f7e3a0e5/profile.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/1a443a6a-caa6-433d-94d1-b036c7c5a7a4/main-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/4467076c-8934-4a38-9b47-1133243be1e0/main-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/ea9c9229-eecd-48b5-97ad-65dd0ddab902/main-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/87933149-4b69-47c5-aa92-4dac84275a3c/bottom-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/5d00cb96-31db-425d-8783-bcfc73c21dac/bottom-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/3628c67b-adbb-4877-a3f0-2e4bfd875736/bottom-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/5d27ecfb-be25-42e4-a873-b448c854b29f/bottom-4.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/be50dac3-84a9-4311-911c-b734dd3a7102/bottom-5.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/fc981c28-62df-45d1-b32a-735ce3dc0d79/bottom-6.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/67bd189a-4878-4398-be65-e9b3d0fd2060/bottom-7.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/94f6af13-76cd-4829-8e4c-b7971301a631/bottom-8.jpg" alt="Photo" onclick="window.open(this.src)">
+    </div>
+
+    <div class="label" style="margin-top:40px;">Session Videos</div>
+    <h3>Watch it <em>happen</em></h3>
+        <div class="video-list">
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/LWS_Mfnx1kg?rel=0" title="Day 20: Dr. Adam — The Lyrica, The TRT, and Why Everything Connects" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-04</div><div class="vid-title">Day 20: Dr. Adam — The Lyrica, The TRT, and Why Everything Connects</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/LQWiKzj9qj8?rel=0" title="Day 49: Dr. Adam — The Check-In, Lyrica, and Face Needles" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-27</div><div class="vid-title">Day 49: Dr. Adam — The Check-In, Lyrica, and Face Needles</div></div>
+      </div>
+    </div>
+
+<div class="star-cta">
       <h3 style="margin-top:0;">Book with Dr. Adam</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Catalyst Kintec Surrey · 376 175a St #2, Surrey, BC · (604) 330-6772</p>
       <a class="btn-gold" href="https://ckg.janeapp.com" target="_blank">Book Now — Jane App</a>
@@ -1123,7 +1180,44 @@
       </div>
       <p>He's the data-driven healer who's been tracking the jaw shake, the headache pressure, and the real progress beneath the surface. Capacity, stability, strength — in that order. That's the Dr. Trent way.</p>
     </div>
-    <div class="star-cta">
+        <div class="label" style="margin-top:34px;">The Gallery</div>
+    <h3>In the <em>room</em></h3>
+        <div class="gallery-grid"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/437786d7-2eae-41ef-8700-b6cc6f4bc315/profile.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/9c2d5f3a-c198-4d9e-99f4-be133c3b7e64/main-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/5b2ecb1e-8335-4c77-acc9-f9a362aea580/main-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/f38bb4ba-564b-4b50-95ef-51343e73254f/main-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/3e18d1ea-fbd2-440d-95ae-d8555e662a68/bottom-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/12c0fa14-04c5-41fe-9757-b561de5f5242/bottom-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/b12f2217-7925-4e5f-9c8c-195c60397cfb/bottom-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/8b4c3256-02e7-4209-a047-39cf9008a8d0/bottom-4.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/0fbf9047-74aa-4aed-82fe-1ccc395e1e9e/bottom-5.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/1bc058e3-7bde-40c5-8ee8-5879f6b55cf9/bottom-6.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/cb27c080-faf6-4ca9-bb3d-a47038c45813/bottom-7.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/a1c1128d-88fc-40e1-8f0c-7bca369c2b23/bottom-8.jpg" alt="Photo" onclick="window.open(this.src)">
+    </div>
+
+    <div class="label" style="margin-top:40px;">Session Videos</div>
+    <h3>Watch it <em>happen</em></h3>
+        <div class="video-list">
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/qSvqIpf-59g?rel=0" title="Day Three: Dr. Trent, Playing with Fire, and the First Adjustment" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-06-17</div><div class="vid-title">Day Three: Dr. Trent, Playing with Fire, and the First Adjustment</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/eRdO6h7xgHk?rel=0" title="Day 10: The Foundation Conversation — Dr. Trent on Testosterone, Sleep & the Plan" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-06-25</div><div class="vid-title">Day 10: The Foundation Conversation — Dr. Trent on Testosterone, Sleep & the Plan</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/N5wRVfrF8sw?rel=0" title="Day 24: Dr. Trent — The Progress Is Visible" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-08</div><div class="vid-title">Day 24: Dr. Trent — The Progress Is Visible</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/d3LdmJNW1RU?rel=0" title="Day 34: Dr. Trent — The Numbers Are Moving" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-15</div><div class="vid-title">Day 34: Dr. Trent — The Numbers Are Moving</div></div>
+      </div>
+    </div>
+
+<div class="star-cta">
       <h3 style="margin-top:0;">Work with Dr. Trent</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Data-driven chiropractic care at Catalyst Kintec Surrey. The same practitioner tracking Prince week-by-week is available for your spine, jaw, and nervous system.</p>
       <a class="btn-gold" href="https://catalystkintec.com" target="_blank">Book Now — Catalyst Kintec</a>
@@ -1164,7 +1258,52 @@
       <p>His passion for health and fitness started at age 5. He grew up playing soccer, basketball, football, and ball hockey. In his free time he enjoys hiking, weightlifting, soccer, and ball hockey. Manny strives to educate and treat clients using the most recent evidence-based practice.</p>
       <p>Athlete-specialist rebuilding the foundation, joint by joint. FMS screen. Gait. Compensations. He sees what other eyes miss. Every Monday with Manny adds something new. Every week, the flow gets deeper.</p>
     </div>
-    <div class="star-cta">
+        <div class="label" style="margin-top:34px;">The Gallery</div>
+    <h3>In the <em>room</em></h3>
+        <div class="gallery-grid"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/6aec515c-9b47-40b9-b33c-04cb37782790/profile.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/ffce7484-ae48-4a15-8e84-90f56c590537/main-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/a0d38f2a-c2c4-4a57-88ce-466218ac012a/main-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/bee8d7ef-3915-4b87-8ada-6c86914bdd97/main-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/d04e08c6-8c9d-4e1c-ba49-d3248a7b714c/bottom-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/096fae72-1b36-4095-9e6e-c3558eade16b/bottom-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/7f557cc3-e1c4-4a5c-9710-1666416ed3a6/bottom-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/967a1079-e6dc-4de7-b30d-f9c7231ca5c6/bottom-4.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/eddee2a0-b7cc-46e0-86f8-11e3a73734cd/bottom-5.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/a597f922-c831-44f0-b79d-7eef5de7a1e1/bottom-6.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/5f34c63e-7d6b-4b8a-b132-064b7acab243/bottom-7.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/3842d97e-7730-4251-9e81-d56ea1ea2ec9/bottom-8.jpg" alt="Photo" onclick="window.open(this.src)">
+    </div>
+
+    <div class="label" style="margin-top:40px;">Session Videos</div>
+    <h3>Watch it <em>happen</em></h3>
+        <div class="video-list">
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/YFcwxGjG_c8?rel=0" title="Day 8: The Shoulder Blade Revelation — Manny Changes Everything" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-06-23</div><div class="vid-title">Day 8: The Shoulder Blade Revelation — Manny Changes Everything</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/KJjIHsc87ik?rel=0" title="Day 15: Humbled By The Body — Manny Miyagi and the Reset" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-06-29</div><div class="vid-title">Day 15: Humbled By The Body — Manny Miyagi and the Reset</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/3bfDfQSZVtY?rel=0" title="Day 22: Manny Monday — Points That Are Not As Strong" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-06</div><div class="vid-title">Day 22: Manny Monday — Points That Are Not As Strong</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/5hQ6-iYLMgc?rel=0" title="Day 32: Manny Monday — Week After Week, Layer After Layer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-13</div><div class="vid-title">Day 32: Manny Monday — Week After Week, Layer After Layer</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/ckaGGRpV1Qg?rel=0" title="Day 41: Just Another Manny Monday — Same Moves, Deeper Every Time" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-20</div><div class="vid-title">Day 41: Just Another Manny Monday — Same Moves, Deeper Every Time</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/64AdD41LD3w?rel=0" title="Day 49: Manny Monday - The Green Light. Ready to Grapple." loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-27</div><div class="vid-title">Day 49: Manny Monday - The Green Light. Ready to Grapple.</div></div>
+      </div>
+    </div>
+
+<div class="star-cta">
       <h3 style="margin-top:0;">Work with Manny</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">FMS screening, gait analysis, and athlete-level physio at Catalyst Kintec Surrey. Rebuild your foundation, joint by joint.</p>
       <a class="btn-gold" href="https://catalystkintec.com" target="_blank">Book Now — Catalyst Kintec</a>
@@ -1203,7 +1342,48 @@
       </div>
       <p>He is also Prince's CrossFit and Weightlifting coach — so he knows exactly how his body is connecting and what's going on in the gym. That dual perspective makes every session more precise.</p>
     </div>
-    <div class="star-cta">
+        <div class="label" style="margin-top:34px;">The Gallery</div>
+    <h3>In the <em>room</em></h3>
+        <div class="gallery-grid"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/09b844b9-020e-4a80-917f-516710b8e469/profile.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/daef28dc-93d9-4416-b5db-5656567aaebf/main-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/fa302384-6f3f-44e0-84b3-d8fd10475b44/main-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/7b989464-e87b-4b70-bf78-1d87b14ca0ef/main-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/70edf820-dc8e-4c9a-83da-61923bf4ef9d/bottom-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/2878672d-fbca-4e2a-a72b-04e64d8b2452/bottom-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/5dd80248-7055-4906-9e61-d48c5f82b949/bottom-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/1df2eec4-495c-44a7-8894-d3dd25fd8280/bottom-4.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/0c83e062-b4cf-4457-8420-ce792b392d0d/bottom-5.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/aa70b573-90a1-4ced-92cf-bc5fa0543519/bottom-6.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/20a5b18f-b7a0-4f8f-9262-537d58e8dafb/bottom-7.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/__l5e/assets-v1/44a7af37-76f3-4b39-9573-4bc4b9f7f691/bottom-8.jpg" alt="Photo" onclick="window.open(this.src)">
+    </div>
+
+    <div class="label" style="margin-top:40px;">Session Videos</div>
+    <h3>Watch it <em>happen</em></h3>
+        <div class="video-list">
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/VQzWQT3fis4?rel=0" title="Day 12: Austin — RMT, CrossFit Coach, and the Recommendation I Didn't See Coming" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-06-26</div><div class="vid-title">Day 12: Austin — RMT, CrossFit Coach, and the Recommendation I Didn't See Coming</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/1iGOqyyN9Ds?rel=0" title="Day 19: Austin — The Speed of Recovery" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-03</div><div class="vid-title">Day 19: Austin — The Speed of Recovery</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/K8J5deVf7jI?rel=0" title="Day 26: Float Friday — Austin Progress Check" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-10</div><div class="vid-title">Day 26: Float Friday — Austin Progress Check</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/gABn1lmX_-Y?rel=0" title="Day 37: Friday RMT Reset — Austin Working the Week Out" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-17</div><div class="vid-title">Day 37: Friday RMT Reset — Austin Working the Week Out</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/5xn0ClkFbag?rel=0" title="Day 38: Front Squat Friday — Building the Engine with Austin" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-17</div><div class="vid-title">Day 38: Front Squat Friday — Building the Engine with Austin</div></div>
+      </div>
+    </div>
+
+<div class="star-cta">
       <h3 style="margin-top:0;">Work with Austin</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Athlete-level massage therapy at Catalyst Kintec Surrey. Uncanny hands. Untangles what every protocol leaves behind.</p>
       <a class="btn-gold" href="https://ckg.janeapp.com/locations/catalyst-kinetics-group-surrey/book#/staff_member/292" target="_blank">Book Now Austin Marron's Jane App</a>
@@ -1244,7 +1424,32 @@
       <p>Her approach is individualized — she treats the person, not the symptoms. She's a member of the BC Naturopathic Association and the Canadian Association of Naturopathic Doctors, in good standing with the College of Naturopathic Physicians of BC.</p>
       <p>Whether it's chronic pain that won't resolve, an injury that keeps coming back, hormones, digestion, or mental health — Dr. Silvana brings the full toolkit. Eastern and Western. Injection therapy and TCM. She finds what's blocking the body's ability to heal, then removes it.</p>
     </div>
-    <div class="star-cta">
+        <div class="label" style="margin-top:34px;">The Gallery</div>
+    <h3>In the <em>room</em></h3>
+        <div class="gallery-grid"><img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-profile-picture.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-main-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-main-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-main3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-bottom-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-bottom-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-bottom-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-bottom-4.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-bottom-5.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-bottom-6.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-bottom-7.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-bottom-8.jpg" alt="Photo" onclick="window.open(this.src)">
+    </div>
+
+    <div class="label" style="margin-top:40px;">Session Videos</div>
+    <h3>Watch it <em>happen</em></h3>
+        <div class="video-list">
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/lXEZBvzZU9A?rel=0" title="Day 43: Dr. Silvana — The Root Cause. Prolotherapy, Needling & the Full Naturopathic Toolkit" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">2026-07-22</div><div class="vid-title">Day 43: Dr. Silvana — The Root Cause. Prolotherapy, Needling & the Full Naturopathic Toolkit</div></div>
+      </div>
+    </div>
+
+<div class="star-cta">
       <h3 style="margin-top:0;">Work with Dr. Silvana</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Prolotherapy, PRP, needling, acupuncture, and TCM at Catalyst Kintec Surrey. When nothing else has worked — she gets to the root.</p>
       <a class="btn-gold" href="https://catalystkintec.com" target="_blank">Book Now — Catalyst Kintec</a>
@@ -1286,7 +1491,19 @@
         <div class="by">— Coach Joe, CrossFit Coach</div>
       </div>
     </div>
-    <div class="star-cta">
+        <div class="label" style="margin-top:34px;">The Gallery</div>
+    <h3>Inside the <em>space</em></h3>
+    <div class="gallery-grid"><img src="https://projectpemfwarrior.com/story-media/wod-day1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day5-crossfit-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day5-crossfit-6.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day5-crossfit-9.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/pullup-action.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/day5-pullup-form.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/prince-flex-semiahmoo.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/to-semiahmoo.jpg" alt="Photo" onclick="window.open(this.src)">
+    </div>
+
+<div class="star-cta">
       <h3 style="margin-top:0;">Train at Semiahmoo Athletic Club</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">362 175a St Unit 101, Surrey, BC · (778) 877-5136</p>
       <a class="btn-gold" href="https://semiahmooac.com" target="_blank">Visit Semiahmoo AC</a>
@@ -1325,7 +1542,21 @@
         <div class="by">— Float House</div>
       </div>
     </div>
-    <div class="star-cta">
+        <div class="label" style="margin-top:34px;">The Gallery</div>
+    <h3>Inside the <em>space</em></h3>
+    <div class="gallery-grid"><img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-profile-picture.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-main-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-main-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-bottom-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-bottom-3.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-bottom-4.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-bottom-5.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-bottom-6.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-bottome-7.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-float-house-bottom-8.jpg" alt="Photo" onclick="window.open(this.src)">
+    </div>
+
+<div class="star-cta">
       <h3 style="margin-top:0;">Float at Float House</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Float Therapy Centre · South Surrey, BC.</p>
       <a class="btn-gold" href="https://floathouse.ca" target="_blank">Visit Float House</a>
@@ -1363,7 +1594,17 @@
         <div class="by">— Salt Wellness Centre</div>
       </div>
     </div>
-    <div class="star-cta">
+        <div class="label" style="margin-top:34px;">The Gallery</div>
+    <h3>Inside the <em>space</em></h3>
+    <div class="gallery-grid"><img src="https://projectpemfwarrior.com/story-media/chelsea-salt-profile-picture.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-salt-main-1.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-salt-main-2.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-salt-bottom-6.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-salt-bottom-7.jpg" alt="Photo" onclick="window.open(this.src)">
+<img src="https://projectpemfwarrior.com/story-media/chelsea-salt-bottom-8.jpg" alt="Photo" onclick="window.open(this.src)">
+    </div>
+
+<div class="star-cta">
       <h3 style="margin-top:0;">Visit Salt Wellness</h3>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Float Therapy · Salt Therapy · South Surrey, BC.</p>
       <a class="btn-gold" href="https://saltwellness.ca" target="_blank">Visit Salt Wellness</a>
