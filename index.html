@@ -118,6 +118,27 @@
   .track li { font-size: 13px; color: var(--ink-soft); padding: 6px 0 6px 18px; position: relative; line-height: 1.55; }
   .track li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
 
+  /* DROPDOWNS */
+  .dropdown-group { margin-top: 30px; display: flex; flex-direction: column; gap: 12px; }
+  .dropdown-item { border: 1px solid var(--line); border-radius: 8px; background: var(--white); overflow: hidden; }
+  .dropdown-head {
+    width: 100%; display: flex; align-items: center; gap: 14px; padding: 18px 22px;
+    background: var(--white); border: none; cursor: pointer; text-align: left;
+    font-family: var(--sans); transition: background 0.2s;
+  }
+  .dropdown-head:hover { background: var(--cream-2); }
+  .dropdown-head .dd-icon { font-size: 22px; }
+  .dropdown-head .dd-title { font-family: var(--display); font-size: 18px; font-weight: 600; color: var(--ink); min-width: 130px; }
+  .dropdown-head .dd-sub { font-size: 12.5px; color: var(--muted); flex: 1; }
+  .dropdown-head .dd-arrow { font-size: 14px; color: var(--teal); transition: transform 0.25s; }
+  .dropdown-item.open .dd-arrow { transform: rotate(180deg); }
+  .dropdown-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .dropdown-item.open .dropdown-body { max-height: 600px; }
+  .dropdown-body ul { list-style: none; padding: 0 22px 20px 22px; border-top: 1px solid var(--line); }
+  .dropdown-body li { font-size: 13.5px; color: var(--ink-soft); padding: 8px 0 8px 20px; position: relative; line-height: 1.6; }
+  .dropdown-body li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
+  .dropdown-body .btn-gold { margin: 0 0 20px 22px; }
+
   /* GRANTS TABLE */
   .grant-table { width: 100%; border-collapse: collapse; margin-top: 26px; background: var(--white); border-radius: 6px; overflow: hidden; border: 1px solid var(--line); }
   .grant-table th { text-align: left; padding: 14px 16px; background: var(--cream-2); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
@@ -473,69 +494,106 @@
   <section>
     <div class="label">Our Partners</div>
     <h2>We don't do this <em>alone</em></h2>
-    <p class="lead">From Osoyoos to the Lower Mainland, these clinics, businesses, and community organizations have stood with us through the documentary, the movie, and the mission.</p>
+    <p class="lead">From Osoyoos to the Lower Mainland, these clinics, businesses, resorts, and community organizations have stood with us through the documentary, the movie, and the mission.</p>
     <div class="partner-grid">
+      <div class="partner"><img src="https://southokanaganphysio.com/wp-content/uploads/logo-pos.svg" alt="South Okanagan Physiotherapy — Osoyoos"></div>
+      <div class="partner"><img src="https://mapleleafgreenery.ca/wp-content/uploads/2021/06/20191101-Maple-Leaf-Greenery_Logo.jpg" alt="Maple Leaf Greenery — Osoyoos"></div>
+      <div class="partner"><img src="https://www.newwestcity.ca/images/NW_logo_primary-2C.svg" alt="City of New Westminster"></div>
+      <div class="partner"><img src="https://numode.ca/wp-content/uploads/2026/08/numode-logo-header-600.png" alt="Numode Delivery"></div>
+      <div class="partner"><img src="https://static.wixstatic.com/media/8d7ff8_8087872b25a346e7b980bf45cdc6cb72~mv2.png" alt="Similkameen Valley Resort — Cawston"></div>
       <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/fe43e23d-dbcb-4c01-adb8-64ea77768c37/catalyst.jpg" alt="Catalyst"></div>
       <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/37cf3219-01f5-4a85-954c-c657699e7d0f/semiahmoo-logo.jpg" alt="Semiahmoo Athletic Club"></div>
       <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/721c4f23-8fcf-4e04-9f15-e95c4b49dcf2/float-house.jpg" alt="Float House Surrey"></div>
       <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/bae3f68e-5748-47d3-a990-8a41971d417f/salt-wellness.jpg" alt="Salt Wellness Centre"></div>
-      <div class="partner text-only">South Okanagan Physiotherapy</div>
-      <div class="partner text-only">Greenleaf Cannabis</div>
-      <div class="partner text-only">Royal Canadian Legion</div>
-      <div class="partner text-only">City of New Westminster</div>
+      <div class="partner"><img src="https://projectpemfwarrior.com/pemf-warrior-logo.jpg" alt="PEMF Warrior"></div>
     </div>
   </section>
 
   <section class="alt-bg full">
     <div class="wrap">
-      <div class="label">Partnership Tracks</div>
+      <div class="label">What We're Looking For</div>
       <h2>Four ways to <em>stand with us</em></h2>
-      <p class="lead">We're not asking for cash. We're asking for alignment. Each track is built for real contribution — not just a logo on a page.</p>
-      <div class="grid4" style="grid-template-columns: repeat(2, 1fr);">
-        <div class="track">
-          <h4>Civic Partner</h4>
-          <div class="sub">Mayors, MLAs, councils, granting bodies</div>
-          <ul>
-            <li>City or municipality credited in the documentary as a civic partner</li>
-            <li>Logo placement in film credits, website, and community materials</li>
-            <li>Access to anonymized outcome data for policy and grant reporting</li>
-            <li>Co-branded community events — free wrestling shows, wellness clinics, town halls</li>
-            <li>Position your community as a leader in invisible disability innovation</li>
-            <li>Direct pipeline to 8+ disability advocacy groups</li>
-          </ul>
+      <p class="lead">We're not asking for cash. We're asking for alignment. Pick the track that fits what you bring — each one is built for real contribution, not just a logo on a page.</p>
+
+      <div class="dropdown-group">
+        <div class="dropdown-item">
+          <button class="dropdown-head" onclick="toggleDropdown(this)">
+            <span class="dd-icon">🏛️</span>
+            <span class="dd-title">Civic Partner</span>
+            <span class="dd-sub">Mayors, MLAs, councils, granting bodies</span>
+            <span class="dd-arrow">▾</span>
+          </button>
+          <div class="dropdown-body">
+            <ul>
+              <li>City or municipality credited in the documentary as a civic partner</li>
+              <li>Logo placement in film credits, website, and community materials</li>
+              <li>Access to anonymized outcome data for policy and grant reporting</li>
+              <li>Co-branded community events — free wrestling shows, wellness clinics, town halls</li>
+              <li>Position your community as a leader in invisible disability innovation</li>
+              <li>Direct pipeline to 8+ disability advocacy groups</li>
+            </ul>
+            <p style="margin-top:12px;"><a class="btn-gold" href="#" onclick="showPage('civic');return false;">For Mayors &amp; Civic Leaders →</a></p>
+          </div>
         </div>
-        <div class="track">
-          <h4>Device Partner</h4>
-          <div class="sub">Swiss Bionic, Prime Medical, recovery tech</div>
-          <ul>
-            <li>Your device powers the protocol — featured in documentary footage</li>
-            <li>Logo placement in film credits, website footer, event signage</li>
-            <li>Anonymized outcome data from the 90-day study for your R&amp;D</li>
-            <li>Exclusive listing in the Warrior World Business Directory</li>
-            <li>First right of refusal on live event sponsorships</li>
-          </ul>
+
+        <div class="dropdown-item">
+          <button class="dropdown-head" onclick="toggleDropdown(this)">
+            <span class="dd-icon">🔬</span>
+            <span class="dd-title">Device Partner</span>
+            <span class="dd-sub">Swiss Bionic, Prime Medical, recovery tech</span>
+            <span class="dd-arrow">▾</span>
+          </button>
+          <div class="dropdown-body">
+            <ul>
+              <li>Your device powers the protocol — featured in documentary footage</li>
+              <li>Logo placement in film credits, website footer, event signage</li>
+              <li>Anonymized outcome data from the 90-day study for your R&amp;D</li>
+              <li>Exclusive listing in the Warrior World Business Directory</li>
+              <li>First right of refusal on live event sponsorships</li>
+            </ul>
+          </div>
         </div>
-        <div class="track">
-          <h4>Facility Partner</h4>
-          <div class="sub">Gyms, float studios, stretch labs, ring spaces</div>
-          <ul>
-            <li>Your space becomes the proving ground — filmed and credited</li>
-            <li>Logo placement in film credits and partner grid</li>
-            <li>Featured on our website with backlink and full description</li>
-            <li>Anonymized outcome data for your own community proof</li>
-          </ul>
+
+        <div class="dropdown-item">
+          <button class="dropdown-head" onclick="toggleDropdown(this)">
+            <span class="dd-icon">🏋️</span>
+            <span class="dd-title">Facility Partner</span>
+            <span class="dd-sub">Gyms, float studios, stretch labs, ring spaces, resorts</span>
+            <span class="dd-arrow">▾</span>
+          </button>
+          <div class="dropdown-body">
+            <ul>
+              <li>Your space becomes the proving ground — filmed and credited</li>
+              <li>Logo placement in film credits and partner grid</li>
+              <li>Featured on our website with backlink and full description</li>
+              <li>Anonymized outcome data for your own community proof</li>
+              <li>First right of refusal on live event sponsorships in your region</li>
+            </ul>
+          </div>
         </div>
-        <div class="track">
-          <h4>Fuel Partner</h4>
-          <div class="sub">Clean meat, whole food, hydration, plant medicine</div>
-          <ul>
-            <li>Your product literally fuels the comeback — real usage, real results</li>
-            <li>Product placement in kitchen, training, and recovery scenes</li>
-            <li>Outcome data correlating nutrition with measurable gains</li>
-            <li>Co-branded social media showcasing your product in action</li>
-          </ul>
+
+        <div class="dropdown-item">
+          <button class="dropdown-head" onclick="toggleDropdown(this)">
+            <span class="dd-icon">🥗</span>
+            <span class="dd-title">Fuel Partner</span>
+            <span class="dd-sub">Clean meat, whole food, hydration, plant medicine</span>
+            <span class="dd-arrow">▾</span>
+          </button>
+          <div class="dropdown-body">
+            <ul>
+              <li>Your product literally fuels the comeback — real usage, real results</li>
+              <li>Product placement in kitchen, training, and recovery scenes</li>
+              <li>Outcome data correlating nutrition with measurable gains</li>
+              <li>Co-branded social media showcasing your product in action</li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      <p style="margin-top:32px;text-align:center;">
+        <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Become a Partner — Let's Talk</a>
+        <a class="btn-line" href="#" onclick="showPage('grants');return false;">View Our Grant Strategy</a>
+      </p>
     </div>
   </section>
 </div>
@@ -623,6 +681,13 @@ function showPage(name) {
   });
   document.getElementById('navTabs').classList.remove('open');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function toggleDropdown(btn) {
+  const item = btn.closest('.dropdown-item');
+  const wasOpen = item.classList.contains('open');
+  // Close all others
+  document.querySelectorAll('.dropdown-item.open').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
 }
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#', '');
