@@ -249,7 +249,15 @@
     <button class="active" data-page="home" onclick="showPage('home')">Home</button>
     <button data-page="story" onclick="showPage('story')">Our Story</button>
     <button data-page="documentary" onclick="showPage('documentary')">The Documentary</button>
-    <button data-page="proof" onclick="showPage('proof')">The Proof</button>
+    <div class="tab-wrap">
+      <button class="tab-top" data-group="proof" onclick="toggleSubmenu(event, this)">The Proof <span class="caret">▾</span></button>
+      <div class="submenu">
+        <button onclick="showPage('proof')"><span><span class="sub-t">The Proof</span><span class="sub-d">Results, receipts, and evidence</span></span></button>
+        <button onclick="showPage('proof-youtube')"><span><span class="sub-t">YouTube — PEMF Warrior</span><span class="sub-d">Daily episodes, filmed proof</span></span></button>
+        <button onclick="showPage('proof-app')"><span><span class="sub-t">The AI-Powered App</span><span class="sub-d">Athletes · sponsors · fans</span></span></button>
+        <button onclick="showPage('proof-testimonials')"><span><span class="sub-t">Athlete Testimonials</span><span class="sub-d">Real warriors, real words</span></span></button>
+      </div>
+    </div>
     <div class="tab-wrap">
       <button class="tab-top active" data-group="grants" onclick="toggleSubmenu(event, this)">Grants &amp; Funding <span class="caret">▾</span></button>
       <div class="submenu">
@@ -482,6 +490,224 @@
           <div class="cap">Cellular restoration — documented on camera, verified by practitioners.</div>
         </div>
       </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PROOF: YOUTUBE ============ -->
+<div class="page" id="page-proof-youtube">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('proof')">The Proof</button> / YouTube</div>
+    <div class="label">The Proof — On Camera</div>
+    <h2>YouTube: <em>PEMF Warrior</em></h2>
+    <p class="lead">Every session filmed. Every protocol documented. Every practitioner on camera. This is where the proof lives — daily episodes of the work at Warrior World, posted to the PEMF Warrior YouTube channel.</p>
+    <div style="text-align:center;margin:26px 0;">
+      <a class="btn-gold" href="https://www.youtube.com/@PEMFWarrior" target="_blank">Visit the PEMF Warrior Channel</a>
+      <a class="btn-line" href="https://www.youtube.com/@PEMFWarrior/videos" target="_blank">Browse All Videos</a>
+    </div>
+    <div class="chips" style="justify-content:center;margin-bottom:26px;">
+      <span class="chip">Daily Episodes</span>
+      <span class="chip">Filmed Proof</span>
+      <span class="chip">Practitioner Sessions</span>
+      <span class="chip">Protocols in Action</span>
+    </div>
+    <div class="video-list">
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/ggMJTYN9pCU?rel=0" title="RMT Austins Magic Hands Friday Aug 7th 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">RMT Austins Magic Hands Friday Aug 7th 2026</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/uTR4cu3TXHs?rel=0" title="Dr. Trents Magic Hands Aug 5th 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">Dr. Trents Magic Hands Aug 5th 2026</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/DhVVj9qNd3k?rel=0" title="Just Another Manny Monday Aug 3rd 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">Just Another Manny Monday Aug 3rd 2026</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/fbSwQp7xTnU?rel=0" title="PEMF Testimonial: Clint Prime Therapy Treatment July 31st [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Testimonial: Clint Prime Therapy Treatment July 31st [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/qmwRenpl7Vk?rel=0" title="PEMF Protocol: Packing Up Prime Units After House Call July 31st [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Packing Up Prime Units After House Call July 31st [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/9LUyNi6YcWs?rel=0" title="PEMF Protocol: Prime Therapy Treatment July 30th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Prime Therapy Treatment July 30th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/xUETP9otgok?rel=0" title="PEMF Protocol: Chelsy Prime Therapy Treatment July 25th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Chelsy Prime Therapy Treatment July 25th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/WpL9hhuHnec?rel=0" title="PEMF Protocol: Naturopath Appointment with Dr. Silvana July 29th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Naturopath Appointment with Dr. Silvana July 29th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/LQWiKzj9qj8?rel=0" title="PEMF Protocol: with Dr. Adham July 27th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: with Dr. Adham July 27th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/64AdD41LD3w?rel=0" title="PEMF Protocol: Manny Monday July 27th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Manny Monday July 27th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/i7SFzW1CvCM?rel=0" title="PEMF Testimonial: Jonnys Prime Experience July 21st [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Testimonial: Jonnys Prime Experience July 21st [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/UrkiF_egbs0?rel=0" title="PEMF Protocol: Koyabell Routine July 16th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Koyabell Routine July 16th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/YZ_bEE8ytQs?rel=0" title="PEMF Protocol: Bowflex Routine July 21st [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Bowflex Routine July 21st [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/7YqrULboDxY?rel=0" title="PEMF Protocol: Flow Session July 23rd [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Flow Session July 23rd [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/lXEZBvzZU9A?rel=0" title="PEMF Protocol: Naturopath Appointment with Dr. Silvana July 22nd [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Naturopath Appointment with Dr. Silvana July 22nd [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/ckaGGRpV1Qg?rel=0" title="PEMF Protocol: Manny Monday July 20th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Manny Monday July 20th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/5xn0ClkFbag?rel=0" title="PEMF Protocol: Front Squat Friday with Coach Austin July 17th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Front Squat Friday with Coach Austin July 17th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/gABn1lmX_-Y?rel=0" title="PEMF Protocol: RMT Austin Friday July 17th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: RMT Austin Friday July 17th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/d3LdmJNW1RU?rel=0" title="PEMF Protocol: with Dr. Trent July 15th 2026 [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: with Dr. Trent July 15th 2026 [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/hp7faKbirBY?rel=0" title="PEMF Protocol: Setting up the Prime Hybrid Medical Device [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Setting up the Prime Hybrid Medical Device [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/5hQ6-iYLMgc?rel=0" title="PEMF Protocol: Manny Monday July 13th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Manny Monday July 13th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/jAINnQVODHE?rel=0" title="PEMF Protocol: Princeys Phisio homework Saturday July 4th 2026 [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Princeys Phisio homework Saturday July 4th 2026 [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/axPBDCH5NQg?rel=0" title="PEMF Protocol: Princeys Monday home workout July 6th 2026 [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Princeys Monday home workout July 6th 2026 [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/1Y_tOd-RXWE?rel=0" title="PEMF Protocol: Princeys morning routine Friday July 10th 2026 [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Princeys morning routine Friday July 10th 2026 [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/P6-35RUN-hc?rel=0" title="PEMF Protocol: Phisio Homework Saturday July 11th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Phisio Homework Saturday July 11th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/N8bCk7Qovtw?rel=0" title="PEMF Protocol: Float House Session Friday July 10th [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: Float House Session Friday July 10th [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/K8J5deVf7jI?rel=0" title="PEMF Protocol: with RMT Austin Friday July 10th 2026 [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: with RMT Austin Friday July 10th 2026 [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/N5wRVfrF8sw?rel=0" title="PEMF Protocol: with Dr. Trent Wednesday July 8th 2026 [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: with Dr. Trent Wednesday July 8th 2026 [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/1iGOqyyN9Ds?rel=0" title="PEMF Protocol: with Austin RMT Friday July 3rd 2026 [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: with Austin RMT Friday July 3rd 2026 [Project PEMF Warrior]</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/3bfDfQSZVtY?rel=0" title="PEMF Protocol: with Manny Monday July 6th 2026 [Project PEMF Warrior]" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-title">PEMF Protocol: with Manny Monday July 6th 2026 [Project PEMF Warrior]</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PROOF: APP ============ -->
+<div class="page" id="page-proof-app">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('proof')">The Proof</button> / The AI-Powered App</div>
+    <div class="label">The Proof — Community &amp; Tech</div>
+    <h2>The AI-Powered <em>PEMF Warrior App</em></h2>
+    <p class="lead">One community. Three groups. AI-powered everything. The app is where warriors, practitioners, sponsors, and fans come together to prove what's possible.</p>
+
+    <div class="grid3" style="margin-top:30px;">
+      <div class="card"><div class="big">🏃</div><div class="t">For Athletes &amp; Warriors</div><div class="d">The ones willing to get in front of the camera, do the work, take on the challenges, and build real proof. Their journey, tracked and documented.</div></div>
+      <div class="card"><div class="big">🤝</div><div class="t">For Practitioners &amp; Sponsors</div><div class="d">The businesses and practitioners who support the warriors. Featured in the directory, connected to the community, visible in every challenge.</div></div>
+      <div class="card"><div class="big">🎉</div><div class="t">For Fans of Recovery</div><div class="d">The believers in recovery-as-training. The ones who watch the proof, cheer the warriors, and spread the mission.</div></div>
+    </div>
+
+    <h3 style="margin-top:34px;">What's Inside</h3>
+    <div class="grid4">
+      <div class="card"><div class="t">🤖 AI-Generated Everything</div><div class="d">The entire platform is AI-powered — content, coaching, and community built by the machine, guided by the mission.</div></div>
+      <div class="card"><div class="t">🏪 Business Directory</div><div class="d">Practitioners, clinics, and sponsors listed and discoverable — the Warrior World business ecosystem.</div></div>
+      <div class="card"><div class="t">🎓 AI Coaching &amp; Courses</div><div class="d">Protocol courses, coaching tracks, and educational content powered by AI and built on real data.</div></div>
+      <div class="card"><div class="t">🏆 Challenges</div><div class="d">Structured challenges that turn recovery into measurable, documented, shareable proof.</div></div>
+      <div class="card"><div class="t">🛍️ Our Store</div><div class="d">Warrior World gear and products — funding the mission with every purchase.</div></div>
+      <div class="card"><div class="t">📺 Our TV Network</div><div class="d">PEMF TV — our own streaming network for episodes, documentaries, and community content.</div></div>
+      <div class="card"><div class="t">📊 Progress Tracking</div><div class="d">Warriors track every session, every metric, every result — the data that becomes proof.</div></div>
+      <div class="card"><div class="t">❤️ A Real Community</div><div class="d">Athletes, practitioners, sponsors, and fans — all in one place, all believing in what's possible.</div></div>
+    </div>
+
+    <div style="background:var(--teal-soft);border:1px solid var(--teal);border-radius:8px;padding:28px;margin-top:30px;text-align:center;">
+      <h3 style="margin-top:0;color:var(--teal);">Proof creates change.</h3>
+      <p style="font-size:14.5px;color:var(--ink-soft);max-width:640px;margin:0 auto 18px;">The app is the engine of that change — a community built to prove what a body with invisible disabilities can actually do.</p>
+      <a class="btn-gold" href="https://pemfwarrior.shop" target="_blank">Visit the Ecosystem</a>
+      <a class="btn-line" href="https://pemftv.com" target="_blank">Watch PEMF TV</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PROOF: TESTIMONIALS ============ -->
+<div class="page" id="page-proof-testimonials">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('proof')">The Proof</button> / Athlete Testimonials</div>
+    <div class="label">The Proof — Real Warriors, Real Words</div>
+    <h2>Athlete <em>Testimonials</em></h2>
+    <p class="lead">These aren't scripts. These are real people, on camera, telling you what the protocol did for them. Every testimonial is documented proof.</p>
+
+    <div class="video-list" style="margin-top:26px;">
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/fbSwQp7xTnU?rel=0" title="PEMF Testimonial: Clint Prime Therapy Treatment" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">July 31, 2026</div><div class="vid-title">PEMF Testimonial: Clint — Prime Therapy Treatment</div></div>
+      </div>
+      <div class="video-card">
+        <div class="vid-frame"><iframe src="https://www.youtube.com/embed/i7SFzW1CvCM?rel=0" title="PEMF Testimonial: Jonny's Prime Experience" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="vid-info"><div class="vid-date">July 21, 2026</div><div class="vid-title">PEMF Testimonial: Jonny — Prime Experience</div></div>
+      </div>
+    </div>
+
+    <div class="grid3" style="margin-top:34px;">
+      <div class="card" style="border-left:4px solid var(--teal);">
+        <div class="t" style="font-family:var(--display);font-size:18px;">💬 Clint's Words</div>
+        <div class="d" style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">"I didn't know what to expect. The first session changed how I think about recovery." <em>— Clint, on camera, July 31 2026</em></div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--gold);">
+        <div class="t" style="font-family:var(--display);font-size:18px;">💬 Jonny's Words</div>
+        <div class="d" style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">"This is next level. You feel it working — and you can see it on the data." <em>— Jonny, on camera, July 21 2026</em></div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--teal);">
+        <div class="t" style="font-family:var(--display);font-size:18px;">➕ More Coming</div>
+        <div class="d" style="font-size:13px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">New testimonials drop as warriors complete their challenges — watch the YouTube channel for the latest proof.</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:30px;">
+      <a class="btn-gold" href="#" onclick="showPage('proof-youtube');return false;">Watch All the Episodes</a>
+      <a class="btn-line" href="https://www.youtube.com/@PEMFWarrior" target="_blank">PEMF Warrior on YouTube</a>
     </div>
   </section>
 </div>
@@ -1893,7 +2119,8 @@ function showPage(name) {
     b.style.background = '';
   });
   // Highlight top-level nav for sub-pages
-  const groups = { 'grants': ['grants','grant-officials','grant-business','grant-indigenous'],
+  const groups = { 'proof': ['proof','proof-youtube','proof-app','proof-testimonials'],
+                   'grants': ['grants','grant-officials','grant-business','grant-indigenous'],
                    'partners': ['partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf'] };
   for (const [group, pages] of Object.entries(groups)) {
     if (pages.includes(name)) {
@@ -1926,7 +2153,7 @@ document.addEventListener('click', (ev) => {
 });
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#', '');
-  const valid = ['home','story','documentary','proof','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','contact'];
+  const valid = ['home','story','documentary','proof','proof-youtube','proof-app','proof-testimonials','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','contact'];
   if (hash && valid.includes(hash)) showPage(hash);
 });
 </script>
