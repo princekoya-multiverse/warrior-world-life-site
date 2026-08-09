@@ -7,144 +7,157 @@
 <meta name="description" content="Warrior World Health & Performance Society — AI-powered assistive technology, Health Canada-approved medical devices, and the first clinical documentary on invisible disability. Serving the 1-in-4 Canadians living with invisible disabilities.">
 <style>
   :root {
-    --bg: #0c0c10;
-    --surface: #14141a;
-    --surface2: #1c1c24;
-    --line: #26262f;
-    --gold: #c8a85a;
-    --gold-bright: #e6c87c;
-    --text: #e9e9ee;
-    --dim: #9a9aa8;
-    --muted: #5f5f6e;
-    --font: 'Georgia', 'Times New Roman', serif;
-    --sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --ink: #1c1c22;
+    --ink-soft: #3a3a44;
+    --cream: #faf8f2;
+    --cream-2: #f2efe6;
+    --teal: #2e7d74;
+    --teal-soft: #e3efec;
+    --gold: #b8943f;
+    --gold-soft: #f4ecd9;
+    --line: #e2ded2;
+    --muted: #6b6b74;
+    --white: #ffffff;
+    --display: 'Instrument Serif', 'Georgia', 'Times New Roman', serif;
+    --sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body { background: var(--cream); color: var(--ink); font-family: var(--sans); line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(12,12,16,0.94); backdrop-filter: blur(10px);
+    background: rgba(250,248,242,0.94); backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
     padding: 12px 32px;
     display: flex; align-items: center; justify-content: space-between;
   }
   nav .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  nav .logo img { height: 32px; width: auto; border-radius: 4px; }
-  nav .logo .name { font-family: var(--font); font-size: 16px; font-weight: 700; letter-spacing: 1px; color: var(--text); }
+  nav .logo img { height: 32px; width: auto; border-radius: 3px; }
+  nav .logo .name { font-family: var(--display); font-size: 19px; font-weight: 600; letter-spacing: 0.5px; color: var(--ink); }
   nav .logo .name small { display: block; font-family: var(--sans); font-size: 9px; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; }
-  nav .tabs { display: flex; gap: 4px; font-size: 13px; font-weight: 500; overflow-x: auto; }
+  nav .tabs { display: flex; gap: 2px; font-size: 13px; font-weight: 500; overflow-x: auto; }
   nav .tabs button {
-    background: none; border: none; color: var(--dim); cursor: pointer;
-    padding: 8px 14px; border-radius: 3px; font-family: var(--sans); font-size: 13px; font-weight: 500;
+    background: none; border: none; color: var(--muted); cursor: pointer;
+    padding: 8px 13px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 500;
     white-space: nowrap; transition: all 0.2s;
   }
-  nav .tabs button:hover { color: var(--text); }
-  nav .tabs button.active { color: var(--gold); background: rgba(200,168,90,0.1); }
-  .menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--text); font-size: 18px; padding: 4px 12px; cursor: pointer; }
+  nav .tabs button:hover { color: var(--ink); background: var(--cream-2); }
+  nav .tabs button.active { color: var(--teal); background: var(--teal-soft); font-weight: 600; }
+  .menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--ink); font-size: 18px; padding: 4px 12px; cursor: pointer; border-radius: 4px; }
 
   /* PAGES */
-  .page { display: none; padding-top: 68px; }
+  .page { display: none; padding-top: 64px; }
   .page.active { display: block; }
-  section { padding: 84px 24px; max-width: 1120px; margin: 0 auto; }
-  .label { font-family: var(--sans); font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
-  h2 { font-family: var(--font); font-size: 36px; font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+  section { padding: 80px 24px; max-width: 1120px; margin: 0 auto; }
+  .label { font-family: var(--sans); font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--teal); margin-bottom: 10px; font-weight: 700; }
+  h2 { font-family: var(--display); font-size: 40px; font-weight: 600; line-height: 1.15; margin-bottom: 14px; }
   h2 em { color: var(--gold); font-style: italic; }
-  h3 { font-family: var(--font); font-size: 20px; font-weight: 700; margin: 24px 0 10px; }
-  .lead { font-size: 16px; color: var(--dim); max-width: 680px; line-height: 1.8; }
-  .btn-gold { display: inline-block; padding: 13px 28px; background: var(--gold); color: #0c0c10; font-size: 14px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.5px; }
+  h3 { font-family: var(--display); font-size: 22px; font-weight: 600; margin: 22px 0 10px; }
+  .lead { font-size: 16.5px; color: var(--ink-soft); max-width: 700px; line-height: 1.8; }
+  .btn-gold { display: inline-block; padding: 13px 28px; background: var(--teal); color: #fff; font-size: 14px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; letter-spacing: 0.5px; border-radius: 4px; transition: opacity 0.2s; }
   .btn-gold:hover { opacity: 0.88; }
-  .btn-line { display: inline-block; padding: 13px 28px; background: transparent; color: var(--text); font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); cursor: pointer; letter-spacing: 0.5px; }
-  .btn-line:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-line { display: inline-block; padding: 13px 28px; background: transparent; color: var(--ink); font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid var(--line); cursor: pointer; letter-spacing: 0.5px; border-radius: 4px; transition: all 0.2s; }
+  .btn-line:hover { border-color: var(--teal); color: var(--teal); }
 
-  /* HOME HERO */
-  #home-hero { min-height: 92vh; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0; max-width: 100%; }
+  /* HERO */
+  #home-hero { min-height: 88vh; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0; max-width: 100%; background: var(--ink); }
   #home-hero .photo { position: absolute; inset: 0; background-image: url('https://projectpemfwarrior.com/__l5e/assets-v1/7a4c3d07-79ae-4b61-b4a2-e42d5492ef40/champ-hero-kalari.jpg'); background-size: cover; background-position: center 20%; }
-  #home-hero .scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,12,16,0.35) 0%, rgba(12,12,16,0.55) 45%, rgba(12,12,16,0.97) 100%); }
-  .hero-inner { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; width: 100%; padding: 0 24px 70px; }
-  .hero-kicker { display: inline-block; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,168,90,0.4); padding: 6px 16px; border-radius: 2px; margin-bottom: 20px; background: rgba(12,12,16,0.5); }
-  .hero-inner h1 { font-family: var(--font); font-size: 50px; font-weight: 700; line-height: 1.1; margin-bottom: 16px; }
-  .hero-inner h1 .hl { color: var(--gold); font-style: italic; }
-  .hero-inner p { font-size: 17px; color: #d5d5dd; max-width: 560px; line-height: 1.75; margin-bottom: 26px; }
+  #home-hero .scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,26,0.4) 0%, rgba(20,20,26,0.55) 45%, rgba(20,20,26,0.94) 100%); }
+  .hero-inner { position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; width: 100%; padding: 0 24px 64px; }
+  .hero-kicker { display: inline-block; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #e6d9ae; border: 1px solid rgba(230,217,174,0.4); padding: 6px 16px; border-radius: 3px; margin-bottom: 20px; background: rgba(20,20,26,0.5); }
+  .hero-inner h1 { font-family: var(--display); font-size: 54px; font-weight: 600; line-height: 1.08; margin-bottom: 16px; color: #fff; }
+  .hero-inner h1 .hl { color: #e6d9ae; font-style: italic; }
+  .hero-inner p { font-size: 17px; color: #d5d5dc; max-width: 560px; line-height: 1.75; margin-bottom: 26px; }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-  .stats { max-width: 1120px; margin: -36px auto 0; padding: 0 24px; position: relative; z-index: 5; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .stat { background: var(--surface); border: 1px solid var(--line); padding: 20px; text-align: center; }
-  .stat .n { font-family: var(--font); font-size: 30px; font-weight: 700; color: var(--gold); }
-  .stat .l { font-size: 10.5px; color: var(--dim); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 2px; }
+  .stats { max-width: 1120px; margin: -32px auto 0; padding: 0 24px; position: relative; z-index: 5; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stat { background: var(--white); border: 1px solid var(--line); padding: 20px; text-align: center; border-radius: 6px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+  .stat .n { font-family: var(--display); font-size: 32px; font-weight: 600; color: var(--teal); }
+  .stat .l { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 2px; }
 
-  /* GRID HELPERS */
+  /* GRIDS */
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 28px; align-items: start; }
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
   .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
-  .photo-frame img { width: 100%; border-radius: 2px; border: 1px solid var(--line); display: block; }
+  .photo-frame img { width: 100%; border-radius: 6px; border: 1px solid var(--line); display: block; }
   .cap { font-size: 12px; color: var(--muted); margin-top: 8px; font-style: italic; }
-  .body-copy p { font-size: 15px; color: var(--dim); margin-bottom: 16px; line-height: 1.85; }
-  .body-copy p strong { color: var(--text); font-weight: 600; }
-  .quote { border-left: 2px solid var(--gold); padding: 16px 24px; margin: 22px 0; background: var(--surface2); }
-  .quote p { font-family: var(--font); font-size: 17px; font-style: italic; color: var(--text); margin-bottom: 6px; }
+  .body-copy p { font-size: 15px; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.85; }
+  .body-copy p strong { color: var(--ink); font-weight: 600; }
+  .quote { border-left: 3px solid var(--teal); padding: 16px 24px; margin: 22px 0; background: var(--white); border-radius: 0 6px 6px 0; }
+  .quote p { font-family: var(--display); font-size: 18px; font-style: italic; color: var(--ink); margin-bottom: 6px; }
   .quote .by { font-size: 12px; color: var(--muted); }
 
   /* CARDS */
-  .card { background: var(--surface); border: 1px solid var(--line); padding: 26px; }
-  .card .big { font-family: var(--font); font-size: 36px; font-weight: 700; color: var(--gold); }
-  .card .t { font-size: 14px; font-weight: 600; color: var(--text); margin: 4px 0 6px; }
-  .card .d { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
-  .card h4 { font-family: var(--font); font-size: 17px; margin-bottom: 6px; }
+  .card { background: var(--white); border: 1px solid var(--line); padding: 26px; border-radius: 6px; }
+  .card .big { font-family: var(--display); font-size: 38px; font-weight: 600; color: var(--teal); }
+  .card .t { font-size: 14px; font-weight: 700; color: var(--ink); margin: 4px 0 6px; }
+  .card .d { font-size: 12.5px; color: var(--muted); line-height: 1.65; }
+  .card h4 { font-family: var(--display); font-size: 18px; margin-bottom: 6px; }
 
   /* BANNER */
-  .banner { position: relative; margin-top: 30px; overflow: hidden; border: 1px solid var(--line); border-radius: 2px; }
+  .banner { position: relative; margin-top: 30px; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; }
   .banner img { width: 100%; display: block; }
-  .banner .overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,12,16,0.92) 0%, rgba(12,12,16,0.6) 55%, rgba(12,12,16,0.15) 100%); display: flex; align-items: center; }
+  .banner .overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(250,248,242,0.97) 0%, rgba(250,248,242,0.85) 45%, rgba(250,248,242,0.1) 100%); display: flex; align-items: center; }
   .banner .txt { max-width: 540px; padding: 40px; }
-  .banner .txt h3 { font-family: var(--font); font-size: 24px; font-weight: 700; margin: 0 0 10px; }
-  .banner .txt p { font-size: 14px; color: #c5c5d0; line-height: 1.7; margin-bottom: 14px; }
+  .banner .txt h3 { font-family: var(--display); font-size: 26px; font-weight: 600; margin: 0 0 10px; }
+  .banner .txt p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 14px; }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip { padding: 4px 12px; border: 1px solid rgba(200,168,90,0.35); font-size: 10.5px; color: var(--gold); letter-spacing: 0.5px; text-transform: uppercase; }
+  .chip { padding: 5px 13px; border: 1px solid var(--teal); background: var(--teal-soft); font-size: 11px; color: var(--teal); letter-spacing: 0.5px; text-transform: uppercase; border-radius: 20px; font-weight: 600; }
 
   /* PARTNERS */
   .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
-  .partner { border: 1px solid var(--line); background: var(--bg); padding: 20px; display: flex; align-items: center; justify-content: center; min-height: 88px; }
-  .partner img { max-width: 100%; max-height: 50px; object-fit: contain; filter: grayscale(0.4); opacity: 0.85; transition: all 0.2s; }
+  .partner { border: 1px solid var(--line); background: var(--white); padding: 22px; display: flex; align-items: center; justify-content: center; min-height: 92px; border-radius: 6px; }
+  .partner img { max-width: 100%; max-height: 52px; object-fit: contain; filter: grayscale(0.3); opacity: 0.8; transition: all 0.2s; }
   .partner:hover img { filter: none; opacity: 1; }
-  .partner.text-only { font-family: var(--font); font-size: 14px; color: var(--dim); text-align: center; font-style: italic; }
-  .track { border: 1px solid var(--line); background: var(--surface); padding: 26px; }
-  .track h4 { font-family: var(--font); font-size: 18px; margin-bottom: 4px; }
-  .track .sub { font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .partner.text-only { font-family: var(--display); font-size: 15px; color: var(--ink-soft); text-align: center; font-style: italic; }
+  .track { border: 1px solid var(--line); background: var(--white); padding: 26px; border-radius: 6px; }
+  .track h4 { font-family: var(--display); font-size: 19px; margin-bottom: 4px; }
+  .track .sub { font-size: 11px; color: var(--teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 700; }
   .track ul { list-style: none; }
-  .track li { font-size: 13px; color: var(--dim); padding: 6px 0 6px 18px; position: relative; line-height: 1.55; }
-  .track li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+  .track li { font-size: 13px; color: var(--ink-soft); padding: 6px 0 6px 18px; position: relative; line-height: 1.55; }
+  .track li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
+
+  /* GRANTS TABLE */
+  .grant-table { width: 100%; border-collapse: collapse; margin-top: 26px; background: var(--white); border-radius: 6px; overflow: hidden; border: 1px solid var(--line); }
+  .grant-table th { text-align: left; padding: 14px 16px; background: var(--cream-2); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+  .grant-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); font-size: 13.5px; vertical-align: top; }
+  .grant-table tr:last-child td { border-bottom: none; }
+  .grant-table .amt { font-weight: 700; color: var(--teal); white-space: nowrap; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .badge.target { background: var(--gold-soft); color: var(--gold); }
+  .badge.applied { background: var(--teal-soft); color: var(--teal); }
 
   /* TEAM */
-  .member { border: 1px solid var(--line); background: var(--surface); overflow: hidden; }
+  .member { border: 1px solid var(--line); background: var(--white); overflow: hidden; border-radius: 6px; }
   .member img { width: 100%; height: 220px; object-fit: cover; display: block; }
   .member .info { padding: 16px; }
-  .member .name { font-family: var(--font); font-size: 16px; font-weight: 700; }
-  .member .role { font-size: 12px; color: var(--gold); margin: 2px 0 6px; }
-  .member .bio { font-size: 12.5px; color: var(--dim); line-height: 1.6; }
+  .member .name { font-family: var(--display); font-size: 17px; font-weight: 600; }
+  .member .role { font-size: 12px; color: var(--teal); margin: 2px 0 6px; font-weight: 600; }
+  .member .bio { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
 
   /* CONTACT */
   .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; }
-  .contact { border: 1px solid var(--line); padding: 24px; background: var(--surface); }
+  .contact { border: 1px solid var(--line); padding: 24px; background: var(--white); border-radius: 6px; }
   .contact .l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
-  .contact .v { font-size: 15px; font-weight: 600; color: var(--text); text-decoration: none; display: block; margin-top: 4px; }
+  .contact .v { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; display: block; margin-top: 4px; }
 
-  footer { border-top: 1px solid var(--line); padding: 34px 24px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); padding: 34px 24px; text-align: center; font-size: 12px; color: var(--muted); background: var(--white); }
   footer .legal { font-size: 11px; margin-top: 6px; color: var(--muted); }
 
-  .alt-bg { background: var(--surface); }
+  .alt-bg { background: var(--cream-2); }
   .full { max-width: 100%; }
   .wrap { max-width: 1120px; margin: 0 auto; }
 
   @media (max-width: 800px) {
     nav .tabs { display: none; }
     .menu-btn { display: block; }
-    nav .tabs.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--surface); border-bottom: 1px solid var(--line); padding: 10px; }
-    .hero-inner h1 { font-size: 34px; }
+    nav .tabs.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--cream); border-bottom: 1px solid var(--line); padding: 10px; }
+    .hero-inner h1 { font-size: 36px; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .grid2, .grid3, .grid4, .partner-grid, .contact-grid { grid-template-columns: 1fr; }
-    h2 { font-size: 27px; }
+    h2 { font-size: 29px; }
+    .grant-table { font-size: 12px; }
   }
 </style>
 </head>
@@ -153,16 +166,17 @@
 <nav>
   <a class="logo" href="#" onclick="showPage('home');return false;">
     <img src="https://projectpemfwarrior.com/pemf-warrior-logo.jpg" alt="Warrior World">
-    <div class="name">Warrior World<small>Empowering the 1-in-4</small></div>
+    <div class="name">Warrior World<small>Health &amp; Performance Society</small></div>
   </a>
   <div class="tabs" id="navTabs">
     <button class="active" data-page="home" onclick="showPage('home')">Home</button>
     <button data-page="story" onclick="showPage('story')">Our Story</button>
     <button data-page="documentary" onclick="showPage('documentary')">The Documentary</button>
     <button data-page="proof" onclick="showPage('proof')">The Proof</button>
+    <button data-page="grants" onclick="showPage('grants')">Grants &amp; Funding</button>
     <button data-page="protocols" onclick="showPage('protocols')">Protocols</button>
     <button data-page="partners" onclick="showPage('partners')">Partners</button>
-    <button data-page="civic" onclick="showPage('civic')">For Mayors &amp; Civic Leaders</button>
+    <button data-page="civic" onclick="showPage('civic')">For Civic Leaders</button>
     <button data-page="contact" onclick="showPage('contact')">Contact</button>
   </div>
   <button class="menu-btn" onclick="document.getElementById('navTabs').classList.toggle('open')">☰</button>
@@ -179,7 +193,7 @@
       <p>Warrior World uses AI-powered assistive technology and Health Canada-approved medical devices to help people with invisible disabilities go from surviving to thriving — and we prove it on camera.</p>
       <div class="hero-ctas">
         <a class="btn-gold" href="#" onclick="showPage('story');return false;">Our Story</a>
-        <a class="btn-line" href="#" onclick="showPage('partners');return false;">Who We Partner With</a>
+        <a class="btn-line" href="#" onclick="showPage('grants');return false;">View Our Grant Strategy</a>
       </div>
     </div>
   </section>
@@ -192,12 +206,12 @@
 
   <section>
     <div class="label">Who We Are</div>
-    <h2>We prove that recovery is <em>possible</em></h2>
-    <p class="lead">Warrior World is a BC non-profit society using AI-powered assistive technology, Health Canada-approved medical devices, and radical documentary proof to help the 1-in-4 Canadians living with invisible disabilities go from surviving to thriving.</p>
+    <h2>A BC non-profit proving that recovery is <em>possible</em></h2>
+    <p class="lead">Warrior World Health &amp; Performance Society uses AI-powered assistive technology, Health Canada-approved medical devices, and radical documentary proof to serve the 1-in-4 Canadians living with invisible disabilities.</p>
     <div class="grid3">
-      <div class="card"><div class="big">🤖</div><div class="t">AI-Powered Platform</div><div class="d">Machine learning tools that coach warriors daily, track biometrics, and reduce the cognitive load of managing multiple invisible disabilities.</div></div>
-      <div class="card"><div class="big">🔬</div><div class="t">Health Canada Approved</div><div class="d">Class II medical devices. Swiss engineered. 284 conditions in peer-reviewed research. Every session logged with full clinical traceability.</div></div>
-      <div class="card"><div class="big">🎬</div><div class="t">Clinical Documentary</div><div class="d">The world's first clinical documentary on invisible disability — 90 days, 8 conditions, every session filmed, every metric public.</div></div>
+      <div class="card"><div class="big">AI</div><div class="t">AI-Powered Platform</div><div class="d">Machine learning tools that coach warriors daily, track biometrics, and reduce the cognitive load of managing multiple invisible disabilities.</div></div>
+      <div class="card"><div class="big">HC</div><div class="t">Health Canada Approved</div><div class="d">Class II medical devices. Swiss engineered. 284 conditions in peer-reviewed research. Every session logged with full clinical traceability.</div></div>
+      <div class="card"><div class="big">90</div><div class="t">Days of Clinical Proof</div><div class="d">The world's first clinical documentary on invisible disability — every session filmed, every metric public, no editing, no spin.</div></div>
     </div>
   </section>
 </div>
@@ -214,8 +228,8 @@
       </div>
       <div class="body-copy">
         <p><strong>January 2021. A morning of hope. A moment that split life into before and after.</strong></p>
-        <p>Prince and Chelsy were driving through Osoyoos when a catastrophic crash on <strong>Anarchist Mountain</strong> changed everything. Chelsy fractured her hip in three places. The doctors' prognosis was brutal: she would be lucky to stand — let alone walk.</p>
-        <p>They said <strong>98% of patients her age end up hooked on opiates</strong>. They said she'd never walk normally again.</p>
+        <p>Prince and Chelsy were driving through Osoyoos when a catastrophic crash on <strong>Anarchist Mountain</strong> changed everything. Chelsy fractured her hip in three places.</p>
+        <p>The doctors' prognosis was brutal: she would be lucky to stand — let alone walk. They said <strong>98% of patients her age end up hooked on opiates</strong>. They said she'd never walk normally again.</p>
         <p>Prince refused to accept that prognosis. He brought the Prime Medical Device into the hospital room. PEMF therapy. Plant medicine. Alkalized water. Bolstered protocols.</p>
         <p><strong>She was off all narcotics in five days.</strong></p>
         <p>The City of New Westminster raised over <strong>$10,000</strong> for Chelsy's recovery. A movement was born.</p>
@@ -288,22 +302,6 @@
       </div>
     </div>
   </section>
-
-  <section>
-    <div class="label">Filmed Across BC</div>
-    <h2>Proof gathered <em>everywhere</em></h2>
-    <p class="lead">Years of filming — New Westminster, Whistler, the Okanagan, the Lower Mainland — gathering proof that a body with eight invisible disabilities can still come back.</p>
-    <div class="grid2">
-      <div class="photo-frame">
-        <img src="https://pemf.cool/assets/clinical-detail-ZThfZdlK.jpg" alt="Clinical detail">
-        <div class="cap">Clinical detail — every session logged with device settings, frequencies, and durations.</div>
-      </div>
-      <div class="photo-frame">
-        <img src="https://pemf.cool/assets/case-study-visual-UIPgJKL6.jpg" alt="Case study visual">
-        <div class="cap">Real case studies — documented, verified, and public.</div>
-      </div>
-    </div>
-  </section>
 </div>
 
 <!-- ============ PROOF ============ -->
@@ -341,6 +339,67 @@
           <img src="https://projectpemfwarrior.com/__l5e/assets-v1/0ac9b4e8-eebf-4b5b-ab23-0145567be396/prince-pemf-happy.jpg" alt="Prince on the PEMF device">
           <div class="cap">Cellular restoration — documented on camera, verified by practitioners.</div>
         </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ GRANTS ============ -->
+<div class="page" id="page-grants">
+  <section>
+    <div class="label">Grants &amp; Funding</div>
+    <h2>A grant-ready <em>organization</em></h2>
+    <p class="lead">Every program we run has a corresponding grant pathway. We don't ask for charity — we ask for investment in a proven, scalable model that serves the 1-in-4 Canadians living with invisible disabilities. As a BC non-profit society, we're eligible for federal, provincial, and municipal funding.</p>
+
+    <div class="grid3" style="margin-top:30px;">
+      <div class="card"><div class="big">$2M+</div><div class="t">Total Grant Target</div><div class="d">Across federal, provincial, and municipal programs — plus Indigenous health funding streams.</div></div>
+      <div class="card"><div class="big">22+</div><div class="t">Grant Programs Identified</div><div class="d">AI innovation, accessibility, disability tech, film production, community health, and sport.</div></div>
+      <div class="card"><div class="big">35%</div><div class="t">SR&amp;ED Tax Credits</div><div class="d">Refundable credit on AI and R&amp;D spending — cash back on every dollar we invest in technology.</div></div>
+    </div>
+
+    <h3>Active Grant Strategy</h3>
+    <table class="grant-table">
+      <tr><th>Program</th><th>Source</th><th>Amount</th><th>Status</th><th>Use of Funds</th></tr>
+      <tr>
+        <td><strong>Accessible Technology Program</strong></td><td>Federal / ISED</td><td class="amt">$75K - $1.5M</td><td><span class="badge target">Targeting</span></td>
+        <td>AI-powered assistive technology for invisible disabilities</td>
+      </tr>
+      <tr>
+        <td><strong>NRC IRAP</strong></td><td>Federal / NRC</td><td class="amt">$50K - $1M</td><td><span class="badge target">Targeting</span></td>
+        <td>R&amp;D on the AI platform and recovery tracking</td>
+      </tr>
+      <tr>
+        <td><strong>Enabling Accessibility Fund</strong></td><td>Federal / ESDC</td><td class="amt">Up to $200K</td><td><span class="badge target">Targeting</span></td>
+        <td>Warrior House renovation — barrier-free treatment space</td>
+      </tr>
+      <tr>
+        <td><strong>BC Community Gaming — Capital</strong></td><td>BC Government</td><td class="amt">$20K - $250K</td><td><span class="badge target">Targeting</span></td>
+        <td>Treatment equipment and facility upgrades</td>
+      </tr>
+      <tr>
+        <td><strong>Creative BC Production</strong></td><td>BC / Creative BC</td><td class="amt">$50K - $200K</td><td><span class="badge target">Targeting</span></td>
+        <td>Documentary post-production and distribution</td>
+      </tr>
+      <tr>
+        <td><strong>Canada Digital Adoption (CDAP)</strong></td><td>Federal / ISED</td><td class="amt">$15K + $100K loan</td><td><span class="badge target">Targeting</span></td>
+        <td>Digital infrastructure and AI adoption</td>
+      </tr>
+      <tr>
+        <td><strong>Indigenous Health Equity</strong></td><td>Health Canada / ISC</td><td class="amt">$50K - $500K</td><td><span class="badge target">Targeting</span></td>
+        <td>Medicine-wheel-aligned care for Indigenous communities</td>
+      </tr>
+      <tr>
+        <td><strong>SR&amp;ED Tax Credits</strong></td><td>Federal / CRA</td><td class="amt">35% of R&amp;D</td><td><span class="badge target">Targeting</span></td>
+        <td>Cash back on AI development spending</td>
+      </tr>
+    </table>
+
+    <div style="background:var(--teal-soft);border:1px solid var(--teal);border-radius:8px;padding:28px;margin-top:28px;">
+      <h3 style="margin-top:0;color:var(--teal);">Why fund Warrior World?</h3>
+      <div class="grid3" style="margin-top:10px;">
+        <div class="card"><div class="t">✅ Proof, not promises</div><div class="d">75% pain reduction in one session. 6-week recovery vs 6-month prognosis. Verified by licensed practitioners, documented on camera.</div></div>
+        <div class="card"><div class="t">✅ Regulated technology</div><div class="d">Health Canada Class II approved devices. FDA and EU MDR certified. 284 conditions in peer-reviewed research.</div></div>
+        <div class="card"><div class="t">✅ Community backing</div><div class="d">11+ partners across BC. City of New Westminster raised $10K+ for our founder's family. A proven community builder.</div></div>
       </div>
     </div>
   </section>
@@ -508,7 +567,7 @@
       <div class="contact"><div class="l">HQ</div><span class="v">Clayton Heights, BC</span></div>
     </div>
     <div style="margin-top:40px;">
-      <h3 style="font-family:var(--font);font-size:18px;">The Ecosystem</h3>
+      <h3 style="font-family:var(--display);font-size:18px;">The Ecosystem</h3>
       <div class="chips" style="justify-content:center;margin-top:14px;">
         <a class="chip" style="text-decoration:none;padding:8px 16px;" href="https://projectpemfwarrior.com">Project PEMF Warrior</a>
         <a class="chip" style="text-decoration:none;padding:8px 16px;" href="https://pemfmovie.com">PEMF Movie</a>
@@ -536,10 +595,9 @@ function showPage(name) {
   document.getElementById('navTabs').classList.remove('open');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-// Deep-link support: #story opens the story tab
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#', '');
-  const valid = ['home','story','documentary','proof','protocols','partners','civic','contact'];
+  const valid = ['home','story','documentary','proof','grants','protocols','partners','civic','contact'];
   if (hash && valid.includes(hash)) showPage(hash);
 });
 </script>
