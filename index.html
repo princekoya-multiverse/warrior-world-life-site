@@ -114,20 +114,11 @@
   .btn-line { display: inline-block; padding: 13px 28px; background: transparent; color: var(--ink); font-size: 14px; font-weight: 500; text-decoration: none; border: 1px solid var(--line); cursor: pointer; letter-spacing: 0.5px; border-radius: 4px; transition: all 0.2s; }
   .btn-line:hover { border-color: var(--teal); color: var(--teal); }
 
-  /* HERO SLIDER */
-  .slider { position: relative; width: 100%; min-height: 88vh; overflow: hidden; background: var(--ink); }
-  .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; display: flex; align-items: flex-end; }
-  .slide.active { opacity: 1; z-index: 2; }
-  .slide .photo { position: absolute; inset: 0; background-size: cover; background-position: center 20%; }
-  .slide .scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,26,0.4) 0%, rgba(20,20,26,0.55) 45%, rgba(20,20,26,0.94) 100%); }
-  .slide .hero-inner { position: relative; z-index: 3; max-width: 1120px; margin: 0 auto; width: 100%; padding: 0 24px 64px; }
-  .slider-nav { position: absolute; bottom: 28px; right: 32px; z-index: 10; display: flex; gap: 8px; }
-  .slider-dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.5); background: transparent; cursor: pointer; padding: 0; transition: all 0.3s; }
-  .slider-dot.active { background: #e6d9ae; border-color: #e6d9ae; }
-  .slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(20,20,26,0.5); border: 1px solid rgba(255,255,255,0.2); color: #fff; width: 44px; height: 44px; border-radius: 50%; font-size: 18px; cursor: pointer; transition: all 0.3s; }
-  .slider-arrow:hover { background: rgba(20,20,26,0.8); }
-  .slider-arrow.prev { left: 24px; }
-  .slider-arrow.next { right: 24px; }
+  /* HERO (static) */
+  .hero-static { position: relative; min-height: 92vh; display: flex; align-items: flex-end; overflow: hidden; background: var(--ink); }
+  .hero-static .photo { position: absolute; inset: 0; background-size: cover; background-position: center 25%; }
+  .hero-static .scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,26,0.35) 0%, rgba(20,20,26,0.5) 50%, rgba(20,20,26,0.94) 100%); }
+  .hero-static .hero-inner { position: relative; z-index: 3; max-width: 1120px; margin: 0 auto; width: 100%; padding: 0 24px 72px; }
   .fab5 { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
   .fab5-item { width: 84px; text-align: center; cursor: pointer; transition: transform 0.2s; }
   .fab5-item:hover { transform: translateY(-4px); }
@@ -294,14 +285,15 @@
   </a>
   <div class="tabs" id="navTabs">
     <button class="active" data-page="home" onclick="showPage('home')">Home</button>
-    <button data-page="about" onclick="showPage('about')">About Us</button>
     <div class="tab-wrap">
-      <button class="tab-top" data-group="story" onclick="toggleSubmenu(event, this)">Our Story <span class="caret">▾</span></button>
+      <button class="tab-top" data-group="about" onclick="toggleSubmenu(event, this)">About Us <span class="caret">▾</span></button>
       <div class="submenu">
+        <button onclick="showPage('about')"><span><span class="sub-t">The Society</span><span class="sub-d">Mission, purpose, governance</span></span></button>
         <button onclick="showPage('story')"><span><span class="sub-t">Our Story</span><span class="sub-d">The mission in one page</span></span></button>
         <button onclick="showPage('story-chelsy')"><span><span class="sub-t">Chelsy's Story</span><span class="sub-d">The crash, the miracle, the recovery</span></span></button>
         <button onclick="showPage('story-prince')"><span><span class="sub-t">Prince's Story</span><span class="sub-d">The warrior who built the system</span></span></button>
         <button onclick="showPage('story-founders')"><span><span class="sub-t">Meet the Founders</span><span class="sub-d">Chelsy &amp; Prince Koya</span></span></button>
+        <button onclick="showPage('protocols')"><span><span class="sub-t">The Protocols</span><span class="sub-d">P.E.M.F. system &amp; technology</span></span></button>
       </div>
     </div>
     <div class="tab-wrap">
@@ -316,24 +308,24 @@
     <div class="tab-wrap">
       <button class="tab-top" data-group="proof" onclick="toggleSubmenu(event, this)">The Proof <span class="caret">▾</span></button>
       <div class="submenu">
+        <button onclick="showPage('proof-impact')"><span><span class="sub-t">Impact Report</span><span class="sub-d">Our numbers, one page</span></span></button>
         <button onclick="showPage('proof')"><span><span class="sub-t">The Proof</span><span class="sub-d">Results, receipts, and evidence</span></span></button>
         <button onclick="showPage('proof-youtube')"><span><span class="sub-t">YouTube — PEMF Warrior</span><span class="sub-d">Daily protocol episodes</span></span></button>
-        <button onclick="showPage('proof-app')"><span><span class="sub-t">The AI-Powered App</span><span class="sub-d">Athletes · sponsors · fans</span></span></button>
         <button onclick="showPage('proof-testimonials')"><span><span class="sub-t">Athlete Testimonials</span><span class="sub-d">Extreme &amp; the warriors</span></span></button>
         <button onclick="showPage('proof-clinic')"><span><span class="sub-t">Clinic Testimonials</span><span class="sub-d">The Prime Experience</span></span></button>
-        <button onclick="showPage('proof-impact')"><span><span class="sub-t">Impact Report</span><span class="sub-d">Our numbers, one page</span></span></button>
+        <button onclick="showPage('proof-app')"><span><span class="sub-t">The AI-Powered App</span><span class="sub-d">Athletes · sponsors · fans</span></span></button>
       </div>
     </div>
     <div class="tab-wrap">
-      <button class="tab-top active" data-group="grants" onclick="toggleSubmenu(event, this)">Grants &amp; Funding <span class="caret">▾</span></button>
+      <button class="tab-top" data-group="involved" onclick="toggleSubmenu(event, this)">Get Involved <span class="caret">▾</span></button>
       <div class="submenu">
-        <button onclick="showPage('grants')"><span><span class="sub-t">Grant Strategy</span><span class="sub-d">The programs we're targeting</span></span></button>
+        <button onclick="showPage('grants')"><span><span class="sub-t">Grants &amp; Funding</span><span class="sub-d">The programs we're targeting</span></span></button>
         <button onclick="showPage('grant-officials')"><span><span class="sub-t">For Mayors &amp; MLAs</span><span class="sub-d">The ask — 15 minutes, a letter</span></span></button>
         <button onclick="showPage('grant-business')"><span><span class="sub-t">For Businesses</span><span class="sub-d">Be part of the movie</span></span></button>
         <button onclick="showPage('grant-indigenous')"><span><span class="sub-t">Indigenous Communities</span><span class="sub-d">A call to the Nations</span></span></button>
+        <button onclick="showPage('support')"><span><span class="sub-t">Support Us</span><span class="sub-d">Fund a warrior, fund the film</span></span></button>
       </div>
     </div>
-    <button data-page="protocols" onclick="showPage('protocols')">Protocols</button>
     <div class="tab-wrap">
       <button class="tab-top" data-group="partners" onclick="toggleSubmenu(event, this)">Partners <span class="caret">▾</span></button>
       <div class="submenu">
@@ -364,7 +356,6 @@
         <button class="sub-child" onclick="showPage('partner-pemf')"><span><span class="sub-t">PEMF Warrior</span><span class="sub-d">The flagship program</span></span></button>
       </div>
     </div>
-    <button data-page="support" onclick="showPage('support')">Support Us</button>
     <button data-page="contact" onclick="showPage('contact')">Contact</button>
   </div>
   <button class="menu-btn" onclick="document.getElementById('navTabs').classList.toggle('open')">☰</button>
@@ -372,108 +363,19 @@
 
 <!-- ============ HOME ============ -->
 <div class="page active" id="page-home">
-  <div class="slider" id="homeSlider">
-  <!-- SLIDE 1: THE MISSION -->
-  <div class="slide active">
-    <div class="photo" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/0ac9b4e8-eebf-4b5b-ab23-0145567be396/prince-pemf-happy.jpg');"></div>
-    <div class="scrim"></div>
-    <div class="hero-inner">
-      <div class="hero-kicker">Warrior World Health &amp; Performance Society — a registered BC non-profit</div>
-      <h1>Helping the 1-in-4 Canadians with invisible disabilities <span class="hl">recover — and proving it on camera</span></h1>
-      <p>We use AI-powered assistive technology and Health Canada-approved medical devices to help warriors go from surviving to thriving. Every session filmed. Every metric public. Prove it. Pass it on.</p>
-      <div class="hero-ctas">
-        <a class="btn-gold" href="#" onclick="showPage('support');return false;">Support the Mission</a>
-        <a class="btn-line" href="#" onclick="showPage('about');return false;">About the Society</a>
-      </div>
+  <div id="homeHero" class="hero-static">
+  <div class="photo" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/0ac9b4e8-eebf-4b5b-ab23-0145567be396/prince-pemf-happy.jpg');"></div>
+  <div class="scrim"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">A registered BC non-profit society</div>
+    <h1>We help the 1-in-4 Canadians with invisible disabilities <span class="hl">recover — and prove it on camera</span></h1>
+    <p>AI-powered assistive technology. Health Canada-approved devices. Real warriors, real practitioners, real results — documented for the world.</p>
+    <div class="hero-ctas">
+      <a class="btn-gold" href="#" onclick="showPage('support');return false;">Support the Mission</a>
+      <a class="btn-line" href="#" onclick="showPage('about');return false;">About the Society</a>
     </div>
   </div>
-  <!-- SLIDE 1B: THE DEVICE -->
-  <div class="slide">
-    <div class="photo" style="background-image:url('https://pemf.cool/assets/in-clinic-D05sx4sn.jpg');"></div>
-    <div class="scrim"></div>
-    <div class="hero-inner">
-      <div class="hero-kicker">The Technology</div>
-      <h1>The device that <span class="hl">proved it possible</span></h1>
-      <p>Health Canada-approved. Swiss engineered. The same Prime Medical Device that helped Chelsy walk again — now powering the world's first clinical documentary on invisible disability.</p>
-      <div class="hero-ctas">
-        <a class="btn-gold" href="#" onclick="showPage('protocols');return false;">The Technology</a>
-        <a class="btn-line" href="#" onclick="showPage('story');return false;">Our Story</a>
-      </div>
-    </div>
-  </div>
-  <!-- SLIDE 2: WHAT WE'RE ALL ABOUT -->
-  <div class="slide">
-    <div class="photo" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/7a4c3d07-79ae-4b61-b4a2-e42d5492ef40/champ-hero-kalari.jpg');"></div>
-    <div class="scrim"></div>
-    <div class="hero-inner">
-      <div class="hero-kicker">Warrior World Health &amp; Performance Society</div>
-      <h1>Invisible to the world.<br><span class="hl">Unstoppable with us.</span></h1>
-      <p>A BC non-profit society. AI-powered assistive technology. Health Canada-approved medical devices. Warrior Tech. And a community of athletes, practitioners, sponsors, and fans — proving that recovery is training.</p>
-      <div class="hero-ctas">
-        <a class="btn-gold" href="#" onclick="showPage('about');return false;">About the Society</a>
-        <a class="btn-line" href="#" onclick="showPage('grants');return false;">Our Grant Strategy</a>
-      </div>
-    </div>
-  </div>
-  <!-- SLIDE 3: THE FAB 5 -->
-  <div class="slide">
-    <div class="photo" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/63299f1c-f262-43b6-838f-b41888ed8387/dr-adam.jpg');"></div>
-    <div class="scrim"></div>
-    <div class="hero-inner">
-      <div class="hero-kicker">The Practitioners</div>
-      <h1>The Fab 5. <span class="hl">One roof.</span></h1>
-      <p>Dr. Adam, Dr. Trent, Manny, Austin, and Dr. Silvana — the clinical team of Catalyst Kintec Surrey keeping warriors in fighting shape, every session on camera.</p>
-      <div class="fab5">
-        <div class="fab5-item" onclick="showPage('catalyst-adam')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/0c10ea51-8918-4bd3-9866-1108f7e3a0e5/profile.jpg" alt="Dr. Adam Parlberg"><span>Dr. Adam</span></div>
-        <div class="fab5-item" onclick="showPage('catalyst-trent')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/457eb137-61ca-4547-97b3-05c51e7ed72e/trent.jpg" alt="Dr. Trent Wittal"><span>Dr. Trent</span></div>
-        <div class="fab5-item" onclick="showPage('catalyst-manny')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/4a5d578d-9c33-44c4-81f1-1f9f1dd30ec9/manny.jpg" alt="Manny Lehal"><span>Manny</span></div>
-        <div class="fab5-item" onclick="showPage('catalyst-austin')"><img src="https://projectpemfwarrior.com/story-media/austin-v3.jpg" alt="Austin Marron"><span>Austin</span></div>
-        <div class="fab5-item" onclick="showPage('catalyst-silvana')"><img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-profile-picture.jpg" alt="Dr. Silvana Jakupovic"><span>Dr. Silvana</span></div>
-      </div>
-      <div class="hero-ctas" style="margin-top:22px;">
-        <a class="btn-gold" href="#" onclick="showPage('partner-catalyst');return false;">Meet the Full Team</a>
-        <a class="btn-line" href="#" onclick="showPage('partners');return false;">All Our Partners</a>
-      </div>
-    </div>
-  </div>
-  <!-- SLIDE 4: MAYORS / GRANTS -->
-  <div class="slide">
-    <div class="photo" style="background-image:url('https://raw.githubusercontent.com/princekoya-multiverse/warrior-world-life-site/main/assets/article-rumble.jpg');"></div>
-    <div class="scrim"></div>
-    <div class="hero-inner">
-      <div class="hero-kicker">For Mayors, MLAs &amp; Civic Leaders</div>
-      <h1>Put your community on the <span class="hl">map</span></h1>
-      <p>The world's first clinical documentary on invisible disability is filming in BC right now. Your city can be part of it — 15 minutes. A letter. A handshake.</p>
-      <div class="hero-ctas">
-        <a class="btn-gold" href="#" onclick="showPage('grant-officials');return false;">The Ask — For Civic Leaders</a>
-        <a class="btn-line" href="#" onclick="showPage('grants');return false;">Grant &amp; Funding</a>
-      </div>
-    </div>
-  </div>
-  <!-- SLIDE 5: PROVE IT. PASS IT ON. -->
-  <div class="slide">
-    <div class="photo" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/0ac9b4e8-eebf-4b5b-ab23-0145567be396/prince-pemf-happy.jpg');"></div>
-    <div class="scrim"></div>
-    <div class="hero-inner">
-      <div class="hero-kicker">The Mission</div>
-      <h1>Prove it. <span class="hl">Pass it on.</span></h1>
-      <p>Every session filmed. Every metric public. Every warrior's story documented so the next one can do it too. Proof creates change.</p>
-      <div class="hero-ctas">
-        <a class="btn-gold" href="#" onclick="showPage('proof');return false;">The Proof</a>
-        <a class="btn-line" href="#" onclick="showPage('proof-testimonials');return false;">Athlete Testimonials</a>
-      </div>
-    </div>
-  </div>
-  <button class="slider-arrow prev" onclick="slidePrev()" aria-label="Previous">‹</button>
-  <button class="slider-arrow next" onclick="slideNext()" aria-label="Next">›</button>
-  <div class="slider-nav" id="sliderNav"></div>
 </div>
-  <div class="stats">
-    <div class="stat"><div class="n">75%</div><div class="l">Pain Reduction</div></div>
-    <div class="stat"><div class="n">6 wks</div><div class="l">vs 6-mo Prognosis</div></div>
-    <div class="stat"><div class="n">8</div><div class="l">Invisible Conditions</div></div>
-    <div class="stat"><div class="n">11+</div><div class="l">Partners Across BC</div></div>
-  </div>
 
   <section style="padding-top:60px;padding-bottom:0;">
     <div style="background:var(--teal-soft);border:1px solid var(--teal);border-radius:10px;padding:28px 32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
@@ -481,17 +383,13 @@
         <div class="label" style="margin-bottom:6px;">Our Mission</div>
         <p style="font-family:var(--display);font-size:20px;line-height:1.4;color:var(--ink);margin:0;"><strong>Warrior World Health &amp; Performance Society</strong> helps Canadians with invisible disabilities recover, thrive, and prove what's possible — through AI-powered assistive technology and Health Canada-approved medical devices.</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:8px;">
-        <a class="btn-gold" href="#" onclick="showPage('support');return false;">Support the Mission</a>
-        <a class="btn-line" href="#" onclick="showPage('about');return false;">About the Society</a>
-      </div>
+      <a class="btn-gold" href="#" onclick="showPage('support');return false;">Support the Mission</a>
     </div>
   </section>
 
   <section style="padding-top:50px;padding-bottom:0;">
-    <div class="label">Who Stands With Us</div>
-    <h2>From Osoyoos to the <em>Lower Mainland</em></h2>
-    <p class="lead">A BC society backed by real clinics, real communities, and real believers — 11+ partners and growing.</p>
+    <div class="label">Trusted Across BC</div>
+    <p class="lead" style="max-width:640px;">Clinics, communities, and believers from Osoyoos to the Lower Mainland stand with the warriors.</p>
     <div class="partner-grid" style="margin-top:20px;">
       <div class="partner" onclick="showPage('partner-sop')"><img src="https://southokanaganphysio.com/wp-content/uploads/logo-pos.svg" alt="South Okanagan Physiotherapy"></div>
       <div class="partner" onclick="showPage('partner-mlg')"><img src="https://mapleleafgreenery.ca/wp-content/uploads/2021/06/20191101-Maple-Leaf-Greenery_Logo.jpg" alt="Maple Leaf Greenery"></div>
@@ -872,7 +770,7 @@
     </div>
     <p style="margin-top:30px;text-align:center;">
       <a class="btn-gold" href="#" onclick="showPage('doc-season3');return false;">Season 3 — Home →</a>
-      <a class="btn-line" href="#" onclick="showPage('grant-officials');return false;">Partnerships &amp; Civic Support</a>
+      
     </p>
   </section>
 </div>
@@ -902,7 +800,7 @@
     </div>
     <p style="margin-top:30px;text-align:center;">
       <a class="btn-gold" href="#" onclick="showPage('partner-newwest');return false;">City of New Westminster Partner</a>
-      <a class="btn-line" href="#" onclick="showPage('documentary');return false;">Back to The Documentary</a>
+      
     </p>
   </section>
 </div>
@@ -956,7 +854,7 @@
     <p class="lead">Every session filmed. Every protocol documented. Every practitioner on camera. This is the daily work at the Warrior House — protocols, treatments, and everything we do, posted to the PEMF Warrior YouTube channel.</p>
     <div style="text-align:center;margin:26px 0;">
       <a class="btn-gold" href="https://www.youtube.com/@PEMFWarrior" target="_blank">Visit the PEMF Warrior Channel</a>
-      <a class="btn-line" href="https://www.youtube.com/@PEMFWarrior/videos" target="_blank">Browse All Videos</a>
+      
     </div>
     <div class="chips" style="justify-content:center;margin-bottom:26px;">
       <span class="chip">Daily Episodes</span>
@@ -1165,7 +1063,7 @@
 
     <div style="text-align:center;margin-top:30px;">
       <a class="btn-gold" href="#" onclick="showPage('proof-youtube');return false;">Watch All the Episodes</a>
-      <a class="btn-line" href="https://www.youtube.com/@PEMFWarrior" target="_blank">PEMF Warrior on YouTube</a>
+      
     </div>
   </section>
 </div>
@@ -1231,7 +1129,7 @@
 
     <div style="text-align:center;margin-top:30px;">
       <a class="btn-gold" href="#" onclick="showPage('proof-testimonials');return false;">View Athlete Testimonials</a>
-      <a class="btn-line" href="https://www.youtube.com/@PEMFWarrior" target="_blank">PEMF Warrior on YouTube</a>
+      
     </div>
   </section>
 </div>
@@ -1468,7 +1366,7 @@
 
       <div style="text-align:center;margin-top:32px;">
         <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Request the 15-Minute Meeting</a>
-        <a class="btn-line" href="#" onclick="showPage('grants');return false;">Back to Grant Strategy</a>
+        
       </div>
     </div>
   </section>
@@ -1654,7 +1552,7 @@
       </div>
       <p style="margin-top:30px;text-align:center;">
         <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Connect With Us — Chiefs &amp; Elders</a>
-        <a class="btn-line" href="#" onclick="showPage('story');return false;">Read Our Story</a>
+        
       </p>
     </div>
   </section>
@@ -2691,7 +2589,7 @@
       </div>
       <p style="margin-top:26px;text-align:center;">
         <a class="btn-gold" href="#" onclick="showPage('grant-officials');return false;">For Mayors &amp; MLAs</a>
-        <a class="btn-line" href="#" onclick="showPage('grant-indigenous');return false;">Indigenous Communities</a>
+        
       </p>
     </div>
   </section>
@@ -2796,10 +2694,10 @@ function showPage(name) {
     b.style.background = '';
   });
   // Highlight top-level nav for sub-pages
-  const groups = { 'story': ['story','story-chelsy','story-prince','story-founders','about'],
+  const groups = { 'about': ['about','story','story-chelsy','story-prince','story-founders','protocols'],
                    'documentary': ['documentary','doc-season1','doc-season2','doc-season3'],
                    'proof': ['proof','proof-youtube','proof-app','proof-testimonials','proof-clinic','proof-impact'],
-                   'grants': ['grants','grant-officials','grant-business','grant-indigenous'],
+                   'involved': ['grants','grant-officials','grant-business','grant-indigenous','support'],
                    'partners': ['partners','partner-sop','sop-grant','partner-mlg','mlg-jana','partner-similkameen','similkameen-jana','partner-catalyst','catalyst-adam','catalyst-trent','catalyst-manny','catalyst-austin','catalyst-silvana','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf'] };
   for (const [group, pages] of Object.entries(groups)) {
     if (pages.includes(name)) {
@@ -2820,26 +2718,6 @@ function toggleSubmenu(ev, btn) {
   if (!wasOpen) wrap.classList.add('open');
 }
 
-let slideIndex = 0;
-const slides = document.querySelectorAll('#homeSlider .slide');
-const nav = document.getElementById('sliderNav');
-if (slides.length > 0 && nav) {
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Slide ' + (i+1));
-    dot.onclick = () => showSlide(i);
-    nav.appendChild(dot);
-  });
-  setInterval(() => { slideNext(); }, 7000);
-}
-function showSlide(n) {
-  slideIndex = (n + slides.length) % slides.length;
-  slides.forEach((s, i) => s.classList.toggle('active', i === slideIndex));
-  document.querySelectorAll('#sliderNav .slider-dot').forEach((d, i) => d.classList.toggle('active', i === slideIndex));
-}
-function slideNext() { showSlide(slideIndex + 1); }
-function slidePrev() { showSlide(slideIndex - 1); }
 
 function toggleDropdown(btn) {
   const item = btn.closest('.dropdown-item');
