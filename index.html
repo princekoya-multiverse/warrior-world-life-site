@@ -38,13 +38,30 @@
   nav .logo .name { font-family: var(--display); font-size: 19px; font-weight: 600; letter-spacing: 0.5px; color: var(--ink); }
   nav .logo .name small { display: block; font-family: var(--sans); font-size: 9px; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; }
   nav .tabs { display: flex; gap: 2px; font-size: 13px; font-weight: 500; overflow-x: auto; }
-  nav .tabs button {
+  nav .tabs .tab-wrap { position: relative; }
+  nav .tabs button, nav .tabs .tab-top {
     background: none; border: none; color: var(--muted); cursor: pointer;
     padding: 8px 13px; border-radius: 4px; font-family: var(--sans); font-size: 13px; font-weight: 500;
     white-space: nowrap; transition: all 0.2s;
   }
-  nav .tabs button:hover { color: var(--ink); background: var(--cream-2); }
-  nav .tabs button.active { color: var(--teal); background: var(--teal-soft); font-weight: 600; }
+  nav .tabs .tab-top:hover { color: var(--ink); background: var(--cream-2); }
+  nav .tabs button.active, nav .tabs .tab-top.active { color: var(--teal); background: var(--teal-soft); font-weight: 600; }
+  nav .tabs .tab-top .caret { font-size: 9px; margin-left: 4px; }
+  .submenu {
+    display: none; position: absolute; top: 100%; left: 0; min-width: 260px;
+    background: var(--white); border: 1px solid var(--line); border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12); padding: 8px; z-index: 200;
+  }
+  .tab-wrap:hover .submenu, .tab-wrap:focus-within .submenu { display: block; }
+  .submenu button {
+    display: flex; width: 100%; text-align: left; padding: 10px 12px; border: none;
+    background: none; font-family: var(--sans); font-size: 13px; color: var(--ink-soft);
+    cursor: pointer; border-radius: 6px; line-height: 1.4;
+  }
+  .submenu button:hover { background: var(--teal-soft); color: var(--teal); }
+  .submenu button .sub-t { font-weight: 600; color: var(--ink); display: block; }
+  .submenu button .sub-d { font-size: 11px; color: var(--muted); display: block; }
+  .submenu button:hover .sub-t { color: var(--teal); }
   .menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--ink); font-size: 18px; padding: 4px 12px; cursor: pointer; border-radius: 4px; }
 
   /* PAGES */
@@ -106,8 +123,9 @@
   .chip { padding: 5px 13px; border: 1px solid var(--teal); background: var(--teal-soft); font-size: 11px; color: var(--teal); letter-spacing: 0.5px; text-transform: uppercase; border-radius: 20px; font-weight: 600; }
 
   /* PARTNERS */
-  .partner-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
-  .partner { border: 1px solid var(--line); background: var(--white); padding: 22px; display: flex; align-items: center; justify-content: center; min-height: 92px; border-radius: 6px; }
+  .partner-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 28px; }
+  .partner { border: 1px solid var(--line); background: var(--white); padding: 22px; display: flex; align-items: center; justify-content: center; min-height: 92px; border-radius: 6px; cursor: pointer; transition: all 0.2s; text-align: center; }
+  .partner:hover { border-color: var(--teal); box-shadow: 0 4px 14px rgba(46,125,116,0.12); transform: translateY(-2px); }
   .partner img { max-width: 100%; max-height: 52px; object-fit: contain; filter: grayscale(0.3); opacity: 0.8; transition: all 0.2s; }
   .partner:hover img { filter: none; opacity: 1; }
   .partner.text-only { font-family: var(--display); font-size: 15px; color: var(--ink-soft); text-align: center; font-style: italic; }
@@ -139,6 +157,14 @@
   .dropdown-body li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
   .dropdown-body .btn-gold { margin: 0 0 20px 22px; }
 
+  /* SUPERSTAR PARTNER PAGE */
+  .star-hero { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: center; }
+  .star-hero .photo-frame img { border-radius: 8px; }
+  .star-hero .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .star-cta { text-align: center; background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 34px; margin-top: 34px; }
+  .star-cta .btn-gold { margin: 0 6px 10px; }
+  .star-cta .btn-line { margin: 0 6px 10px; }
+
   /* GRANTS TABLE */
   .grant-table { width: 100%; border-collapse: collapse; margin-top: 26px; background: var(--white); border-radius: 6px; overflow: hidden; border: 1px solid var(--line); }
   .grant-table th { text-align: left; padding: 14px 16px; background: var(--cream-2); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
@@ -169,11 +195,16 @@
   .alt-bg { background: var(--cream-2); }
   .full { max-width: 100%; }
   .wrap { max-width: 1120px; margin: 0 auto; }
+  .crumbs { font-size: 12px; color: var(--muted); margin-bottom: 18px; }
+  .crumbs button { background: none; border: none; color: var(--teal); font-family: var(--sans); font-size: 12px; cursor: pointer; padding: 0; }
+  .crumbs button:hover { text-decoration: underline; }
 
   @media (max-width: 800px) {
     nav .tabs { display: none; }
     .menu-btn { display: block; }
     nav .tabs.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--cream); border-bottom: 1px solid var(--line); padding: 10px; }
+    .submenu { position: static; box-shadow: none; border: none; padding: 0 0 0 14px; }
+    .star-hero { grid-template-columns: 1fr; }
     .hero-inner h1 { font-size: 36px; }
     .stats { grid-template-columns: repeat(2, 1fr); }
     .grid2, .grid3, .grid4, .partner-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -194,9 +225,32 @@
     <button data-page="story" onclick="showPage('story')">Our Story</button>
     <button data-page="documentary" onclick="showPage('documentary')">The Documentary</button>
     <button data-page="proof" onclick="showPage('proof')">The Proof</button>
-    <button data-page="grants" onclick="showPage('grants')">Grants &amp; Funding</button>
+    <div class="tab-wrap">
+      <button class="tab-top active" data-group="grants" onclick="showPage('grants')">Grants &amp; Funding <span class="caret">▾</span></button>
+      <div class="submenu">
+        <button onclick="showPage('grants')"><span><span class="sub-t">Grant Strategy</span><span class="sub-d">The programs we're targeting</span></span></button>
+        <button onclick="showPage('grant-officials')"><span><span class="sub-t">For Mayors &amp; MLAs</span><span class="sub-d">The ask — 15 minutes, a letter</span></span></button>
+        <button onclick="showPage('grant-business')"><span><span class="sub-t">For Businesses</span><span class="sub-d">Be part of the movie</span></span></button>
+        <button onclick="showPage('grant-indigenous')"><span><span class="sub-t">Indigenous Communities</span><span class="sub-d">A call to the Nations</span></span></button>
+      </div>
+    </div>
     <button data-page="protocols" onclick="showPage('protocols')">Protocols</button>
-    <button data-page="partners" onclick="showPage('partners')">Partners</button>
+    <div class="tab-wrap">
+      <button class="tab-top" data-group="partners" onclick="showPage('partners')">Partners <span class="caret">▾</span></button>
+      <div class="submenu">
+        <button onclick="showPage('partners')"><span><span class="sub-t">All Partners</span><span class="sub-d">The full grid + ways to stand with us</span></span></button>
+        <button onclick="showPage('partner-sop')"><span><span class="sub-t">South Okanagan Physiotherapy</span><span class="sub-d">Osoyoos, BC</span></span></button>
+        <button onclick="showPage('partner-mlg')"><span><span class="sub-t">Maple Leaf Greenery</span><span class="sub-d">Osoyoos, BC</span></span></button>
+        <button onclick="showPage('partner-similkameen')"><span><span class="sub-t">Similkameen Valley Resort</span><span class="sub-d">Cawston, BC</span></span></button>
+        <button onclick="showPage('partner-catalyst')"><span><span class="sub-t">Catalyst Kintec</span><span class="sub-d">Lower Mainland</span></span></button>
+        <button onclick="showPage('partner-semiahmoo')"><span><span class="sub-t">Semiahmoo Athletic Club</span><span class="sub-d">South Surrey</span></span></button>
+        <button onclick="showPage('partner-float')"><span><span class="sub-t">Float House Surrey</span><span class="sub-d">Surrey, BC</span></span></button>
+        <button onclick="showPage('partner-salt')"><span><span class="sub-t">Salt Wellness Centre</span><span class="sub-d">Lower Mainland</span></span></button>
+        <button onclick="showPage('partner-newwest')"><span><span class="sub-t">City of New Westminster</span><span class="sub-d">Our civic partner</span></span></button>
+        <button onclick="showPage('partner-numode')"><span><span class="sub-t">Numode Delivery</span><span class="sub-d">Greater Vancouver</span></span></button>
+        <button onclick="showPage('partner-pemf')"><span><span class="sub-t">PEMF Warrior</span><span class="sub-d">The flagship program</span></span></button>
+      </div>
+    </div>
     <button data-page="contact" onclick="showPage('contact')">Contact</button>
   </div>
   <button class="menu-btn" onclick="document.getElementById('navTabs').classList.toggle('open')">☰</button>
@@ -393,9 +447,10 @@
   </section>
 </div>
 
-<!-- ============ GRANTS & CIVIC (merged) ============ -->
+<!-- ============ GRANTS & FUNDING (MAIN) ============ -->
 <div class="page" id="page-grants">
   <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / Grants &amp; Funding</div>
     <div class="label">Grants &amp; Funding</div>
     <h2>A grant-ready <em>organization</em></h2>
     <p class="lead">We don't ask for charity — we ask for investment in a proven, scalable model that serves the 1-in-4 Canadians living with invisible disabilities. As a BC non-profit society, we're eligible for federal, provincial, and municipal funding. Here's the plan — and exactly what we need from you.</p>
@@ -451,61 +506,72 @@
         <div class="card"><div class="t">✅ Community backing</div><div class="d">11+ partners across BC. City of New Westminster raised $10K+ for our founder's family. A proven community builder.</div></div>
       </div>
     </div>
-  </section>
 
-  <section class="alt-bg full">
-    <div class="wrap">
-      <div class="label">For Mayors, MLAs &amp; Civic Leaders</div>
-      <h2>The <em>ask</em> — clear and simple</h2>
-      <p class="lead">We know you're busy. So here's exactly what we're asking — no mystery, no runaround. If it works for you, we'll make it easy.</p>
-
-      <div class="grid2" style="margin-top:26px;">
-        <div class="card" style="border-left:4px solid var(--teal);">
-          <div class="t" style="font-family:var(--display);font-size:20px;">🕐 15 Minutes. That's all we ask.</div>
-          <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
-            <strong>Step 1 — a 15-minute introductory meeting.</strong> In person, by video, or at your office — your call. We bring the story, the proof, and the plan. You bring questions. No ask beyond the conversation.
-          </div>
-        </div>
-        <div class="card" style="border-left:4px solid var(--gold);">
-          <div class="t" style="font-family:var(--display);font-size:20px;">📄 A letter of support.</div>
-          <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
-            <strong>Step 2 — if the meeting goes well, we ask for a letter of support.</strong> One page. We draft it for your office to review and sign. It goes into our grant applications — federal, provincial, municipal. It's the single biggest unlock for our funding, and it costs you nothing but a signature.
-          </div>
-        </div>
-        <div class="card" style="border-left:4px solid var(--teal);">
-          <div class="t" style="font-family:var(--display);font-size:20px;">🤝 One handshake, face to face.</div>
-          <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
-            <strong>Step 3 — we want to meet you.</strong> Not just email. We want to shake your hand, show you the Warrior House, and let you see the treatment room where the documentary is filmed. When you've seen it, you'll understand why we're so confident.
-          </div>
-        </div>
-        <div class="card" style="border-left:4px solid var(--gold);">
-          <div class="t" style="font-family:var(--display);font-size:20px;">🗣️ Tell us who to work with.</div>
-          <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
-            <strong>Step 4 — point us to your local businesses.</strong> Who's open to being part of the movie? Who wants their products or facilities on camera? Who wants to co-create content? You know your community better than anyone — introduce us to the ones who want to be part of something historic.
-          </div>
-        </div>
-        <div class="card" style="border-left:4px solid var(--teal);">
-          <div class="t" style="font-family:var(--display);font-size:20px;">🎉 Optional: a proclamation &amp; a partnership.</div>
-          <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
-            <strong>Step 5 — if you want to go further:</strong> an "Invisible Disability Awareness" proclamation in your city, a co-branded community event (we run free family wrestling shows, wellness clinics, and town halls), and a civic partner credit in the documentary. Your city gets real media recognition.
-          </div>
-        </div>
-        <div class="card" style="border-left:4px solid var(--gold);">
-          <div class="t" style="font-family:var(--display);font-size:20px;">🔗 Referrals to granting bodies.</div>
-          <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
-            <strong>Step 6 — if you can, connect us.</strong> An introduction to the Ministry of Health, ISED, or a regional district granting body. Even a warm email makes a difference. We handle everything else.
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:30px;">
-        <p style="font-family:var(--display);font-size:20px;color:var(--ink);margin-bottom:14px;">That's the whole ask. 15 minutes. A letter. A handshake.</p>
-        <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Request a 15-Minute Meeting</a>
+    <div style="text-align:center;margin-top:34px;">
+      <p style="font-family:var(--display);font-size:20px;color:var(--ink);margin-bottom:14px;">Who are you? We have a page for you.</p>
+      <div class="grid3" style="margin-top:10px;">
+        <div class="card" style="cursor:pointer;" onclick="showPage('grant-officials')"><div class="t">🏛️ An elected official</div><div class="d">See the 15-minute ask, the letter, and what your community gets.</div></div>
+        <div class="card" style="cursor:pointer;" onclick="showPage('grant-business')"><div class="t">🎥 A business</div><div class="d">Want your business in the movie? See the partnership tracks.</div></div>
+        <div class="card" style="cursor:pointer;" onclick="showPage('grant-indigenous')"><div class="t">🌍 Indigenous community</div><div class="d">Chiefs &amp; Elders — read the call to the Nations.</div></div>
       </div>
     </div>
   </section>
+</div>
 
+<!-- ============ GRANT: OFFICIALS ============ -->
+<div class="page" id="page-grant-officials">
   <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('grants')">Grants &amp; Funding</button> / For Mayors &amp; MLAs</div>
+    <div class="label">For Mayors, MLAs &amp; Civic Leaders</div>
+    <h2>The <em>ask</em> — clear and simple</h2>
+    <p class="lead">We know you're busy. So here's exactly what we're asking — no mystery, no runaround. If it works for you, we'll make it easy.</p>
+
+    <div class="grid2" style="margin-top:26px;">
+      <div class="card" style="border-left:4px solid var(--teal);">
+        <div class="t" style="font-family:var(--display);font-size:20px;">🕐 15 Minutes. That's all we ask.</div>
+        <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
+          <strong>Step 1 — a 15-minute introductory meeting.</strong> In person, by video, or at your office — your call. We bring the story, the proof, and the plan. You bring questions. No ask beyond the conversation.
+        </div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--gold);">
+        <div class="t" style="font-family:var(--display);font-size:20px;">📄 A letter of support.</div>
+        <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
+          <strong>Step 2 — if the meeting goes well, we ask for a letter of support.</strong> One page. We draft it for your office to review and sign. It goes into our grant applications — federal, provincial, municipal. It's the single biggest unlock for our funding, and it costs you nothing but a signature.
+        </div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--teal);">
+        <div class="t" style="font-family:var(--display);font-size:20px;">🤝 One handshake, face to face.</div>
+        <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
+          <strong>Step 3 — we want to meet you.</strong> Not just email. We want to shake your hand, show you the Warrior House, and let you see the treatment room where the documentary is filmed. When you've seen it, you'll understand why we're so confident.
+        </div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--gold);">
+        <div class="t" style="font-family:var(--display);font-size:20px;">🗣️ Tell us who to work with.</div>
+        <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
+          <strong>Step 4 — point us to your local businesses.</strong> Who's open to being part of the movie? Who wants their products or facilities on camera? Who wants to co-create content? You know your community better than anyone — introduce us to the ones who want to be part of something historic.
+        </div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--teal);">
+        <div class="t" style="font-family:var(--display);font-size:20px;">🎉 Optional: a proclamation &amp; a partnership.</div>
+        <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
+          <strong>Step 5 — if you want to go further:</strong> an "Invisible Disability Awareness" proclamation in your city, a co-branded community event (we run free family wrestling shows, wellness clinics, and town halls), and a civic partner credit in the documentary. Your city gets real media recognition.
+        </div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--gold);">
+        <div class="t" style="font-family:var(--display);font-size:20px;">🔗 Referrals to granting bodies.</div>
+        <div class="d" style="font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.7;">
+          <strong>Step 6 — if you can, connect us.</strong> An introduction to the Ministry of Health, ISED, or a regional district granting body. Even a warm email makes a difference. We handle everything else.
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:30px;">
+      <p style="font-family:var(--display);font-size:20px;color:var(--ink);margin-bottom:14px;">That's the whole ask. 15 minutes. A letter. A handshake.</p>
+      <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Request a 15-Minute Meeting</a>
+    </div>
+  </section>
+
+  <section class="alt-bg full">
     <div class="wrap">
       <div class="label">By Community</div>
       <h2>What each region can <em>do</em></h2>
@@ -561,11 +627,20 @@
           </div>
         </div>
       </div>
+
+      <div style="text-align:center;margin-top:32px;">
+        <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Request the 15-Minute Meeting</a>
+        <a class="btn-line" href="#" onclick="showPage('grants');return false;">Back to Grant Strategy</a>
+      </div>
     </div>
   </section>
+</div>
 
+<!-- ============ GRANT: BUSINESS ============ -->
+<div class="page" id="page-grant-business">
   <section class="alt-bg full">
     <div class="wrap">
+      <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('grants')">Grants &amp; Funding</button> / For Businesses</div>
       <div class="label">For Businesses &amp; Community Partners</div>
       <h2>Want your business <em>in the movie?</em></h2>
       <p class="lead">We're not asking for cash. We're asking for alignment. If your business wants to be part of the first clinical documentary on invisible disability — on camera, co-branded, proven — this is the place.</p>
@@ -577,15 +652,93 @@
         <div class="card"><div class="t">🏪 Business Directory</div><div class="d">Exclusive listing in the Warrior World Business Directory — invite-only, seen by our community of warriors and optimizers.</div></div>
         <div class="card"><div class="t">🎪 Live events</div><div class="d">First right of refusal on live event sponsorships — wrestling shows, wellness clinics, and warrior gatherings.</div></div>
       </div>
-      <p style="margin-top:30px;text-align:center;">
-        <a class="btn-gold" href="#" onclick="showPage('partners');return false;">See the Partnership Tracks</a>
-        <a class="btn-line" href="#" onclick="showPage('contact');return false;">Become a Partner — Let's Talk</a>
+
+      <h3 style="margin-top:34px;">The Four Partnership Tracks</h3>
+      <div class="dropdown-group">
+        <div class="dropdown-item">
+          <button class="dropdown-head" onclick="toggleDropdown(this)">
+            <span class="dd-icon">🏛️</span>
+            <span class="dd-title">Civic Partner</span>
+            <span class="dd-sub">Mayors, MLAs, councils, granting bodies</span>
+            <span class="dd-arrow">▾</span>
+          </button>
+          <div class="dropdown-body">
+            <ul>
+              <li>City or municipality credited in the documentary as a civic partner</li>
+              <li>Logo placement in film credits, website, and community materials</li>
+              <li>Access to anonymized outcome data for policy and grant reporting</li>
+              <li>Co-branded community events — free wrestling shows, wellness clinics, town halls</li>
+              <li>Position your community as a leader in invisible disability innovation</li>
+              <li>Direct pipeline to 8+ disability advocacy groups</li>
+            </ul>
+            <p style="margin-top:12px;"><a class="btn-gold" href="#" onclick="showPage('grant-officials');return false;">For Mayors &amp; Civic Leaders →</a></p>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <button class="dropdown-head" onclick="toggleDropdown(this)">
+            <span class="dd-icon">🔬</span>
+            <span class="dd-title">Device Partner</span>
+            <span class="dd-sub">Swiss Bionic, Prime Medical, recovery tech</span>
+            <span class="dd-arrow">▾</span>
+          </button>
+          <div class="dropdown-body">
+            <ul>
+              <li>Your device powers the protocol — featured in documentary footage</li>
+              <li>Logo placement in film credits, website footer, event signage</li>
+              <li>Anonymized outcome data from the 90-day study for your R&amp;D</li>
+              <li>Exclusive listing in the Warrior World Business Directory</li>
+              <li>First right of refusal on live event sponsorships</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <button class="dropdown-head" onclick="toggleDropdown(this)">
+            <span class="dd-icon">🏋️</span>
+            <span class="dd-title">Facility Partner</span>
+            <span class="dd-sub">Gyms, float studios, stretch labs, ring spaces, resorts</span>
+            <span class="dd-arrow">▾</span>
+          </button>
+          <div class="dropdown-body">
+            <ul>
+              <li>Your space becomes the proving ground — filmed and credited</li>
+              <li>Logo placement in film credits and partner grid</li>
+              <li>Featured on our website with backlink and full description</li>
+              <li>Anonymized outcome data for your own community proof</li>
+              <li>First right of refusal on live event sponsorships in your region</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dropdown-item">
+          <button class="dropdown-head" onclick="toggleDropdown(this)">
+            <span class="dd-icon">🥗</span>
+            <span class="dd-title">Fuel Partner</span>
+            <span class="dd-sub">Clean meat, whole food, hydration, plant medicine</span>
+            <span class="dd-arrow">▾</span>
+          </button>
+          <div class="dropdown-body">
+            <ul>
+              <li>Your product literally fuels the comeback — real usage, real results</li>
+              <li>Product placement in kitchen, training, and recovery scenes</li>
+              <li>Outcome data correlating nutrition with measurable gains</li>
+              <li>Co-branded social media showcasing your product in action</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:32px;text-align:center;">
+        <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Become a Partner — Let's Talk</a>
+        <a class="btn-line" href="#" onclick="showPage('partners');return false;">Meet Our Current Partners</a>
       </p>
     </div>
   </section>
+</div>
 
+<!-- ============ GRANT: INDIGENOUS ============ -->
+<div class="page" id="page-grant-indigenous">
   <section class="alt-bg full" style="background:var(--cream);">
     <div class="wrap">
+      <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('grants')">Grants &amp; Funding</button> / Indigenous Communities</div>
       <div class="label">For Indigenous Communities &amp; Chiefs</div>
       <h2>A call to the <em>Nations</em></h2>
       <p class="lead">This is personal. This is home. And this is an open invitation to every Chief, Elder, and community leader who wants to bring real healing technology to their people.</p>
@@ -667,24 +820,6 @@
       </p>
     </div>
   </section>
-
-  <section>
-    <div class="wrap">
-      <div class="label">What Your Community Gets</div>
-      <h2>The Civic Partner <em>benefits</em></h2>
-      <div class="grid3">
-        <div class="card"><div class="t">🏛️ Documentary Credit</div><div class="d">Your city or municipality credited as a civic partner in the film, website, and all community-facing materials.</div></div>
-        <div class="card"><div class="t">📊 Policy-Grade Data</div><div class="d">Access to anonymized outcome data — pain reduction, mobility gains, mental health improvements — for policy development and grant reporting.</div></div>
-        <div class="card"><div class="t">🎉 Community Events</div><div class="d">Co-branded events: free wrestling shows, warrior wellness clinics, and town halls that bring real energy to your community.</div></div>
-        <div class="card"><div class="t">📺 Media Recognition</div><div class="d">Position your community alongside the documentary's media coverage — local and national attention for invisible disability innovation.</div></div>
-        <div class="card"><div class="t">🤝 Advocacy Pipeline</div><div class="d">Direct connection to 8+ disability advocacy groups through the project's reach.</div></div>
-        <div class="card"><div class="t">🌍 A Lasting Legacy</div><div class="d">Be remembered as the community that stood up for the 1-in-4 — the birthplace of a new standard in disability care.</div></div>
-      </div>
-      <p style="margin-top:30px;text-align:center;">
-        <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Request the 15-Minute Meeting</a>
-      </p>
-    </div>
-  </section>
 </div>
 
 <!-- ============ PROTOCOLS ============ -->
@@ -721,111 +856,391 @@
   </section>
 </div>
 
-<!-- ============ PARTNERS ============ -->
+<!-- ============ PARTNERS (MAIN) ============ -->
 <div class="page" id="page-partners">
   <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / Partners</div>
     <div class="label">Our Partners</div>
     <h2>We don't do this <em>alone</em></h2>
-    <p class="lead">From Osoyoos to the Lower Mainland, these clinics, businesses, resorts, and community organizations have stood with us through the documentary, the movie, and the mission.</p>
+    <p class="lead">From Osoyoos to the Lower Mainland, these clinics, businesses, resorts, and community organizations have stood with us through the documentary, the movie, and the mission. <strong>Click any partner to see their full page.</strong></p>
     <div class="partner-grid">
-      <div class="partner"><img src="https://southokanaganphysio.com/wp-content/uploads/logo-pos.svg" alt="South Okanagan Physiotherapy — Osoyoos"></div>
-      <div class="partner"><img src="https://mapleleafgreenery.ca/wp-content/uploads/2021/06/20191101-Maple-Leaf-Greenery_Logo.jpg" alt="Maple Leaf Greenery — Osoyoos"></div>
-      <div class="partner"><img src="https://www.newwestcity.ca/images/NW_logo_primary-2C.svg" alt="City of New Westminster"></div>
-      <div class="partner"><img src="https://numode.ca/wp-content/uploads/2026/08/numode-logo-header-600.png" alt="Numode Delivery"></div>
-      <div class="partner"><img src="https://static.wixstatic.com/media/8d7ff8_8087872b25a346e7b980bf45cdc6cb72~mv2.png" alt="Similkameen Valley Resort — Cawston"></div>
-      <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/fe43e23d-dbcb-4c01-adb8-64ea77768c37/catalyst.jpg" alt="Catalyst"></div>
-      <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/37cf3219-01f5-4a85-954c-c657699e7d0f/semiahmoo-logo.jpg" alt="Semiahmoo Athletic Club"></div>
-      <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/721c4f23-8fcf-4e04-9f15-e95c4b49dcf2/float-house.jpg" alt="Float House Surrey"></div>
-      <div class="partner"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/bae3f68e-5748-47d3-a990-8a41971d417f/salt-wellness.jpg" alt="Salt Wellness Centre"></div>
-      <div class="partner"><img src="https://projectpemfwarrior.com/pemf-warrior-logo.jpg" alt="PEMF Warrior"></div>
+      <div class="partner" onclick="showPage('partner-sop')"><img src="https://southokanaganphysio.com/wp-content/uploads/logo-pos.svg" alt="South Okanagan Physiotherapy — Osoyoos"></div>
+      <div class="partner" onclick="showPage('partner-mlg')"><img src="https://mapleleafgreenery.ca/wp-content/uploads/2021/06/20191101-Maple-Leaf-Greenery_Logo.jpg" alt="Maple Leaf Greenery — Osoyoos"></div>
+      <div class="partner" onclick="showPage('partner-similkameen')"><img src="https://static.wixstatic.com/media/8d7ff8_8087872b25a346e7b980bf45cdc6cb72~mv2.png" alt="Similkameen Valley Resort — Cawston"></div>
+      <div class="partner" onclick="showPage('partner-newwest')"><img src="https://www.newwestcity.ca/images/NW_logo_primary-2C.svg" alt="City of New Westminster"></div>
+      <div class="partner" onclick="showPage('partner-numode')"><img src="https://numode.ca/wp-content/uploads/2026/08/numode-logo-header-600.png" alt="Numode Delivery"></div>
+      <div class="partner" onclick="showPage('partner-catalyst')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/fe43e23d-dbcb-4c01-adb8-64ea77768c37/catalyst.jpg" alt="Catalyst Kintec"></div>
+      <div class="partner" onclick="showPage('partner-semiahmoo')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/37cf3219-01f5-4a85-954c-c657699e7d0f/semiahmoo-logo.jpg" alt="Semiahmoo Athletic Club"></div>
+      <div class="partner" onclick="showPage('partner-float')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/721c4f23-8fcf-4e04-9f15-e95c4b49dcf2/float-house.jpg" alt="Float House Surrey"></div>
+      <div class="partner" onclick="showPage('partner-salt')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/bae3f68e-5748-47d3-a990-8a41971d417f/salt-wellness.jpg" alt="Salt Wellness Centre"></div>
+      <div class="partner" onclick="showPage('partner-pemf')"><img src="https://projectpemfwarrior.com/pemf-warrior-logo.jpg" alt="PEMF Warrior"></div>
     </div>
   </section>
 
   <section class="alt-bg full">
     <div class="wrap">
-      <div class="label">What We're Looking For</div>
-      <h2>Four ways to <em>stand with us</em></h2>
+      <div class="label">Four Ways to Stand With Us</div>
+      <h2>The <em>partnership tracks</em></h2>
       <p class="lead">We're not asking for cash. We're asking for alignment. Pick the track that fits what you bring — each one is built for real contribution, not just a logo on a page.</p>
+      <div class="grid4">
+        <div class="card" style="cursor:pointer;" onclick="showPage('grant-officials')"><div class="t">🏛️ Civic Partner</div><div class="d">Mayors, MLAs, councils, granting bodies. Letter of support, proclamation, documentary credit. <strong style="color:var(--teal);">Learn more →</strong></div></div>
+        <div class="card"><div class="t">🔬 Device Partner</div><div class="d">Recovery technology featured in the documentary, with anonymized outcome data for your R&amp;D.</div></div>
+        <div class="card"><div class="t">🏋️ Facility Partner</div><div class="d">Your gym, float studio, or resort becomes the proving ground — filmed, credited, and featured.</div></div>
+        <div class="card"><div class="t">🥗 Fuel Partner</div><div class="d">Your product literally fuels the comeback — real usage, real results, co-branded content.</div></div>
+      </div>
+      <p style="margin-top:30px;text-align:center;">
+        <a class="btn-gold" href="#" onclick="showPage('grant-business');return false;">Become a Partner — See the Tracks</a>
+        <a class="btn-line" href="#" onclick="showPage('contact');return false;">Let's Talk</a>
+      </p>
+    </div>
+  </section>
+</div>
 
-      <div class="dropdown-group">
-        <div class="dropdown-item">
-          <button class="dropdown-head" onclick="toggleDropdown(this)">
-            <span class="dd-icon">🏛️</span>
-            <span class="dd-title">Civic Partner</span>
-            <span class="dd-sub">Mayors, MLAs, councils, granting bodies</span>
-            <span class="dd-arrow">▾</span>
-          </button>
-          <div class="dropdown-body">
-            <ul>
-              <li>City or municipality credited in the documentary as a civic partner</li>
-              <li>Logo placement in film credits, website, and community materials</li>
-              <li>Access to anonymized outcome data for policy and grant reporting</li>
-              <li>Co-branded community events — free wrestling shows, wellness clinics, town halls</li>
-              <li>Position your community as a leader in invisible disability innovation</li>
-              <li>Direct pipeline to 8+ disability advocacy groups</li>
-            </ul>
-            <p style="margin-top:12px;"><a class="btn-gold" href="#" onclick="showPage('grants');return false;">For Mayors &amp; Civic Leaders →</a></p>
-          </div>
-        </div>
-
-        <div class="dropdown-item">
-          <button class="dropdown-head" onclick="toggleDropdown(this)">
-            <span class="dd-icon">🔬</span>
-            <span class="dd-title">Device Partner</span>
-            <span class="dd-sub">Swiss Bionic, Prime Medical, recovery tech</span>
-            <span class="dd-arrow">▾</span>
-          </button>
-          <div class="dropdown-body">
-            <ul>
-              <li>Your device powers the protocol — featured in documentary footage</li>
-              <li>Logo placement in film credits, website footer, event signage</li>
-              <li>Anonymized outcome data from the 90-day study for your R&amp;D</li>
-              <li>Exclusive listing in the Warrior World Business Directory</li>
-              <li>First right of refusal on live event sponsorships</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dropdown-item">
-          <button class="dropdown-head" onclick="toggleDropdown(this)">
-            <span class="dd-icon">🏋️</span>
-            <span class="dd-title">Facility Partner</span>
-            <span class="dd-sub">Gyms, float studios, stretch labs, ring spaces, resorts</span>
-            <span class="dd-arrow">▾</span>
-          </button>
-          <div class="dropdown-body">
-            <ul>
-              <li>Your space becomes the proving ground — filmed and credited</li>
-              <li>Logo placement in film credits and partner grid</li>
-              <li>Featured on our website with backlink and full description</li>
-              <li>Anonymized outcome data for your own community proof</li>
-              <li>First right of refusal on live event sponsorships in your region</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dropdown-item">
-          <button class="dropdown-head" onclick="toggleDropdown(this)">
-            <span class="dd-icon">🥗</span>
-            <span class="dd-title">Fuel Partner</span>
-            <span class="dd-sub">Clean meat, whole food, hydration, plant medicine</span>
-            <span class="dd-arrow">▾</span>
-          </button>
-          <div class="dropdown-body">
-            <ul>
-              <li>Your product literally fuels the comeback — real usage, real results</li>
-              <li>Product placement in kitchen, training, and recovery scenes</li>
-              <li>Outcome data correlating nutrition with measurable gains</li>
-              <li>Co-branded social media showcasing your product in action</li>
-            </ul>
-          </div>
+<!-- ============ PARTNER: SOP ============ -->
+<div class="page" id="page-partner-sop">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / South Okanagan Physiotherapy</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://southokanaganphysio.com/wp-content/uploads/photo-grant-treatment-600x415.jpg" alt="Grant Storzuk — South Okanagan Physiotherapy">
+        <div class="cap">Grant Storzuk at work — the physiotherapist who verified our results.</div>
+      </div>
+      <div>
+        <div class="label">Partner — South Okanagan</div>
+        <h2>South Okanagan <em>Physiotherapy</em></h2>
+        <p class="lead">The clinic that helped write the proof — and verified the numbers behind the mission.</p>
+        <div class="badges">
+          <span class="chip">Osoyoos, BC</span>
+          <span class="chip">10+ Years Practice</span>
+          <span class="chip">Verified 75% Pain Reduction</span>
+          <span class="chip">Health Canada Approved Tech</span>
         </div>
       </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Where the mission met the medicine.</strong> When Prince brought the Prime Medical Device to the Okanagan, it was South Okanagan Physiotherapy that put real clinical eyes on it.</p>
+      <p><strong>Grant Storzuk</strong> — a physiotherapist with over a decade of practice — didn't just watch. He measured. Range of motion, before and after. Pain scores, session by session. His verification of <strong>75% pain reduction in a single session</strong> became one of the cornerstones of our proof.</p>
+      <p>From Osoyoos, right in the heart of the region where the story began on Anarchist Mountain, South Okanagan Physiotherapy continues to treat warriors, track outcomes, and stand with the mission.</p>
+      <div class="quote">
+        <p>"The data is real. The results are real. This is medicine working the way it should."</p>
+        <div class="by">— Team, South Okanagan Physiotherapy</div>
+      </div>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Work with South Okanagan Physiotherapy</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Located in Osoyoos, BC — the region where the Warrior World story began.</p>
+      <a class="btn-gold" href="https://southokanaganphysio.com" target="_blank">Visit Their Website</a>
+      <a class="btn-line" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
 
-      <p style="margin-top:32px;text-align:center;">
-        <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Become a Partner — Let's Talk</a>
-        <a class="btn-line" href="#" onclick="showPage('grants');return false;">View Our Grant Strategy</a>
-      </p>
+<!-- ============ PARTNER: MLG ============ -->
+<div class="page" id="page-partner-mlg">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / Maple Leaf Greenery</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://mapleleafgreenery.ca/wp-content/uploads/2021/06/20191101-Maple-Leaf-Greenery_Logo.jpg" alt="Maple Leaf Greenery — Osoyoos">
+        <div class="cap">Maple Leaf Greenery — Osoyoos, BC.</div>
+      </div>
+      <div>
+        <div class="label">Partner — Fuel</div>
+        <h2>Maple Leaf <em>Greenery</em></h2>
+        <p class="lead">Plant medicine from the Okanagan — fueling the comeback with nature's own protocols.</p>
+        <div class="badges">
+          <span class="chip">Osoyoos, BC</span>
+          <span class="chip">Plant Medicine</span>
+          <span class="chip">Fuel Partner</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Nature has been doing medicine longer than we have.</strong> Maple Leaf Greenery brings the plant side of the protocol — the herbal and botanical support that works alongside PEMF, movement, and nutrition.</p>
+      <p>From Osoyoos, Maple Leaf Greenery stands with the mission as a <strong>Fuel Partner</strong> — real products, real usage, real results, documented as part of the 90-day study.</p>
+      <p>In the region where the crash happened and the miracle began, this partnership represents the full circle: <strong>the land that took, giving back.</strong></p>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Connect with Maple Leaf Greenery</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Osoyoos, BC.</p>
+      <a class="btn-gold" href="https://mapleleafgreenery.ca" target="_blank">Visit Their Website</a>
+      <a class="btn-line" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PARTNER: SIMILKAMEEN ============ -->
+<div class="page" id="page-partner-similkameen">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / Similkameen Valley Resort</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://static.wixstatic.com/media/8d7ff8_450ce7950ce74a2b8a04cb3c1f855644~mv2.jpg" alt="Similkameen Valley Resort — Cawston">
+        <div class="cap">Similkameen Valley Resort — Cawston, BC.</div>
+      </div>
+      <div>
+        <div class="label">Partner — Facility</div>
+        <h2>Similkameen Valley <em>Resort</em></h2>
+        <p class="lead">A recovery retreat in the Similkameen Valley — where warriors recharge in nature.</p>
+        <div class="badges">
+          <span class="chip">Cawston, BC</span>
+          <span class="chip">Facility Partner</span>
+          <span class="chip">Recovery Retreat</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Recovery needs a place to happen.</strong> The Similkameen Valley Resort, nestled in Cawston, is that place — a facility partner where warriors can step away from the noise and let the protocols work.</p>
+      <p>Between the orchard rows and the mountain air, the resort gives our warriors a true recovery environment: rest, restoration, and the space to heal — all within reach of the communities we serve in the South Okanagan.</p>
+      <p>As a <strong>Facility Partner</strong>, the resort is featured in the documentary as part of the recovery journey — the place where the body catches up with the spirit.</p>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Stay at Similkameen Valley Resort</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Cawston, BC — Similkameen Valley.</p>
+      <a class="btn-gold" href="https://www.similkameenvalleyresort.ca" target="_blank">Visit Their Website</a>
+      <a class="btn-line" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PARTNER: CATALYST ============ -->
+<div class="page" id="page-partner-catalyst">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / Catalyst Kintec</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/fe43e23d-dbcb-4c01-adb8-64ea77768c37/catalyst.jpg" alt="Catalyst Kintec">
+        <div class="cap">Catalyst Kintec — Lower Mainland.</div>
+      </div>
+      <div>
+        <div class="label">Partner — Foot Health &amp; Mobility</div>
+        <h2>Catalyst <em>Kintec</em></h2>
+        <p class="lead">The team behind the feet — keeping warriors standing, moving, and fighting.</p>
+        <div class="badges">
+          <span class="chip">Lower Mainland</span>
+          <span class="chip">Foot Health</span>
+          <span class="chip">Mobility Partner</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Every comeback starts from the ground up.</strong> Catalyst Kintec is the foot-health and mobility team standing with the mission — because you can't rebuild a warrior on broken foundations.</p>
+      <p>From the Lower Mainland, Catalyst Kintec's team works alongside our practitioners to keep warriors on their feet: assessment, orthotics, footwear, and the biomechanical support that makes the protocols hold.</p>
+      <p>As a partner in the documentary, they're part of the <strong>Movement pillar</strong> — the machines, metrics, and mobility that turn intention into motion.</p>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Work with Catalyst Kintec</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Lower Mainland, BC.</p>
+      <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PARTNER: SEMIAHMOO ============ -->
+<div class="page" id="page-partner-semiahmoo">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / Semiahmoo Athletic Club</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/37cf3219-01f5-4a85-954c-c657699e7d0f/semiahmoo-logo.jpg" alt="Semiahmoo Athletic Club">
+        <div class="cap">Semiahmoo Athletic Club — South Surrey.</div>
+      </div>
+      <div>
+        <div class="label">Partner — Training Ground</div>
+        <h2>Semiahmoo Athletic <em>Club</em></h2>
+        <p class="lead">Where our warriors train — Coach Joe and the team behind the movement pillar.</p>
+        <div class="badges">
+          <span class="chip">South Surrey</span>
+          <span class="chip">Movement Coach</span>
+          <span class="chip">Training Ground</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Movement is medicine.</strong> At Semiahmoo Athletic Club in South Surrey, <strong>Coach Joe</strong> and his team run the training side of the mission — Kalaripayattu flow, wrestling, Bollywood, Kundalini. Every session filmed. Every output logged.</p>
+      <p>This is where warriors rebuild strength, mobility, and confidence — under real coaching, with real accountability, in a real community.</p>
+      <p>As the documentary's training ground, Semiahmoo shows the world what the <strong>Movement pillar</strong> looks like in practice: machines, metrics, and mobility — the body learning to trust itself again.</p>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Train at Semiahmoo Athletic Club</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">South Surrey, BC.</p>
+      <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PARTNER: FLOAT HOUSE ============ -->
+<div class="page" id="page-partner-float">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / Float House Surrey</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/721c4f23-8fcf-4e04-9f15-e95c4b49dcf2/float-house.jpg" alt="Float House Surrey">
+        <div class="cap">Float House Surrey.</div>
+      </div>
+      <div>
+        <div class="label">Partner — Recovery</div>
+        <h2>Float House <em>Surrey</em></h2>
+        <p class="lead">Sensory deprivation and deep recovery — the nervous system's reset button.</p>
+        <div class="badges">
+          <span class="chip">Surrey, BC</span>
+          <span class="chip">Float Therapy</span>
+          <span class="chip">Recovery Partner</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Sometimes healing means silence.</strong> Float House Surrey offers the sensory-deprivation experience that powers the <strong>Energy and Flow pillars</strong> of the protocol.</p>
+      <p>In the float tank, the nervous system finally gets to rest. For warriors living with chronic pain, PTSD, and nervous system dysregulation, this isn't a luxury — it's a reset.</p>
+      <p>As a recovery partner, Float House Surrey is featured in the documentary as part of the 90-day protocol — the quiet counterweight to the training, the film, the fight.</p>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Float at Float House Surrey</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Surrey, BC.</p>
+      <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PARTNER: SALT WELLNESS ============ -->
+<div class="page" id="page-partner-salt">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / Salt Wellness Centre</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/bae3f68e-5748-47d3-a990-8a41971d417f/salt-wellness.jpg" alt="Salt Wellness Centre">
+        <div class="cap">Salt Wellness Centre.</div>
+      </div>
+      <div>
+        <div class="label">Partner — Breath &amp; Recovery</div>
+        <h2>Salt Wellness <em>Centre</em></h2>
+        <p class="lead">Halotherapy and breathwork — the body's natural recovery chamber.</p>
+        <div class="badges">
+          <span class="chip">Lower Mainland</span>
+          <span class="chip">Halotherapy</span>
+          <span class="chip">Recovery Partner</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Breath is the first medicine.</strong> Salt Wellness Centre brings halotherapy — salt therapy — into the protocol: a natural chamber where lungs, skin, and nervous system find relief.</p>
+      <p>For warriors dealing with sleep apnea, respiratory strain, and stress, the salt room is part of the <strong>Flow pillar</strong> — the body breathing easier, the mind following.</p>
+      <p>As a recovery partner, Salt Wellness Centre is part of the documented 90-day journey — another modality, another proof point, another way to heal.</p>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Visit Salt Wellness Centre</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Lower Mainland, BC.</p>
+      <a class="btn-gold" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PARTNER: NEW WEST ============ -->
+<div class="page" id="page-partner-newwest">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / City of New Westminster</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://raw.githubusercontent.com/princekoya-multiverse/warrior-world-life-site/main/assets/article-rumble.jpg" alt="Royal City Rumble — Mayor Cote and Mr. India">
+        <div class="cap">The Royal City Defenders — Mr. India and Mayor Jonathan Cote. Front page of the New Westminster Record.</div>
+      </div>
+      <div>
+        <div class="label">Civic Partner</div>
+        <h2>City of New <em>Westminster</em></h2>
+        <p class="lead">The city that carried us — and the community where Season 2 comes home.</p>
+        <div class="badges">
+          <span class="chip">New Westminster, BC</span>
+          <span class="chip">Civic Partner</span>
+          <span class="chip">Season 2 Home</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>When the crash happened, this city showed up.</strong> New Westminster raised over <strong>$10,000</strong> for Chelsy's recovery. Not as a government program — as a community that refused to look away.</p>
+      <p>Then came Royal City Wrestling. Free family events. Hundreds of families packed in. And in 2019, <strong>Mayor Jonathan Coté stepped into the ring as Prince's tag-team partner</strong> — the first sitting Canadian mayor to ever wrestle. Front page of the newspaper. Global TV coverage.</p>
+      <p><strong>Season 2 of the documentary films in New Westminster.</strong> The community that carried this family through the worst is now the stage for proving the system works.</p>
+      <div class="quote">
+        <p>"We are not a wrestling company. We are a building-the-community company."</p>
+        <div class="by">— Prince, Royal City Wrestling</div>
+      </div>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Partner With New Westminster</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Season 2 — coming home.</p>
+      <a class="btn-gold" href="#" onclick="showPage('grant-officials');return false;">The Ask for Mayors &amp; MLAs</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PARTNER: NUMODE ============ -->
+<div class="page" id="page-partner-numode">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / Numode Delivery</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://numode.ca/wp-content/uploads/2025/10/truck.png" alt="Numode Delivery truck">
+        <div class="cap">Numode Delivery — same-day &amp; next-day across Greater Vancouver.</div>
+      </div>
+      <div>
+        <div class="label">Partner — Logistics</div>
+        <h2>Numode <em>Delivery</em></h2>
+        <p class="lead">The wheels that move the mission — same-day and next-day across Greater Vancouver.</p>
+        <div class="badges">
+          <span class="chip">Greater Vancouver</span>
+          <span class="chip">Same-Day Delivery</span>
+          <span class="chip">Logistics Partner</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>Every mission needs logistics.</strong> Numode Delivery keeps the machine moving — same-day and next-day delivery across Greater Vancouver, connecting warriors, clinics, and partners.</p>
+      <p>From equipment to documentation, Numode makes sure the right thing gets to the right place at the right time — the quiet backbone of the operation.</p>
+      <p>As a partner in the mission, Numode delivers more than packages — they deliver the reliability that lets us focus on the healing.</p>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Move With Numode</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Greater Vancouver — same-day &amp; next-day.</p>
+      <a class="btn-gold" href="https://numode.ca" target="_blank">Visit Their Website</a>
+      <a class="btn-line" href="#" onclick="showPage('contact');return false;">Book Through Warrior World</a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ PARTNER: PEMF WARRIOR ============ -->
+<div class="page" id="page-partner-pemf">
+  <section>
+    <div class="crumbs"><button onclick="showPage('home')">Home</button> / <button onclick="showPage('partners')">Partners</button> / PEMF Warrior</div>
+    <div class="star-hero">
+      <div class="photo-frame">
+        <img src="https://projectpemfwarrior.com/__l5e/assets-v1/0ac9b4e8-eebf-4b5b-ab23-0145567be396/prince-pemf-happy.jpg" alt="Prince on the PEMF device">
+        <div class="cap">The flagship program — one warrior proving the system works.</div>
+      </div>
+      <div>
+        <div class="label">The Flagship</div>
+        <h2>PEMF <em>Warrior</em></h2>
+        <p class="lead">The project that started it all — 8 invisible disabilities, one body, radical documentation.</p>
+        <div class="badges">
+          <span class="chip">Clayton Heights, BC</span>
+          <span class="chip">90-Day Study</span>
+          <span class="chip">Every Session Public</span>
+        </div>
+      </div>
+    </div>
+    <div class="body-copy" style="margin-top:30px;">
+      <p><strong>This is where it all began.</strong> Project PEMF Warrior is the flagship — Prince's own body as the laboratory, every protocol tested, every session filmed, every metric tracked.</p>
+      <p><strong>Eight invisible disabilities.</strong> Degenerative Disc Disease, PTSD, depression, anxiety, chronic pain, sleep disorder, TMJ, nervous system dysregulation. None of them show up on an x-ray. All of them fought, daily, on camera.</p>
+      <p>The proof: <strong>75% pain reduction in one session. 6-week recovery vs a 6-month prognosis. Off narcotics in five days.</strong> All verified by licensed practitioners, all documented.</p>
+      <p>PEMF Warrior is the template — and Warrior World is the machine that will scale it to every warrior who needs it.</p>
+      <div class="quote">
+        <p>"One warrior proved them wrong. Now we build the template so every warrior after him can do the same."</p>
+        <div class="by">— Project PEMF Warrior</div>
+      </div>
+    </div>
+    <div class="star-cta">
+      <h3 style="margin-top:0;">Follow the Mission</h3>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:16px;">Clayton Heights, BC.</p>
+      <a class="btn-gold" href="https://projectpemfwarrior.com" target="_blank">Visit Project PEMF Warrior</a>
+      <a class="btn-line" href="#" onclick="showPage('story');return false;">Read the Story</a>
     </div>
   </section>
 </div>
@@ -863,23 +1278,34 @@
 <script>
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + name).classList.add('active');
-  document.querySelectorAll('#navTabs button').forEach(b => {
-    b.classList.toggle('active', b.dataset.page === name);
+  const el = document.getElementById('page-' + name);
+  if (el) el.classList.add('active');
+  document.querySelectorAll('#navTabs button, #navTabs .tab-top').forEach(b => {
+    b.classList.remove('active');
+    b.style.background = '';
   });
+  // Highlight top-level nav for sub-pages
+  const groups = { 'grants': ['grants','grant-officials','grant-business','grant-indigenous'],
+                   'partners': ['partners','partner-sop','partner-mlg','partner-similkameen','partner-catalyst','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf'] };
+  for (const [group, pages] of Object.entries(groups)) {
+    if (pages.includes(name)) {
+      document.querySelectorAll(`#navTabs .tab-top[data-group="${group}"]`).forEach(b => b.classList.add('active'));
+    }
+  }
+  const direct = document.querySelector(`#navTabs button[data-page="${name}"]`);
+  if (direct) direct.classList.add('active');
   document.getElementById('navTabs').classList.remove('open');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 function toggleDropdown(btn) {
   const item = btn.closest('.dropdown-item');
   const wasOpen = item.classList.contains('open');
-  // Close all others
   document.querySelectorAll('.dropdown-item.open').forEach(i => i.classList.remove('open'));
   if (!wasOpen) item.classList.add('open');
 }
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash.replace('#', '');
-  const valid = ['home','story','documentary','proof','grants','protocols','partners','contact'];
+  const valid = ['home','story','documentary','proof','grants','grant-officials','grant-business','grant-indigenous','protocols','partners','partner-sop','partner-mlg','partner-similkameen','partner-catalyst','partner-semiahmoo','partner-float','partner-salt','partner-newwest','partner-numode','partner-pemf','contact'];
   if (hash && valid.includes(hash)) showPage(hash);
 });
 </script>
