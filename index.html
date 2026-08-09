@@ -101,6 +101,11 @@
   .slider-arrow:hover { background: rgba(20,20,26,0.8); }
   .slider-arrow.prev { left: 24px; }
   .slider-arrow.next { right: 24px; }
+  .fab5 { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+  .fab5-item { width: 84px; text-align: center; cursor: pointer; transition: transform 0.2s; }
+  .fab5-item:hover { transform: translateY(-4px); }
+  .fab5-item img { width: 84px; height: 84px; object-fit: cover; border-radius: 50%; border: 3px solid rgba(230,217,174,0.7); display: block; }
+  .fab5-item span { display: block; margin-top: 6px; font-size: 11px; color: #e6d9ae; font-weight: 600; letter-spacing: 0.5px; }
 
   /* HERO */
   #home-hero { min-height: 88vh; display: flex; align-items: flex-end; position: relative; overflow: hidden; padding: 0; max-width: 100%; background: var(--ink); }
@@ -360,24 +365,31 @@
     <div class="hero-inner">
       <div class="hero-kicker">Warrior World Health &amp; Performance Society</div>
       <h1>Invisible to the world.<br><span class="hl">Unstoppable with us.</span></h1>
-      <p>AI-powered assistive technology. Health Canada-approved medical devices. A community of athletes, practitioners, sponsors, and fans — proving that recovery is training.</p>
+      <p>A BC non-profit society. AI-powered assistive technology. Health Canada-approved medical devices. Warrior Tech. And a community of athletes, practitioners, sponsors, and fans — proving that recovery is training.</p>
       <div class="hero-ctas">
-        <a class="btn-gold" href="#" onclick="showPage('about');return false;">What We're All About</a>
+        <a class="btn-gold" href="#" onclick="showPage('about');return false;">About the Society</a>
         <a class="btn-line" href="#" onclick="showPage('grants');return false;">Our Grant Strategy</a>
       </div>
     </div>
   </div>
-  <!-- SLIDE 3: PARTNERS -->
+  <!-- SLIDE 3: THE FAB 5 -->
   <div class="slide">
-    <div class="photo" style="background-image:url('https://pemf.cool/assets/treatment-room-CetmkAT8.jpg');"></div>
+    <div class="photo" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/63299f1c-f262-43b6-838f-b41888ed8387/dr-adam.jpg');"></div>
     <div class="scrim"></div>
     <div class="hero-inner">
-      <div class="hero-kicker">We don't do this alone</div>
-      <h1>11+ partners. <span class="hl">One mission.</span></h1>
-      <p>From Osoyoos to the Lower Mainland — clinics, resorts, training grounds, and the City of New Westminster all standing with the warriors.</p>
-      <div class="hero-ctas">
-        <a class="btn-gold" href="#" onclick="showPage('partners');return false;">Meet Our Partners</a>
-        <a class="btn-line" href="#" onclick="showPage('grant-business');return false;">Become a Partner</a>
+      <div class="hero-kicker">The Practitioners</div>
+      <h1>The Fab 5. <span class="hl">One roof.</span></h1>
+      <p>Dr. Adam, Dr. Trent, Manny, Austin, and Dr. Silvana — the clinical team of Catalyst Kintec Surrey keeping warriors in fighting shape, every session on camera.</p>
+      <div class="fab5">
+        <div class="fab5-item" onclick="showPage('catalyst-adam')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/0c10ea51-8918-4bd3-9866-1108f7e3a0e5/profile.jpg" alt="Dr. Adam Parlberg"><span>Dr. Adam</span></div>
+        <div class="fab5-item" onclick="showPage('catalyst-trent')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/457eb137-61ca-4547-97b3-05c51e7ed72e/trent.jpg" alt="Dr. Trent Wittal"><span>Dr. Trent</span></div>
+        <div class="fab5-item" onclick="showPage('catalyst-manny')"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/4a5d578d-9c33-44c4-81f1-1f9f1dd30ec9/manny.jpg" alt="Manny Lehal"><span>Manny</span></div>
+        <div class="fab5-item" onclick="showPage('catalyst-austin')"><img src="https://projectpemfwarrior.com/story-media/austin-v3.jpg" alt="Austin Marron"><span>Austin</span></div>
+        <div class="fab5-item" onclick="showPage('catalyst-silvana')"><img src="https://projectpemfwarrior.com/story-media/chelsea-silvana-profile-picture.jpg" alt="Dr. Silvana Jakupovic"><span>Dr. Silvana</span></div>
+      </div>
+      <div class="hero-ctas" style="margin-top:22px;">
+        <a class="btn-gold" href="#" onclick="showPage('partner-catalyst');return false;">Meet the Full Team</a>
+        <a class="btn-line" href="#" onclick="showPage('partners');return false;">All Our Partners</a>
       </div>
     </div>
   </div>
