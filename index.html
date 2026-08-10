@@ -213,9 +213,19 @@
   .modal-box p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
   .modal-close { position: absolute; top: 14px; right: 18px; background: none; border: none; font-size: 22px; cursor: pointer; color: #666; }
 
+  /* TEAM CARDS */
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .team-card { background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; align-items: center; gap: 14px; padding: 14px; }
+  .team-card img { width: 64px; height: 64px; object-fit: cover; border-radius: 50%; border: 2px solid var(--gold-soft); flex-shrink: 0; }
+  .team-card .tn { font-weight: 700; font-size: 14px; line-height: 1.35; }
+  .team-card .tr { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+  .team-card.dark { background: var(--ink-2); border-color: #33333c; }
+  .team-card.dark .tn { color: #fff; }
+  .team-card.dark .tr { color: #a5a5b0; }
+
   /* RESPONSIVE */
   @media (max-width: 960px) {
-    .grid3, .grid4, .grid6, .process, .pathway, .video-grid, .toc-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid3, .grid4, .grid6, .process, .pathway, .video-grid, .toc-grid, .team-grid { grid-template-columns: repeat(2, 1fr); }
     .grid2 { grid-template-columns: 1fr; }
     nav .tabs { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--ink); flex-direction: column; padding: 16px; align-items: stretch; }
     nav .tabs.open { display: flex; }
@@ -225,7 +235,7 @@
     footer .f-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 640px) {
-    .grid3, .grid4, .grid6, .process, .pathway, .video-grid, .toc-grid { grid-template-columns: 1fr; }
+    .grid3, .grid4, .grid6, .process, .pathway, .video-grid, .toc-grid, .team-grid { grid-template-columns: 1fr; }
     .social-proof { gap: 20px; }
     .hero { min-height: 78vh; }
     footer .f-grid { grid-template-columns: 1fr; }
@@ -285,15 +295,15 @@
       <div class="video-grid">
         <div class="video-card">
           <div class="frame"><iframe src="https://www.youtube.com/embed/Mv-66vmzNpU?rel=0" title="Grant — 75% Pain Reduction, Verified" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <div class="info"><div class="vt">Grant — 75% Pain Reduction, Verified</div><div class="vd">A single Prime Medical Device session. Verified on camera by Grant Storzuk, licensed physiotherapist, South Okanagan Physiotherapy.</div></div>
+          <div class="info"><div class="vt">Grant — 75% Pain Reduction, Verified</div><div class="vd">Grant Storzuk — owner and physiotherapist of South Okanagan Physiotherapy (Osoyoos). The practitioner behind the 75% pain reduction and 92% mobility restoration, verified on camera.</div></div>
         </div>
         <div class="video-card">
           <div class="frame"><iframe src="https://www.youtube.com/embed/f6C1ii8Z3Lk?rel=0" title="Extreme — Full Recovery Documentation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <div class="info"><div class="vt">Extreme — Full Recovery Documentation</div><div class="vd">Invisible disability. Daily protocol. 90 days on camera. Watch what happens when you refuse to accept the prognosis.</div></div>
+          <div class="info"><div class="vt">Extreme — Full Recovery Documentation</div><div class="vd">Patrick "Extreme" Leroux — extreme athlete and snowboarder. Broke his shoulder. Doctors said six months. Healed in six weeks on the Warrior Protocol. Documented on camera.</div></div>
         </div>
         <div class="video-card">
           <div class="frame"><iframe src="https://www.youtube.com/embed/NSjvS8ZNaOA?rel=0" title="TKO Cody Smith — Adaptive Athlete" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-          <div class="info"><div class="vt">TKO Cody Smith — Adaptive Athlete</div><div class="vd">Chronic pain to competitive performance. Tracked. Measured. Proven.</div></div>
+          <div class="info"><div class="vt">TKO Cody Smith — Adaptive Athlete</div><div class="vd">Professional wrestling champion. Chronic pain to competitive performance. Tracked. Measured. Proven.</div></div>
         </div>
       </div>
       <p style="text-align:center;margin-top:28px;"><a class="btn-line" href="https://pemftv.com" target="_blank">See All Results on PEMF TV →</a></p>
@@ -378,7 +388,8 @@
   <section class="dark">
     <div class="wrap grid2">
       <div class="photo-frame">
-        <img src="https://raw.githubusercontent.com/princekoya-multiverse/warrior-world-life-site/main/assets/article-mr-india.jpg" alt="Prince and Chelsy Koya" style="border-radius:10px;">
+        <img src="https://i.ytimg.com/vi/xUETP9otgok/maxresdefault.jpg" alt="Chelsy Koya — Prime Medical Device treatment" style="border-radius:10px;">
+        <div class="cap" style="color:#8a8a94;font-size:12px;margin-top:10px;">Chelsy Koya, in treatment with the Prime Medical Device — the first proof the protocol worked.</div>
       </div>
       <div>
         <div class="label">Our Story</div>
@@ -397,13 +408,31 @@
     <div class="wrap">
       <div class="label">The Team That Verifies the Results</div>
       <h2>Clinical Partners</h2>
-      <div class="grid3" style="margin-top:24px;">
-        <div class="card"><div class="t">Dr. Adam Parlberg, MD</div><div class="d">Medical Director, Catalyst Kintec (Surrey)</div></div>
-        <div class="card"><div class="t">Dr. Trent Wittal, DC</div><div class="d">Chiropractor, Catalyst Kintec</div></div>
-        <div class="card"><div class="t">Manny Lehal, PT</div><div class="d">Physiotherapist, Catalyst Kintec</div></div>
-        <div class="card"><div class="t">Austin Marron, RMT</div><div class="d">Registered Massage Therapist &amp; CrossFit Coach</div></div>
-        <div class="card"><div class="t">Dr. Silvana Jakupovic, ND</div><div class="d">Naturopath, Catalyst Kintec</div></div>
-        <div class="card"><div class="t">Grant Storzuk, PT</div><div class="d">Physiotherapist, South Okanagan Physiotherapy (Osoyoos)</div></div>
+      <div class="team-grid" style="margin-top:24px;">
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/0c10ea51-8918-4bd3-9866-1108f7e3a0e5/profile.jpg" alt="Dr. Adam Parlberg">
+          <div class="ti"><div class="tn">Dr. Adam Parlberg, MD</div><div class="tr">Medical Director, Catalyst Kintec (Surrey)</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/457eb137-61ca-4547-97b3-05c51e7ed72e/trent.jpg" alt="Dr. Trent Wittal">
+          <div class="ti"><div class="tn">Dr. Trent Wittal, DC</div><div class="tr">Chiropractor, Catalyst Kintec</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/4a5d578d-9c33-44c4-81f1-1f9f1dd30ec9/manny.jpg" alt="Manny Lehal">
+          <div class="ti"><div class="tn">Manny Lehal, PT</div><div class="tr">Physiotherapist, Catalyst Kintec</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/story-media/austin-v3.jpg" alt="Austin Marron">
+          <div class="ti"><div class="tn">Austin Marron, RMT</div><div class="tr">Registered Massage Therapist &amp; CrossFit Coach</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/story-media/dr-silvana.jpg" alt="Dr. Silvana Jakupovic">
+          <div class="ti"><div class="tn">Dr. Silvana Jakupovic, ND</div><div class="tr">Naturopath, Catalyst Kintec</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://southokanaganphysio.com/wp-content/uploads/Staff-Grant.jpeg" alt="Grant Storzuk">
+          <div class="ti"><div class="tn">Grant Storzuk, PT</div><div class="tr">Owner &amp; Physiotherapist, South Okanagan Physiotherapy (Osoyoos)</div></div>
+        </div>
       </div>
       <p class="lead" style="margin-top:26px;">Plus: Float House, Salt Wellness Centre, Semiahmoo Athletic Club, Similkameen Valley Resort, Numode Delivery, City of New Westminster</p>
     </div>
@@ -561,13 +590,31 @@
     <div class="wrap">
       <div class="label">The Team That Verifies the Results</div>
       <h2 style="color:#fff;">Clinical Partner Team</h2>
-      <div class="grid3" style="margin-top:22px;">
-        <div class="dark-card"><div class="t">Dr. Adam Parlberg, MD</div><div class="d">Medical Director, Catalyst Kintec (Surrey)</div></div>
-        <div class="dark-card"><div class="t">Dr. Trent Wittal, DC</div><div class="d">Chiropractor, Catalyst Kintec</div></div>
-        <div class="dark-card"><div class="t">Manny Lehal, PT</div><div class="d">Physiotherapist, Catalyst Kintec</div></div>
-        <div class="dark-card"><div class="t">Austin Marron, RMT</div><div class="d">Registered Massage Therapist &amp; CrossFit Coach</div></div>
-        <div class="dark-card"><div class="t">Dr. Silvana Jakupovic, ND</div><div class="d">Naturopath, Catalyst Kintec</div></div>
-        <div class="dark-card"><div class="t">Grant Storzuk, PT</div><div class="d">Physiotherapist, South Okanagan Physiotherapy (Osoyoos)</div></div>
+      <div class="team-grid" style="margin-top:22px;">
+        <div class="team-card dark">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/0c10ea51-8918-4bd3-9866-1108f7e3a0e5/profile.jpg" alt="Dr. Adam Parlberg">
+          <div class="ti"><div class="tn">Dr. Adam Parlberg, MD</div><div class="tr">Medical Director, Catalyst Kintec (Surrey)</div></div>
+        </div>
+        <div class="team-card dark">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/457eb137-61ca-4547-97b3-05c51e7ed72e/trent.jpg" alt="Dr. Trent Wittal">
+          <div class="ti"><div class="tn">Dr. Trent Wittal, DC</div><div class="tr">Chiropractor, Catalyst Kintec</div></div>
+        </div>
+        <div class="team-card dark">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/4a5d578d-9c33-44c4-81f1-1f9f1dd30ec9/manny.jpg" alt="Manny Lehal">
+          <div class="ti"><div class="tn">Manny Lehal, PT</div><div class="tr">Physiotherapist, Catalyst Kintec</div></div>
+        </div>
+        <div class="team-card dark">
+          <img src="https://projectpemfwarrior.com/story-media/austin-v3.jpg" alt="Austin Marron">
+          <div class="ti"><div class="tn">Austin Marron, RMT</div><div class="tr">Registered Massage Therapist &amp; CrossFit Coach</div></div>
+        </div>
+        <div class="team-card dark">
+          <img src="https://projectpemfwarrior.com/story-media/dr-silvana.jpg" alt="Dr. Silvana Jakupovic">
+          <div class="ti"><div class="tn">Dr. Silvana Jakupovic, ND</div><div class="tr">Naturopath, Catalyst Kintec</div></div>
+        </div>
+        <div class="team-card dark">
+          <img src="https://southokanaganphysio.com/wp-content/uploads/Staff-Grant.jpeg" alt="Grant Storzuk">
+          <div class="ti"><div class="tn">Grant Storzuk, PT</div><div class="tr">Owner &amp; Physiotherapist, South Okanagan Physiotherapy (Osoyoos)</div></div>
+        </div>
       </div>
       <p style="color:#a5a5b0;font-size:14px;margin-top:22px;">Plus: Float House, Salt Wellness Centre, Semiahmoo Athletic Club, Similkameen Valley Resort, Numode Delivery, City of New Westminster</p>
     </div>
@@ -843,13 +890,31 @@
     <div class="wrap">
       <div class="label">The Practitioners Behind the Proof</div>
       <h2>The Clinical Team</h2>
-      <div class="grid3" style="margin-top:22px;">
-        <div class="card"><div class="t">Dr. Adam Parlberg, MD</div><div class="d">Medical Director, Catalyst Kintec (Surrey)</div></div>
-        <div class="card"><div class="t">Dr. Trent Wittal, DC</div><div class="d">Chiropractor, Catalyst Kintec</div></div>
-        <div class="card"><div class="t">Manny Lehal, PT</div><div class="d">Physiotherapist, Catalyst Kintec</div></div>
-        <div class="card"><div class="t">Austin Marron, RMT</div><div class="d">Registered Massage Therapist &amp; CrossFit Coach</div></div>
-        <div class="card"><div class="t">Dr. Silvana Jakupovic, ND</div><div class="d">Naturopath, Catalyst Kintec</div></div>
-        <div class="card"><div class="t">Grant Storzuk, PT</div><div class="d">Physiotherapist, South Okanagan Physiotherapy (Osoyoos)</div></div>
+      <div class="team-grid" style="margin-top:22px;">
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/0c10ea51-8918-4bd3-9866-1108f7e3a0e5/profile.jpg" alt="Dr. Adam Parlberg">
+          <div class="ti"><div class="tn">Dr. Adam Parlberg, MD</div><div class="tr">Medical Director, Catalyst Kintec (Surrey)</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/457eb137-61ca-4547-97b3-05c51e7ed72e/trent.jpg" alt="Dr. Trent Wittal">
+          <div class="ti"><div class="tn">Dr. Trent Wittal, DC</div><div class="tr">Chiropractor, Catalyst Kintec</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/__l5e/assets-v1/4a5d578d-9c33-44c4-81f1-1f9f1dd30ec9/manny.jpg" alt="Manny Lehal">
+          <div class="ti"><div class="tn">Manny Lehal, PT</div><div class="tr">Physiotherapist, Catalyst Kintec</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/story-media/austin-v3.jpg" alt="Austin Marron">
+          <div class="ti"><div class="tn">Austin Marron, RMT</div><div class="tr">Registered Massage Therapist &amp; CrossFit Coach</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://projectpemfwarrior.com/story-media/dr-silvana.jpg" alt="Dr. Silvana Jakupovic">
+          <div class="ti"><div class="tn">Dr. Silvana Jakupovic, ND</div><div class="tr">Naturopath, Catalyst Kintec</div></div>
+        </div>
+        <div class="team-card">
+          <img src="https://southokanaganphysio.com/wp-content/uploads/Staff-Grant.jpeg" alt="Grant Storzuk">
+          <div class="ti"><div class="tn">Grant Storzuk, PT</div><div class="tr">Owner &amp; Physiotherapist, South Okanagan Physiotherapy (Osoyoos)</div></div>
+        </div>
       </div>
       <div class="note">Every outcome shown in the documentary is verified by a named, licensed practitioner. This is not reality TV. This is a clinical record.</div>
     </div>
@@ -1316,19 +1381,19 @@
       <div class="label center" style="text-align:center;">Application</div>
       <h2 class="center" style="color:#fff;text-align:center;">Apply for the Warrior Protocol</h2>
       <div class="form-box" style="background:var(--white);">
-        <form onsubmit="alert('Application received! We will reach out within 48 hours.');return false;">
+        <form onsubmit="return sendApply(event)">
           <label>Full Name</label>
-          <input type="text" required placeholder="Your full name">
+          <input type="text" required placeholder="Your full name" id="apName">
           <label>Email</label>
-          <input type="email" required placeholder="you@email.com">
+          <input type="email" required placeholder="you@email.com" id="apEmail">
           <label>Phone</label>
-          <input type="tel" placeholder="(604) 000-0000">
+          <input type="tel" placeholder="(604) 000-0000" id="apPhone">
           <label>Location (City, Province)</label>
-          <input type="text" required placeholder="e.g. Surrey, BC">
+          <input type="text" required placeholder="e.g. Surrey, BC" id="apLoc">
           <label>Tell us about your condition(s)</label>
-          <textarea rows="4" required placeholder="Share what you're living with and hoping to address."></textarea>
+          <textarea rows="4" required placeholder="Share what you're living with and hoping to address." id="apCond"></textarea>
           <label>How did you hear about Warrior World?</label>
-          <select>
+          <select id="apSource">
             <option>Social media</option>
             <option>YouTube / PEMF TV</option>
             <option>Referral — practitioner</option>
@@ -1337,9 +1402,9 @@
             <option>Other</option>
           </select>
           <label>What are you hoping to achieve?</label>
-          <textarea rows="3" placeholder="Pain reduction, mobility, sleep, return to sport, other goals..."></textarea>
+          <textarea rows="3" placeholder="Pain reduction, mobility, sleep, return to sport, other goals..." id="apGoal"></textarea>
           <label>Are you able to contribute to program costs?</label>
-          <select>
+          <select id="apCost">
             <option>Yes</option>
             <option>Partial</option>
             <option>No — I need subsidized access</option>
@@ -1372,7 +1437,7 @@
       <h1>Fund a Warrior's Recovery</h1>
       <p class="sub">Warrior World Health &amp; Performance Society is a registered BC non-profit. Every dollar funds treatment access, AI coaching tools, documentary production, and community health programming — for Canadians who have been told there's nothing more the system can do for them.</p>
       <div class="ctas">
-        <a class="btn-gold" href="https://www.canadahelps.org" target="_blank">Donate Now</a>
+        <a class="btn-gold" href="mailto:info@warriorworld.life?subject=Donation%20to%20Warrior%20World&body=I%27d%20like%20to%20donate%20to%20Warrior%20World%20Health%20%26%20Performance%20Society.">Donate Now</a>
       </div>
     </div>
   </div>
@@ -1391,7 +1456,7 @@
         <tr><td><strong>$5,000</strong></td><td>Partial funding for one documentary episode — filmed, edited, published.</td></tr>
         <tr><td><strong>Custom</strong></td><td>Fund a specific program, community, or initiative you care about.</td></tr>
       </table>
-      <p style="text-align:center;margin-top:28px;"><a class="btn-gold" href="https://www.canadahelps.org" target="_blank" style="font-size:17px;padding:16px 44px;">Donate Now</a></p>
+      <p style="text-align:center;margin-top:28px;"><a class="btn-gold" href="mailto:info@warriorworld.life?subject=Donation%20to%20Warrior%20World&body=I%27d%20like%20to%20donate%20to%20Warrior%20World%20Health%20%26%20Performance%20Society." style="font-size:17px;padding:16px 44px;">Donate Now</a></p>
     </div>
   </section>
 
@@ -1439,9 +1504,9 @@
       <div class="label center" style="text-align:center;">Contact Form</div>
       <h2 class="center" style="text-align:center;">Send Us a Message</h2>
       <div class="form-box">
-        <form onsubmit="alert('Message sent! We will connect you with the right person within 48 hours.');return false;">
+        <form onsubmit="return sendContact(event)">
           <label>I am a…</label>
-          <select required>
+          <select required id="cfRole">
             <option value="">Select one</option>
             <option>Mayor, MLA, MP, or civic staff</option>
             <option>Foundation or grant funder</option>
@@ -1454,15 +1519,15 @@
             <option>Other</option>
           </select>
           <label>Full Name</label>
-          <input type="text" required placeholder="Your full name">
+          <input type="text" required placeholder="Your full name" id="cfName">
           <label>Email</label>
-          <input type="email" required placeholder="you@email.com">
+          <input type="email" required placeholder="you@email.com" id="cfEmail">
           <label>Phone (optional)</label>
-          <input type="tel" placeholder="(604) 000-0000">
+          <input type="tel" placeholder="(604) 000-0000" id="cfPhone">
           <label>Organization (if applicable)</label>
-          <input type="text" placeholder="Organization">
+          <input type="text" placeholder="Organization" id="cfOrg">
           <label>Message</label>
-          <textarea rows="5" required placeholder="How can we work together?"></textarea>
+          <textarea rows="5" required placeholder="How can we work together?" id="cfMsg"></textarea>
           <button type="submit" class="btn-gold">Send Message</button>
         </form>
       </div>
@@ -1539,10 +1604,10 @@
   <div class="modal-box">
     <h3>Book a 15-Minute Meeting</h3>
     <p>Tell us who you are and we'll send you a calendar link to pick a time that works.</p>
-    <form onsubmit="alert('Meeting request sent! We will email you a calendar link within 24 hours.');return false;">
+    <form onsubmit="return sendBooking(event)">
       <div style="text-align:left;">
         <label style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;display:block;margin:10px 0 4px;">I am a…</label>
-        <select style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:6px;font-family:inherit;font-size:14px;">
+        <select id="bkRole" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:6px;font-family:inherit;font-size:14px;">
           <option>Mayor, MLA, MP, or civic staff</option>
           <option>Foundation or grant funder</option>
           <option>Indigenous community leader or health coordinator</option>
@@ -1551,9 +1616,9 @@
           <option>Other</option>
         </select>
         <label style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;display:block;margin:10px 0 4px;">Name</label>
-        <input type="text" required placeholder="Your name" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:6px;font-family:inherit;font-size:14px;">
+        <input type="text" required placeholder="Your name" id="bkName" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:6px;font-family:inherit;font-size:14px;">
         <label style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#666;display:block;margin:10px 0 4px;">Email</label>
-        <input type="email" required placeholder="you@organization.ca" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:6px;font-family:inherit;font-size:14px;">
+        <input type="email" required placeholder="you@organization.ca" id="bkEmail" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:6px;font-family:inherit;font-size:14px;">
       </div>
       <button type="submit" class="btn-gold" style="width:100%;margin-top:16px;">Request a Meeting</button>
     </form>
@@ -1669,6 +1734,52 @@
     } else {
       addMsg('Great question. For anything I can't answer, our team responds within 48 hours — <a href="mailto:info@warriorworld.life">info@warriorworld.life</a>. In the meantime: <a href="#" onclick="showPage('programs');return false;">explore our programs →</a>');
     }
+  }
+
+  // ===== FORM → EMAIL (working submit) =====
+  function sendContact(e) {
+    e.preventDefault();
+    const role = document.getElementById('cfRole').value;
+    const name = document.getElementById('cfName').value;
+    const email = document.getElementById('cfEmail').value;
+    const phone = document.getElementById('cfPhone').value;
+    const org = document.getElementById('cfOrg').value;
+    const msg = document.getElementById('cfMsg').value;
+    const subject = 'Website inquiry — ' + role + ' — ' + name;
+    const body = 'Role: ' + role + '\nName: ' + name + '\nEmail: ' + email + '\nPhone: ' + (phone || '-') + '\nOrganization: ' + (org || '-') + '\n\nMessage:\n' + msg;
+    window.location.href = 'mailto:info@warriorworld.life?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    alert('Your email app is opening with your message ready to send to info@warriorworld.life. We reply within 48 hours.');
+    return false;
+  }
+
+  function sendApply(e) {
+    e.preventDefault();
+    const name = document.getElementById('apName').value;
+    const email = document.getElementById('apEmail').value;
+    const phone = document.getElementById('apPhone').value;
+    const loc = document.getElementById('apLoc').value;
+    const cond = document.getElementById('apCond').value;
+    const source = document.getElementById('apSource').value;
+    const goal = document.getElementById('apGoal').value;
+    const cost = document.getElementById('apCost').value;
+    const subject = 'Warrior Protocol Application — ' + name;
+    const body = 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + (phone || '-') + '\nLocation: ' + loc + '\n\nCondition(s):\n' + cond + '\n\nGoals:\n' + (goal || '-') + '\n\nHow they heard: ' + source + '\nCost contribution: ' + cost;
+    window.location.href = 'mailto:info@warriorworld.life?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    alert('Your email app is opening with your application ready to send to info@warriorworld.life. We reach out within 48 hours.');
+    return false;
+  }
+
+  function sendBooking(e) {
+    e.preventDefault();
+    const role = document.getElementById('bkRole').value;
+    const name = document.getElementById('bkName').value;
+    const email = document.getElementById('bkEmail').value;
+    const subject = '15-Minute Meeting Request — ' + role + ' — ' + name;
+    const body = 'Role: ' + role + '\nName: ' + name + '\nEmail: ' + email + '\n\nPlease send a calendar link for a 15-minute intro call.';
+    window.location.href = 'mailto:info@warriorworld.life?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    alert('Your email app is opening with your meeting request ready to send to info@warriorworld.life.');
+    closeBooking();
+    return false;
   }
 </script>
 </body>
