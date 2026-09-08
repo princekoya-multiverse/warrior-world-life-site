@@ -232,6 +232,13 @@
   .plogo img { max-height: 60px; max-width: 80%; object-fit: contain; }
   .plogo span { font-size: 12px; color: var(--muted); font-weight: 600; }
 
+  /* CLINICIAN GRID */
+  .clinician-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .c-card { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 18px; text-align: center; }
+  .c-card img { width: 74px; height: 74px; object-fit: cover; border-radius: 50%; border: 3px solid var(--gold-soft); margin: 0 auto 10px; }
+  .c-card .cn { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .c-card .cr { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
   /* RESPONSIVE */
   @media (max-width: 960px) {
     .grid3, .grid4, .grid6, .process, .pathway, .video-grid, .toc-grid, .team-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1570,9 +1577,34 @@
       <div class="grid3">
         <div class="dark-card"><div class="t">💊 The Pharmacist / Health Coach</div><div class="d">Create videos with us. Coach on the things the average person doesn't know. You become our "pharmacist coach" — a voice of expertise on camera.</div></div>
         <div class="dark-card"><div class="t">🏋️ The CrossFit Coach</div><div class="d">Teach the benefits of CrossFit for recovery and performance. You become the "CrossFit coach" for warriors who need to move again.</div></div>
+        <div class="dark-card"><div class="t">🧘 The Pilates <em>Reformer</em> Coach</div><div class="d">Pilates is the quiet powerhouse of rehabilitation. You become the "reformer coach" — the expert whose movement practice rebuilds warriors from the core.</div></div>
         <div class="dark-card"><div class="t">🎬 The Practitioner</div><div class="d">Get filmed treating real warriors. Your expertise becomes part of the clinical proof — verified, on camera, for the world.</div></div>
+        <div class="dark-card"><div class="t">🏃 The Performance Coach</div><div class="d">Strength, conditioning, speed, mobility. You become the coach who takes a recovering athlete from "can move again" to "competing again."</div></div>
+        <div class="dark-card"><div class="t">🧠 The Mental Health &amp; Breathwork Coach</div><div class="d">Invisible disability lives in the nervous system too. You become the coach who helps warriors find calm, focus, and flow.</div></div>
       </div>
       <p style="color:#e6d9ae;font-size:15.5px;line-height:1.8;max-width:760px;margin:28px auto 0;">That's the ask. Partner up with Warrior World — bring your expertise, share your time, and help a warrior prove what's possible.</p>
+    </div>
+  </section>
+
+
+  <!-- LIVING DOCUMENTARY + LOCAL BRANDING -->
+  <section>
+    <div class="wrap">
+      <div class="label">Be Part of the Living Documentary</div>
+      <h2>Build Your Brand. <em>In Your Community.</em></h2>
+      <p class="lead" style="margin-bottom:24px;">This isn't a one-off commercial. Warrior World is a <strong style="color:var(--ink);">living documentary</strong> — and when you partner, you're not just in it, you help write it.</p>
+      <div class="grid2">
+        <div class="body-copy">
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.8;margin-bottom:14px;"><strong style="color:var(--ink);">We team you up with athletes in your area.</strong> You help them heal, they help you grow. Their recovery becomes proof of what you do — filmed, shared, and building your reputation on camera.</p>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.8;margin-bottom:14px;"><strong style="color:var(--ink);">We build your branding in your region.</strong> Right now we work with Catalyst Kintec and practitioners in South Surrey — bringing quality athletes through their doors because everyone in the network refers to each other. That's the model.</p>
+          <p style="font-size:15px;color:var(--ink-soft);line-height:1.8;"><strong style="color:var(--ink);">We bring attention to what you do.</strong> The documentary, the content, the community — it all funnels eyes toward the practitioners who are actually doing the work. You don't advertise. You get proven on camera.</p>
+        </div>
+        <div class="photo-frame">
+          <img src="https://pemf.cool/assets/in-clinic-D05sx4sn.jpg" alt="Practitioners working with athletes on camera" style="border-radius:10px;">
+          <div class="cap" style="color:#8a8a94;font-size:12px;margin-top:10px;">Partnering means being on camera, in the community, building together.</div>
+        </div>
+      </div>
+      <div class="note" style="margin-top:22px;"><strong>That's the local model:</strong> partner → work with area athletes → their recovery proves you → you grow — all on camera, all together. Catalyst and the South Surrey practitioners are proving it works right now.</div>
     </div>
   </section>
 
@@ -1587,13 +1619,18 @@
         <div class="plogo"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/37cf3219-01f5-4a85-954c-c657699e7d0f/semiahmoo-logo.jpg" alt="Semiahmoo Athletic Club" loading="lazy"><span>Semiahmoo Athletic Club</span></div>
         <div class="plogo"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/721c4f23-8fcf-4e04-9f15-e95c4b49dcf2/float-house.jpg" alt="Float House" loading="lazy"><span>Float House</span></div>
         <div class="plogo"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/bae3f68e-5748-47d3-a990-8a41971d417f/salt-wellness.jpg" alt="Salt Wellness Centre" loading="lazy"><span>Salt Wellness Centre</span></div>
-        <div class="plogo"><img src="https://numode.ca/wp-content/uploads/2026/08/numode-logo-header-600.png" alt="Numode" loading="lazy"><span>Numode</span></div>
         <div class="plogo"><img src="https://southokanaganphysio.com/wp-content/uploads/logo-pos.svg" alt="South Okanagan Physiotherapy" loading="lazy"><span>South Okanagan Physiotherapy</span></div>
-        <div class="plogo"><img src="https://static.wixstatic.com/media/8d7ff8_8087872b25a346e7b980bf45cdc6cb72~mv2.png" alt="Similkameen Valley Resort" loading="lazy"><span>Similkameen Valley Resort</span></div>
-        <div class="plogo"><img src="https://mapleleafgreenery.ca/wp-content/uploads/2021/06/20191101-Maple-Leaf-Greenery_Logo.jpg" alt="Maple Leaf Greenery" loading="lazy"><span>Maple Leaf Greenery</span></div>
-        <div class="plogo"><img src="https://www.newwestcity.ca/images/NW_logo_primary-2C.svg" alt="City of New Westminster" loading="lazy"><span>City of New Westminster</span></div>
+        <div class="plogo"><img src="https://static.wixstatic.com/media/8d7ff8_8087872b25a346e7b980bf45cdc6cb72~mv2.png" alt="Similkameen Valley Resort — Health Retreat" loading="lazy"><span>Similkameen Valley Health Retreat</span></div>
       </div>
-      <div class="note" style="margin-top:24px;">Plus our clinical team and practitioners — Dr. Adam Parlberg, Dr. Trent Wittal, Manny Lehal, Austin Marron, Dr. Silvana Jakupovic, and Grant Storzuk — the hands and expertise behind the proof.</div>
+      <p style="font-size:14.5px;color:var(--ink-soft);line-height:1.7;margin-top:30px;"><strong style="color:var(--ink);">The clinicians behind the proof.</strong> Dr. Adam, Dr. Trent, Manny, Austin, Dr. Silvana, and Grant — the hands and expertise that make the documentary real. When you partner with Warrior World, you stand beside them.</p>
+      <div class="clinician-grid" style="margin-top:20px;">
+        <div class="c-card"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/0c10ea51-8918-4bd3-9866-1108f7e3a0e5/profile.jpg" alt="Dr. Adam Parlberg"><div class="cn">Dr. Adam Parlberg</div><div class="cr">Medical Director</div></div>
+        <div class="c-card"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/457eb137-61ca-4547-97b3-05c51e7ed72e/trent.jpg" alt="Dr. Trent Wittal"><div class="cn">Dr. Trent Wittal</div><div class="cr">Chiropractor</div></div>
+        <div class="c-card"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/4a5d578d-9c33-44c4-81f1-1f9f1dd30ec9/manny.jpg" alt="Manny Lehal"><div class="cn">Manny Lehal</div><div class="cr">Physiotherapist</div></div>
+        <div class="c-card"><img src="https://projectpemfwarrior.com/story-media/austin-v3.jpg" alt="Austin Marron"><div class="cn">Austin Marron</div><div class="cr">RMT &amp; CrossFit Coach</div></div>
+        <div class="c-card"><img src="https://projectpemfwarrior.com/story-media/dr-silvana.jpg" alt="Dr. Silvana Jakupovic"><div class="cn">Dr. Silvana Jakupovic</div><div class="cr">Naturopath</div></div>
+        <div class="c-card"><img src="https://southokanaganphysio.com/wp-content/uploads/Staff-Grant.jpeg" alt="Grant Storzuk"><div class="cn">Grant Storzuk</div><div class="cr">Physiotherapist</div></div>
+      </div>
     </div>
   </section>
 
