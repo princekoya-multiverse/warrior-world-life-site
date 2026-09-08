@@ -226,6 +226,12 @@
   .team-card.dark .tn { color: #fff; }
   .team-card.dark .tr { color: #a5a5b0; }
 
+  /* PARTNER LOGOS */
+  .partner-logos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .plogo { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-height: 110px; }
+  .plogo img { max-height: 60px; max-width: 80%; object-fit: contain; }
+  .plogo span { font-size: 12px; color: var(--muted); font-weight: 600; }
+
   /* RESPONSIVE */
   @media (max-width: 960px) {
     .grid3, .grid4, .grid6, .process, .pathway, .video-grid, .toc-grid, .team-grid { grid-template-columns: repeat(2, 1fr); }
@@ -260,6 +266,7 @@
     <button data-page="documentary" onclick="showPage('documentary')">Documentary</button>
     <button data-page="apply" onclick="showPage('apply')">Apply</button>
     <button data-page="donate" onclick="showPage('donate')">Donate</button>
+    <button data-page="invite" onclick="showPage('invite')">Invite</button>
     <button data-page="contact" onclick="showPage('contact')">Contact</button>
   </div>
   <button class="nav-cta" onclick="openBooking()">Book a Meeting</button>
@@ -475,7 +482,7 @@
             <a class="btn-white" href="#for-funders" onclick="showPage('for-funders');return false;">Funder Information →</a>
           </div>
         </div>
-        <div class="p-card" style="background:url('https://pemf.cool/assets/patient-photo-NaWANXYn.jpg') center/cover;min-height:440px;">
+        <div class="p-card" style="background:url('https://pemf.cool/assets/treatment-room-CetmkAT8.jpg') center/cover;min-height:440px;">
           <div class="p-overlay">
             <div class="p-tag">FOR INDIGENOUS COMMUNITIES</div>
             <div class="pt">An Invitation to the Nations</div>
@@ -811,7 +818,7 @@
           </ul>
         </div>
         <div class="photo-frame">
-          <img src="https://pemf.cool/assets/patient-photo-NaWANXYn.jpg" alt="Recovery fueling" style="border-radius:10px;max-height:280px;object-fit:cover;width:100%;">
+          <img src="https://pemf.cool/assets/treatment-room-CetmkAT8.jpg" alt="Recovery fueling" style="border-radius:10px;max-height:280px;object-fit:cover;width:100%;">
         </div>
       </div>
     </div>
@@ -1211,7 +1218,7 @@
 
   <!-- SECTION 1: HERO -->
   <div class="hero">
-    <div class="bg" style="background-image:url('https://pemf.cool/assets/patient-photo-NaWANXYn.jpg');"></div>
+    <div class="bg" style="background-image:url('https://pemf.cool/assets/treatment-room-CetmkAT8.jpg');"></div>
     <div class="scrim"></div>
     <div class="inner">
       <div class="label" style="color:#e6d9ae;">Indigenous Communities</div>
@@ -1522,6 +1529,106 @@
 </div>
 <!-- ============ /DONATE ============ -->
 
+
+<!-- ============ PAGE: INVITE ============ -->
+<div class="page" id="page-invite">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="bg" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/7a4c3d07-79ae-4b61-b4a2-e42d5492ef40/champ-hero-kalari.jpg');"></div>
+    <div class="scrim"></div>
+    <div class="inner">
+      <div class="label" style="color:#e6d9ae;">An Invitation to Partner</div>
+      <h1>Let's Build Something <span style="color:#e6d9ae;">that Proves It</span></h1>
+      <p class="sub">Warrior World is a community of people who refuse to sit back. We're attacking the biggest health question of our time — invisible disability — and proving it's possible to do more than survive. We'd love you to be part of it.</p>
+      <div class="ctas">
+        <a class="btn-gold" href="#partnerform" onclick="document.getElementById('partnerform').scrollIntoView({behavior:'smooth'});return false;">Become a Partner</a>
+        <a class="btn-white" href="#current" onclick="document.getElementById('current').scrollIntoView({behavior:'smooth'});return false;">Our Current Partners</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE INVITATION -->
+  <section>
+    <div class="wrap">
+      <div class="label">Why Partner</div>
+      <h2>Work With Us. Or Work With Us <em>Again.</em></h2>
+      <p class="lead" style="margin-bottom:24px;">If we've worked together before — let's do it again. If you're a fan of what we're doing — this is your invitation to get in. If you work in health, fitness, or the improvement industry, and you want to help people with invisible disabilities — you're exactly who we're looking for.</p>
+      <div class="grid3">
+        <div class="card"><div class="t">🤝 If we've worked before</div><div class="d">We want to work with you again. The documentary, the partnerships, the proof — it keeps building, and we want you in the next chapter.</div></div>
+        <div class="card"><div class="t">⭐ If you're a fan</div><div class="d">You've watched what we're doing and you believe in it. Here's the invitation to stop watching and start building alongside us.</div></div>
+        <div class="card"><div class="t">🏥 If you're in health &amp; fitness</div><div class="d">Practitioners, clinics, pharmacies, coaches, fitness brands — anything that helps someone with an invisible disability. This is your lane.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS - NO CHARGE -->
+  <section class="dark">
+    <div class="wrap">
+      <div class="label">How Partnering Works</div>
+      <h2 style="color:#fff;">No Fees. Just <em style="color:#e6d9ae;">Expertise, Time &amp; Proof.</em></h2>
+      <p style="color:#c8c8d2;font-size:15px;line-height:1.8;max-width:760px;margin-bottom:28px;">For practitioner and professional partners, there's <strong style="color:#fff;">no charge to join.</strong> What we ask for is your expertise, your time, and — where it makes sense — a discount for the athletes you support. In return, you become part of the documentary, the movement, and the proof.</p>
+      <div class="grid3">
+        <div class="dark-card"><div class="t">💊 The Pharmacist / Health Coach</div><div class="d">Create videos with us. Coach on the things the average person doesn't know. You become our "pharmacist coach" — a voice of expertise on camera.</div></div>
+        <div class="dark-card"><div class="t">🏋️ The CrossFit Coach</div><div class="d">Teach the benefits of CrossFit for recovery and performance. You become the "CrossFit coach" for warriors who need to move again.</div></div>
+        <div class="dark-card"><div class="t">🎬 The Practitioner</div><div class="d">Get filmed treating real warriors. Your expertise becomes part of the clinical proof — verified, on camera, for the world.</div></div>
+      </div>
+      <p style="color:#e6d9ae;font-size:15.5px;line-height:1.8;max-width:760px;margin:28px auto 0;">That's the ask. Partner up with Warrior World — bring your expertise, share your time, and help a warrior prove what's possible.</p>
+    </div>
+  </section>
+
+  <!-- CURRENT PARTNERS -->
+  <section id="current">
+    <div class="wrap">
+      <div class="label">Warrior World Partners</div>
+      <h2>The Partnership Family</h2>
+      <p class="lead" style="margin-bottom:28px;">These partners have stood with us — on camera, in the clinic, and in the community. They're the reason the mission keeps proving itself.</p>
+      <div class="partner-logos">
+        <div class="plogo"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/fe43e23d-dbcb-4c01-adb8-64ea77768c37/catalyst.jpg" alt="Catalyst Kintec" loading="lazy"><span>Catalyst Kintec</span></div>
+        <div class="plogo"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/37cf3219-01f5-4a85-954c-c657699e7d0f/semiahmoo-logo.jpg" alt="Semiahmoo Athletic Club" loading="lazy"><span>Semiahmoo Athletic Club</span></div>
+        <div class="plogo"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/721c4f23-8fcf-4e04-9f15-e95c4b49dcf2/float-house.jpg" alt="Float House" loading="lazy"><span>Float House</span></div>
+        <div class="plogo"><img src="https://projectpemfwarrior.com/__l5e/assets-v1/bae3f68e-5748-47d3-a990-8a41971d417f/salt-wellness.jpg" alt="Salt Wellness Centre" loading="lazy"><span>Salt Wellness Centre</span></div>
+        <div class="plogo"><img src="https://numode.ca/wp-content/uploads/2026/08/numode-logo-header-600.png" alt="Numode" loading="lazy"><span>Numode</span></div>
+        <div class="plogo"><img src="https://southokanaganphysio.com/wp-content/uploads/logo-pos.svg" alt="South Okanagan Physiotherapy" loading="lazy"><span>South Okanagan Physiotherapy</span></div>
+        <div class="plogo"><img src="https://static.wixstatic.com/media/8d7ff8_8087872b25a346e7b980bf45cdc6cb72~mv2.png" alt="Similkameen Valley Resort" loading="lazy"><span>Similkameen Valley Resort</span></div>
+        <div class="plogo"><img src="https://mapleleafgreenery.ca/wp-content/uploads/2021/06/20191101-Maple-Leaf-Greenery_Logo.jpg" alt="Maple Leaf Greenery" loading="lazy"><span>Maple Leaf Greenery</span></div>
+        <div class="plogo"><img src="https://www.newwestcity.ca/images/NW_logo_primary-2C.svg" alt="City of New Westminster" loading="lazy"><span>City of New Westminster</span></div>
+      </div>
+      <div class="note" style="margin-top:24px;">Plus our clinical team and practitioners — Dr. Adam Parlberg, Dr. Trent Wittal, Manny Lehal, Austin Marron, Dr. Silvana Jakupovic, and Grant Storzuk — the hands and expertise behind the proof.</div>
+    </div>
+  </section>
+
+  <!-- PARTNER FORM -->
+  <section class="dark" id="partnerform">
+    <div class="wrap">
+      <div class="label center" style="text-align:center;">Become a Partner</div>
+      <h2 style="color:#fff;text-align:center;">Let's Start a Conversation</h2>
+      <p style="color:#c8c8d2;font-size:15px;text-align:center;max-width:620px;margin:0 auto 24px;">Tell us who you are and what you do. We'll reach out within 48 hours.</p>
+      <div class="form-box" style="background:var(--white);">
+        <form onsubmit="return sendPartner(event)">
+          <label>Your Name</label>
+          <input type="text" required placeholder="Your name" id="pnName">
+          <label>Organization / Practice</label>
+          <input type="text" required placeholder="Clinic, brand, or organization" id="pnOrg">
+          <label>Email</label>
+          <input type="email" required placeholder="you@organization.ca" id="pnEmail">
+          <label>What do you do?</label>
+          <select id="pnType">
+            <option>Practitioner — clinician (chiro, physio, RMT, ND, MD)</option>
+            <option>Health coach / Pharmacist</option>
+            <option>Fitness / CrossFit / Performance coach</option>
+            <option>Business / Brand in health &amp; wellness</option>
+            <option>Other</option>
+          </select>
+          <label>Why do you want to partner with Warrior World?</label>
+          <textarea rows="4" required placeholder="Tell us your story — worked together before, or excited to start" id="pnMsg"></textarea>
+          <button type="submit" class="btn-gold">Send the Invitation</button>
+        </form>
+      </div>
+      <p style="color:#8a8a94;font-size:12.5px;text-align:center;margin-top:16px;">No charge to join. No commitment. Just a conversation about what we can prove together.</p>
+    </div>
+  </section>
+</div>
+<!-- ============ /INVITE ============ -->
 <!-- ============ PAGE: CONTACT ============ -->
 <div class="page" id="page-contact">
 
@@ -1824,6 +1931,21 @@
     window.location.href = 'mailto:info@warriorworld.life?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     alert('Your email app is opening with your meeting request ready to send to info@warriorworld.life.');
     closeBooking();
+    return false;
+  }
+
+  // ===== PARTNER FORM → EMAIL =====
+  function sendPartner(e) {
+    e.preventDefault();
+    const name = document.getElementById('pnName').value;
+    const org = document.getElementById('pnOrg').value;
+    const email = document.getElementById('pnEmail').value;
+    const type = document.getElementById('pnType').value;
+    const msg = document.getElementById('pnMsg').value;
+    const subject = 'Partner Invitation — ' + name + ' — ' + org;
+    const body = 'Name: ' + name + '\nOrganization: ' + org + '\nEmail: ' + email + '\nType: ' + type + '\n\nMessage:\n' + msg + '\n\n(Response sent via warriorworld.life/invite)';
+    window.location.href = 'mailto:sponsor@projectpemfwarrior.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    alert('Your email app is opening with your partner invitation ready to send to sponsor@projectpemfwarrior.com.');
     return false;
   }
 </script>
