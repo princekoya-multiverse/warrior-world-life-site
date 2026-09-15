@@ -122,12 +122,15 @@
 
   /* VIDEOS */
   .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-  .video-card { background: var(--white); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-  .video-card .frame { aspect-ratio: 16/9; }
+  .video-card { background: var(--ink-2); border: 1px solid #33333c; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s; }
+  .video-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(0,0,0,0.35); }
+  .video-card .frame { aspect-ratio: 16/9; position: relative; }
+  .video-card .frame::after { content: ""; position: absolute; inset: 0; background: rgba(14,14,20,0.18); transition: background 0.25s; }
+  .video-card:hover .frame::after { background: rgba(14,14,20,0.02); }
   .video-card .frame iframe { width: 100%; height: 100%; border: 0; }
-  .video-card .info { padding: 16px 18px; }
-  .video-card .info .vt { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
-  .video-card .info .vd { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .video-card .info { padding: 16px 18px; border-top: 1px solid #2a2a32; }
+  .video-card .info .vt { font-weight: 700; font-size: 15px; margin-bottom: 6px; color: #fff; }
+  .video-card .info .vd { font-size: 13px; color: #a5a5b0; line-height: 1.6; }
 
   /* PROCESS */
   .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -294,7 +297,7 @@
 
   <!-- SECTION 1: HERO -->
   <div class="hero">
-    <div class="bg" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/0ac9b4e8-eebf-4b5b-ab23-0145567be396/prince-pemf-happy.jpg');"></div>
+    <div class="bg" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/7a4c3d07-79ae-4b61-b4a2-e42d5492ef40/champ-hero-kalari.jpg');"></div>
     <div class="scrim"></div>
     <div class="inner">
       <div class="label" style="color:#e6d9ae;">Warrior World Health &amp; Performance Society</div>
@@ -439,7 +442,7 @@
         <p style="color:#e6d9ae;font-size:15px;line-height:1.8;">AI doesn't replace the practitioner. It makes the practitioner's work smarter, and the member's life easier.</p>
       </div>
       <div class="photo-frame">
-        <img src="https://pemf.cool/assets/cellular-Bzo7_Xip.jpg" alt="The Warrior AI — daily tracking of invisible conditions" style="border-radius:10px;">
+        <img src="https://pemf.cool/assets/hero-top-CiCO7B_Y.jpg" alt="The Warrior AI — daily tracking of invisible conditions" style="border-radius:10px;">
         <div class="cap" style="color:#8a8a94;font-size:12px;margin-top:10px;">Eight conditions tracked daily. One dashboard. One coach. That's the AI.</div>
       </div>
     </div>
@@ -940,7 +943,7 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="bg" style="background-image:url('https://projectpemfwarrior.com/__l5e/assets-v1/7a4c3d07-79ae-4b61-b4a2-e42d5492ef40/champ-hero-kalari.jpg');"></div>
+    <div class="bg" style="background-image:url('https://pemf.cool/assets/prince-portrait-tQlVGHNt.jpg');"></div>
     <div class="scrim"></div>
     <div class="inner">
       <div class="label" style="color:#e6d9ae;">Project PEMF Warrior</div>
@@ -1297,7 +1300,7 @@
 
   <!-- SECTION 1: HERO -->
   <div class="hero">
-    <div class="bg" style="background-image:url('https://pemf.cool/assets/cellular-Bzo7_Xip.jpg');"></div>
+    <div class="bg" style="background-image:url('https://pemf.cool/assets/in-clinic-D05sx4sn.jpg');"></div>
     <div class="scrim"></div>
     <div class="inner">
       <div class="label" style="color:#e6d9ae;">Indigenous Communities</div>
